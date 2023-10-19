@@ -1,0 +1,45 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Good job! Your player becomes more put-together, you should celebrate that. Here is the plan: I call some party people, gather party supplies, and you make this player play all the cool songs you have on your phone. Sounds fun, doesn't it?</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li><code class="java">mainButtonSearch</code>:
+
+	<ul>
+<li>instead of always finding the same hard-coded list, you are going to retrieve the song info from your device and create the "All Songs" playlist with that info;</li>
+<li>to access the song info, you will need permission to read from external storage; if the app doesn't have the permission, ask for it;</li>
+<li>If the permission is granted, then save the song info on the "All Songs" playlist and display it on <code class="java">mainSongList</code> without requiring extra clicks;</li>
+<li>If it already had the permission, then save the song info on the "All Songs" playlist and display it on <code class="java">mainSongList</code>.</li>
+</ul>
+</li>
+<li>Permission:
+	<ul>
+<li>add the permission to read from external storage to your <code class="java">AndroidManifest</code> file;</li>
+<li>ask permission during runtime if <code class="java">mainButtonSearch</code> was clicked and the app does not have the permission yet;</li>
+<li>request permission using ActivityCompat api; when asking for permission, use <code class="java">1</code> for <code class="java">requestCode</code>;</li>
+<li>if the permission is denied, show a toast message <code class="java">"Songs cannot be loaded without permission"</code>; requesting permission again should be possible by clicking again on the search button.</li>
+</ul>
+</li>
+<li><code class="java">ContentResolver</code>:
+	<ul>
+<li>use the <code class="java">ContentResolver</code> to retrieve info from audio files using the query method; use this Uri on the query: <code class="java">MediaStore.Audio.Media.EXTERNAL_CONTENT_URI</code>;</li>
+<li>retrieve these columns from the query: <code class="java">MediaStore.Audio.Media._ID</code>, <code class="java">MediaStore.Audio.Media.ARTIST</code>, <code class="java">MediaStore.Audio.Media.TITLE</code>, <code class="java">MediaStore.Audio.Media.DURATION</code>;</li>
+<li>use the info from the audio files on your <code class="java">Song</code> model;</li>
+<li>the <code class="java">songId</code> will be used to load songs on the <code class="java">MediaPlayer</code>;</li>
+<li>if you are manually testing your app on a virtual device, make sure the app has songs to load; you can use the device file explorer to add songs to the device; it may happen that an added file is not being recognized as a music file: then you can try synchronizing the folder on the device explorer; if it still not recognized, try moving the file to the audio folder on the device itself; testing on a real device may be easier.</li>
+</ul>
+</li>
+<li><code class="java">MediaPlayer</code>:
+	<ul>
+<li>get the <code class="java">songUri</code> from the <code class="java">songId</code> using <code class="java"> ContentUris.withAppendedId(android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, songId)</code>;</li>
+<li>use the <code class="java">songUri</code> to load songs to the <code class="java">MediaPlayer</code>;</li>
+<li>it is possible to create a new instance of <code class="java">MediaPlayer</code> for playing a new <code class="java">currentTrack</code>, but you should use the method release on the <code class="java">MediaPlayer</code> instance that is being disposed to avoid memory leaks; keeping a song loaded uses a lot of resources, so you shouldn't load multiple songs at the same time; test may not be able to enforce this requirement, but you should avoid such bad practice anyway.</li>
+</ul>
+</li>
+</ol>
+<p>obs: tests assume the existence of a file named "wisdom.mp3" on res/raw. It should be loaded automatically with the project, but if for some reason it goes missing use this link to restore it <a href="https://stepik.org/media/attachments/lesson/791917/wisdom.mp3" rel="noopener noreferrer nofollow" target="_blank"> https://stepik.org/media/attachments/lesson/791917/wisdom.mp3</a></p>
+<h5 id="examples">Examples</h5>
+<p><img alt="android music player permission request" height="538" name="MusicPlayerStage4_01.gif" src="https://ucarecdn.com/7313eecd-fba3-4f6c-a173-284b59f9f1b4/" width="329"/></p>
+<p> </p>
+<p><img alt="android music player permission grant" height="528" name="MusicPlayerStage4_02.gif" src="https://ucarecdn.com/4e0d3a6f-a11a-48ad-9c9a-9054b09fb20f/" width="300"/></p>
+</div>

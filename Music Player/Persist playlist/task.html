@@ -1,0 +1,33 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Last stage was wild, wasn't it? What a great party, it's a shame I don't really remember anything. Your app doesn't remember anything either: all playlists saved during our awesome party are now gone. You should change that now, implementing a database to keep the playlists saved.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Database:
+	<ul>
+<li>you can make the design of this database very simple: it will be one table only, and you will only keep the relations between <code class="java">playlistName</code> and <code class="java">songId</code>;</li>
+<li>name the database <code class="java">musicPlayerDatabase.db</code>;</li>
+<li>create a table with the name <code class="java">playlist</code> if that table doesn't exist yet;</li>
+<li>add a <code class="java">playlistName</code> column with the type <code class="java">TEXT</code>;</li>
+<li>add a <code class="java">songId</code> column with the type <code class="java">INTEGER</code>;</li>
+<li>don't add the "All Songs" playlist to the database: this one should be kept in memory only;</li>
+<li>pairs of <code class="java">playlistName</code> and <code class="java">songId</code> should be unique, that is, don't add the same song to one playlist twice;</li>
+<li>if a playlist with the same name as an existing one is added, remove the old playlist and keep only the songs from the new playlist;</li>
+<li>if a playlist is loaded with an empty or non-existing "All Songs" playlist, then the search should be done automatically before loading the list; that is, first try loading the songs from the device into "All Songs" playlist once, then proceed with loading the playlist as usual;</li>
+<li>if a song from the saved playlist is not in the "All Songs" playlist, don't display it;</li>
+<li>removing a playlist does the obvious: remove all entries with that <code class="java">playlistName</code>;</li>
+<li>if you are testing your app with an emulated device, you can find the database file on <code class="java">data/data/org.hyperskill.musicplayer/databases</code> in the device file explorer; if you want to reset the database, you can just erase the database files; if you want to open the file to see the contents, you can do that by first clicking twice on the <code class="java">musicPlayerDatabase.db</code>; </li>
+<li>if, when opening a file, its name has unreadable chars, right click on it and look for "open in terminal" – now you can use SQLite to open it with <code class="java">sqlite3 ./musicPlayerDatabase.db</code>; you should have sqlite3 installed and reachable on <code class="java">$PATH</code> to be able to do that.</li>
+</ul>
+</li>
+<li><code class="java">mainMenuLoadPlaylist</code>:
+	<ul>
+<li>display the "All Songs" playlist even if the <code class="java">mainSearchButton</code> hasn't been clicked yet;</li>
+<li>if any playlist is loaded before <code class="java">mainSearchButton</code> is clicked, then the search should be done automatically before loading the list.</li>
+</ul>
+</li>
+</ol>
+<p>obs: tests assume the existence of a file named "wisdom.mp3" on res/raw. It should be loaded automatically with the project, but if for some reason it goes missing use this link to restore it <a href="https://stepik.org/media/attachments/lesson/791917/wisdom.mp3" rel="noopener noreferrer nofollow" target="_blank"> https://stepik.org/media/attachments/lesson/791917/wisdom.mp3</a></p>
+<h5 id="example">Example</h5>
+<p><img alt="android music player persistent playlist" height="573" name="MusicPlayerStage5_01.gif" src="https://ucarecdn.com/8d64091c-27db-4acb-8aa4-9b7dbfe85731/" width="321"/></p>
+</div>

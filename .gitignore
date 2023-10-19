@@ -1,0 +1,5 @@
+# Project exclude paths
+/.gradle/
+/Music Player/task/build/
+/Music Player/task/build/intermediates/javac/debug/classes/
+/Music Player/task/build/intermediates/javac/debugUnitTest/classes/

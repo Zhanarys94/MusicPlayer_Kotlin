@@ -1,0 +1,132 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>In this stage, you will be implementing actions for most of the needed widgets, including implementing the playlist feature. You will focus primarily on the UX concerning events state transitions and how the Activity display should react to those.</p>
+<p>There are going to be a lot of states that you are expected to manage. It means that there will be a lot of work involved because managing a complex state structure with lots of triggers is just not easy. Be careful with illegal states; the more you think about them, the more illicit forms you will find.</p>
+<p>The good news is that, if implemented with a proper design, the remaining stages should be relatively easy after this stage. Even if you are not comfortable working with <code class="java">MediaPlayer</code>, <code class="java">ContentResolver</code>, and <code class="java">SQLiteDatabase</code>, which are the main subjects of the following stages. You should be able to better focus on them by being concerned only with wiring them with the presentation layer.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>View State:
+	<ul>
+<li>there will be two different states your activity should have: PLAY_MUSIC state and ADD_PLAYLIST state;</li>
+<li>in the PLAY_MUSIC state, display <code class="java">list_item_song</code> on <code class="java">mainSongList</code> and <code class="java">MainPlayerControllerFragment</code> on <code class="java">mainFragmentContainer</code>;</li>
+<li>in the ADD_PLAYLIST state, display <code class="java">list_item_song_selector</code> on <code class="java">mainSongList</code> and <code class="java">MainAddPlaylistFragment</code> on <code class="java">mainFragmentContainer</code>;</li>
+<li>other combinations of <code class="java">mainSongList</code> content and <code class="java">mainFragmentContainer</code> content are not valid.</li>
+</ul>
+</li>
+<li>Song:
+	<ul>
+<li>create a model for storing song info; in the following stages, all info will be retrieved from files stored on your device;</li>
+<li>add an id to the model – a number, which is the file id of the song;</li>
+<li>add a title to the model – a text, which is the title of the song;</li>
+<li>add an artist to the model – a text, which is the name of the performer(s);</li>
+<li>add duration to the model – a number, which is the song's duration in milliseconds.</li>
+</ul>
+</li>
+<li><code class="java">currentPlaylist</code>:
+	<ul>
+<li>a playlist is a list of <code class="java">Song</code> elements, the <code class="java">currentPlaylist</code> is the playlist that is displayed in the <code class="java">PLAY_MUSIC</code> state;</li>
+<li>on the <code class="java">currentPlaylist</code>, there is always a <code class="java">currentTrack</code>, which is the song that is currently loaded in response to <code class="java">MainPlayerControllerFragment</code> events; it can be played, paused, or stopped; a <code class="java">Track</code> is a song with its current state: playing, paused, or stopped;</li>
+<li>loading a playlist in the <code class="java">PLAY_MUSIC</code> state should change the <code class="java">currentPlaylist</code> to the loaded playlist;</li>
+<li>if a playlist that is loaded in the <code class="java">PLAY_MUSIC</code> state contains the <code class="java">currentTrack</code>, then the <code class="java">currentTrack</code> should remain selected; if the <code class="java">currentTrack</code> is playing/paused/stopped, it should remain to play/paused/stopped;</li>
+<li>loading a playlist in the <code class="java">ADD_PLAYLIST</code> state should not change the <code class="java">currentPlaylist</code>, but the list displayed in this state should change to the loaded playlist.</li>
+</ul>
+</li>
+<li><code class="java">list_item_song</code>:
+	<ul>
+<li><code class="java">list_item_song</code> is the layout to be used in <code class="java">mainSongList</code> during the <code class="java">PLAY_MUSIC</code> state and just in that state;</li>
+<li>create an XML that you can name <code class="java">list_item_song.xml</code>. It will be used to display the items of the current playlist, which is a list of <code class="java">Song</code> items;</li>
+<li>add an <code class="java">ImageButton</code> with the id <code class="java">songItemImgBtnPlayPause</code> and initial image <code class="java">ic_play</code>, available on <code class="java">res/drawable/</code>;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">songItemTvArtist</code>; the text value should be the song's artist;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">songItemTvTitle</code>; the text value should be the song's title;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">songItemTvDuration</code>; the text value should be the song's duration in "clock format", that is, <em>mm:ss</em>; ss ranges from 00 to 59, representing seconds, and mm ranges from 00 to infinity, representing minutes;</li>
+<li>clicking on <code class="java">songItemImgBtnPlayPause</code> should change the <code class="java">currentTrack</code> if it is a different track; if the track was not in the playing state, it should change to the playing state and change the image of the button to <code class="java">ic_pause</code>; if the track was in the playing state, it should change to paused state and change the image of the button to <code class="java">ic_play</code>; if there is a change on the <code class="java">currentTrack</code>, the old <code class="java">currentTrack</code> should be stopped and change the image of the button to <code class="java">ic_play</code>;</li>
+<li>add an action performed on a long click on the item: on a long click, the view state should change to <code class="java">ADD_PLAYLIST</code>, and the item that triggered the long click should be selected.</li>
+</ul>
+</li>
+<li><code class="java">SongSelector</code>:
+	<ul>
+<li><code class="java">SongSelector</code> is a Song with its current variable state <code class="java">isSelected</code>.</li>
+</ul>
+</li>
+<li><code class="java">list_item_song_selector</code>:
+	<ul>
+<li><code class="java">list_item_song_selector</code> is the layout to be used in <code class="java">mainSongList</code> during ADD_PLAYLIST state and just in that state;</li>
+<li>create an XML that you can name <code class="java">list_item_song_selector.xml</code>; it will be used to display the <code class="java">loadedPlaylist</code>, which is a list of <code class="java">SongSelector</code> to be displayed in ADD_PLAYLIST state;</li>
+<li>add a <code class="java">CheckBox</code> with the id <code class="java">songSelectorItemCheckBox</code>; the checkbox should not be clickable, and it should change its <code class="java">isChecked</code> state on a click on a list item; the checkbox's <code class="java">isChecked</code> state should match the <code class="java">SongSelector</code> <code class="java">isSelected</code> state;</li>
+<li>the background color of the list item should change according to the <code class="java">isSelected</code> state of the model item; if the item <code class="java">isSelected=true</code>, then the color should be <code class="java">Color.LTGRAY</code>, if not, then it should be <code class="java">Color.WHITE</code>; be aware of the recycling nature of the <code class="java">RecyclerView</code>: strange states might happen if you are not;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">songSelectorItemTvArtist</code>; the text value should be the song's artist;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">songSelectorItemTvTitle</code>; the text value should be the song's title;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">songSelectorItemTvDuration</code>; the text value should be the song's duration in "clock format", that is, <em>mm:ss</em>; ss ranges from 00 to 59, representing seconds, and mm ranges from 00 to infinity, representing minutes.</li>
+</ul>
+</li>
+<li><code class="java">mainButtonSearch</code>:
+	<ul>
+<li>on click, you should "find" a hard-coded list with 10 <code class="java">Song</code>;</li>
+<li>the first Song item of this hard-coded list should have <code class="java">id=1</code>, <code class="java">title="title1"</code>, <code class="java">artist="artist1"</code>, <code class="java">duration=215_000</code>;</li>
+<li>the following items of the hard-coded list should have the same structure as the first, replacing all those with the list position of the current item (one indexed); the duration value is constant for all items;</li>
+<li>create a playlist named "All Songs" with the list of all songs that were found;</li>
+<li>if you click on <code class="java">mainButtonSearch</code> in the <code class="java">PLAY_MUSIC</code> state, set the playlist named "All Songs" as the <code class="java">currentPlaylist</code>;</li>
+<li>if you click on <code class="java">mainButtonSearch</code> in the <code class="java">ADD_PLAYLIST</code> state, update the playlist named "All Songs" and display the updated songs on <code class="java">mainSongList</code>, but do not change the <code class="java">currentPlaylist</code>; when returning to the PLAY_MUSIC state, if the <code class="java">currentPlaylist</code> is also the playlist named "All Songs", then <code class="java">mainSongList</code> should display the updated values (in this stage, you will always find the same list);</li>
+<li>if a playlist named "All Songs" already exists, update the values of the playlist and display the updated content (in this stage, you will always find the same list).</li>
+</ul>
+</li>
+<li><code class="java">mainMenuAddPlaylist</code>:
+	<ul>
+<li>ignore clicks on <code class="java">mainMenuAddPlaylist</code> if already in the <code class="java">ADD_PLAYLIST</code> state;</li>
+<li>if the "All Songs" playlist is empty, then you should display the same message as in the previous stage: <code class="java">"no songs loaded, click search to load songs"</code>;</li>
+<li>if the "All Songs" playlist is not empty, then change the state to ADD_PLAYLIST state;</li>
+<li>on the transition from the <code class="java">PLAY_MUSIC</code> state to the <code class="java">ADD_PLAYLIST</code> state, always display on <code class="java">mainSongList</code> a list of <code class="java">SongSelectors</code>, based on the "All Songs" playlist, even if "All Songs" is not the <code class="java">currentPlaylist</code>;</li>
+<li>no <code class="java">songSelectors</code> should be selected if the transition is triggered by clicking on <code class="java">mainMenuAddPlaylist</code>; if the transition is triggered by a long click event on a <code class="java">list_item_song</code>, then only that item should be selected; there are no other differences between clicking on a <code class="java">mainMenuAddPlaylist</code> and long clicking on a <code class="java">list_item_song</code>.</li>
+</ul>
+</li>
+<li>Create a <code class="java">MainAddPlaylistFragment</code> that extends <code class="java">Fragment</code>:
+	<ul>
+<li>add an <code class="java">EditText</code> with the id <code class="java">addPlaylistEtPlaylistName</code> and the hint <code class="java">"Playlist Name"</code>;</li>
+<li>add a <code class="java">Button</code> with the id <code class="java">addPlaylistBtnCancel</code> with the text <code class="java">"Cancel"</code>; on click, you should just transition back to the <code class="java">PLAY_MUSIC</code> state; the <code class="java">currentPlaylist</code> should not have changed during the <code class="java">ADD_PLAYLIST</code> state and should be displayed again after the transition;</li>
+<li>add a <code class="java">Button</code> with the id <code class="java">addPlaylistBtnOk</code> with text <code class="java">"Ok"</code>;</li>
+<li>On click, if no <code class="java">SongSelector</code> is selected, then show a toast with the message <code class="java">"Add at least one song to your playlist"</code>;</li>
+<li>If there are selected songs, but the <code class="java">addPlaylistEtPlaylistName</code> text is blank, then show a toast with the message <code class="java">"Add a name to your playlist"</code>;</li>
+<li>If there are selected songs but the <code class="java">addPlaylistEtPlaylistName</code> text is "All Songs", then show a toast with the message <code class="java">"All Songs is a reserved name choose another playlist name"</code>;</li>
+<li>Otherwise, add a playlist with the name taken from the <code class="java">addPlaylistEtPlaylistName</code> text and with the songs from the list of selected <code class="java">SongSelectors</code> and transition back to the <code class="java">PLAY_MUSIC</code> state; the <code class="java">currentPlaylist</code> should not have changed during the ADD_PLAYLIST state and should be displayed again after the transition.</li>
+</ul>
+</li>
+<li><code class="java">mainMenuLoadPlaylist</code>:
+	<ul>
+<li>keep showing the <code class="java">AlertDialog</code> from the previous stage;</li>
+<li>add items to be selected to the <code class="java">AlertDialog</code>; the items are based on all existing playlist names;</li>
+<li>on <code class="java">itemSelected</code> load the playlist that has the same name as the item;</li>
+<li>if the list is loaded on the <code class="java">PLAY_MUSIC</code> state, then the <code class="java">currentPlaylist</code> should change and the new <code class="java">currentPlaylist</code> should be displayed; if the list contains the <code class="java">currentTrack</code>, then the track should remain selected, and if the <code class="java">currentTrack</code> is playing/paused/stopped, it should remain to play/paused/stopped;</li>
+<li>if the list is loaded on the <code class="java">ADD_PLAYLIST</code> state, then display the <code class="java">loadedPlaylist</code>, which is a list of <code class="java">SongSelector</code>; if the list includes a <code class="java">SongSelector</code> from the old <code class="java">loadedPlaylist</code>, the <code class="java">SongSelector</code> should keep the <code class="java">isSelected</code> state, if it does not include a <code class="java">SongSelector</code>, it should not be selected.</li>
+</ul>
+</li>
+<li><code class="java">mainMenuDeletePlaylist</code>:
+	<ul>
+<li>keep showing the <code class="java">AlertDialog</code> from the previous stage;</li>
+<li>add items to be selected to the <code class="java">AlertDialog</code>; the items are based on all existing playlist names, except the "All Songs" playlist;</li>
+<li>on <code class="java">itemSelected</code> delete the playlist that has the same name as the item;</li>
+<li>if the playlist deleted is the <code class="java">currentPlaylist</code>, then change the <code class="java">currentPlaylist</code> to the "All Songs" playlist;</li>
+<li>if the playlist is deleted on the <code class="java">ADD_PLAYLIST</code> state, then display the "All Songs" playlist.</li>
+</ul>
+</li>
+<li><code class="java">MainPlayerControllerFragment</code>:
+	<ul>
+<li>when you click on <code class="java">controllerBtnPlayPause</code>, then <code class="java">currentTrack</code> should respond by changing its playing/paused/stopped state; if the <code class="java">currentTrack</code> is playing, the <code class="java">songItemImgBtnPlayPause</code> associated with the <code class="java">currentTrack</code> should display <code class="java">ic_pause</code>; if the <code class="java">currentTrack</code> is paused/stopped, the <code class="java">songItemImgBtnPlayPause</code> associated with the <code class="java">currentTrack</code> should display <code class="java">ic_play</code>;</li>
+<li>when you click on <code class="java">controllerBtnStop</code>, then <code class="java">currentTrack</code> should respond by changing the state to stopped state; the <code class="java">songItemImgBtnPlayPause</code> associated with the <code class="java">currentTrack</code> should display <code class="java">ic_play</code>.</li>
+</ul>
+</li>
+</ol>
+<p>obs: tests assume the existence of a file named "wisdom.mp3" on res/raw. It should be loaded automatically with the project, but if for some reason it goes missing use this link to restore it <a href="https://stepik.org/media/attachments/lesson/791917/wisdom.mp3" rel="noopener noreferrer nofollow" target="_blank"> https://stepik.org/media/attachments/lesson/791917/wisdom.mp3</a></p>
+<h5 id="examples">Examples</h5>
+<p><img alt="android music player play" height="524" name="MusicPlayerStage2_01.gif" src="https://ucarecdn.com/3fe9fdeb-4777-45a9-bcb1-dd94848cce6f/" width="305"/></p>
+<p> </p>
+<p><img alt="android music player playlist create" height="524" name="MusicPlayerStage2_02.gif" src="https://ucarecdn.com/da83e282-ce65-4ac5-b48f-b5a22c1d3b8b/" width="305"/></p>
+<p> </p>
+<p> </p>
+<p><img alt="android music player playlist load" height="524" name="MusicPlayerStage2_03.gif" src="https://ucarecdn.com/5da1c266-bc5a-4733-a02d-16ec2e8d3b44/" width="305"/></p>
+<p> </p>
+<p> </p>
+<p><img alt="android music player playlist delete" height="524" name="MusicPlayerStage2_04.gif" src="https://ucarecdn.com/bdb9cd76-3334-4067-b4d0-51d6e8a9180f/" width="305"/></p>
+<p> </p>
+<p> </p>
+<p><img alt="android music player song search" height="524" name="MusicPlayerStage2_05.gif" src="https://ucarecdn.com/e2599031-cbe0-4698-8b00-d8a9392102e6/" width="305"/></p>
+</div>

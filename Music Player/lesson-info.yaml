@@ -1,0 +1,8 @@
+type: framework
+content:
+  - Simple player layout
+  - Creating actions
+  - Let's play a song
+  - Playing from storage
+  - Persist playlist
+current_task: 1

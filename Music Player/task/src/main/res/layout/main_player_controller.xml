@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/controllerBtnStop"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/button_stop_description"
+        android:text="@string/button_stop_text" />
+
+    <TextView
+        android:id="@+id/controllerTvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="10dp"
+        android:text="@string/controller_current_time" />
+
+    <TextView
+        android:id="@+id/controllerTvTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="10dp"
+        android:text="@string/controller_total_time" />
+
+    <SeekBar
+        android:id="@+id/controllerSeekBar"
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:indeterminate="false" />
+
+    <Button
+        android:id="@+id/controllerBtnPlayPause"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/button_playPause_description"
+        android:text="@string/button_playPause_text"
+        android:typeface="normal" />
+</FrameLayout>

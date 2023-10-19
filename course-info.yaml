@@ -1,0 +1,13 @@
+type: hyperskill
+title: Music Player
+language: English
+summary: "<p>Everyone with a computer has searched for a good music player at least\
+  \ once. Most of them either work on a paid subscription, contain advertising, or\
+  \ don't have the necessary functions. In this project, you will create your player.</p><br/><br/>Learn\
+  \ more at <a href=\"https://hyperskill.org/projects/289?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card\"\
+  >https://hyperskill.org/projects/289</a>"
+programming_language: Kotlin
+environment: Android
+content:
+  - Music Player
+mode: Study

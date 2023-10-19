@@ -1,0 +1,50 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>In this project, you will create a simple song player. With this app, you will be able to play songs stored on your device, create playlists with your favorite songs and save them in the database so that they are not lost after closing the app.</p>
+<p>You will also try to have some fun because why not.</p>
+<p>Your resulting app, although simple, will have one outstanding pro: it will be yours, free of ads, free of subscriptions, and customizable by directly changing the source code.</p>
+<p>In this initial stage, you will start focusing on the UI by preparing the layout structure of your <code class="java">MainActivity</code>. You don't need to be concerned with fully implementing actions for most widgets. UX will be the focus of the following stage. Here, you will deal with adding the primary widgets you will be using and preparing the general look of the Activity.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Add a search button to the <code class="java">MainActivity</code>.
+
+	<ul>
+<li>id <code class="java">mainButtonSearch</code></li>
+<li>text <code class="java">search</code></li>
+<li>on click, show the message <code class="java">no songs found</code>.</li>
+</ul>
+</li>
+<li>Add a <code class="java">RecyclerView</code> to the <code class="java">MainActivity</code>.
+	<ul>
+<li>id <code class="java">mainSongList</code></li>
+<li>just keep it empty for this stage</li>
+</ul>
+</li>
+<li>Add a <code class="java">FragmentContainerView</code> to the <code class="java">MainActivity</code>.
+	<ul>
+<li>id <code class="java">mainFragmentContainer</code></li>
+<li><code class="java">init</code> it with the <code class="java">MainPlayerControllerFragment</code></li>
+</ul>
+</li>
+<li>Create a <code class="java">MainPlayerControllerFragment</code> that extends <code class="java">Fragment</code>:
+	<ul>
+<li>add a <code class="java">TextView</code> with the id <code class="java">controllerTvCurrentTime</code> and the text <code class="java">"00:00"</code>;</li>
+<li>add a <code class="java">TextView</code> with the id <code class="java">controllerTvTotalTime</code> and the text <code class="java">"00:00"</code>;</li>
+<li>add a <code class="java">SeekBar</code> with the id <code class="java">controllerSeekBar</code>;</li>
+<li>add a <code class="java">Button</code> with the id <code class="java">controllerBtnPlayPause</code> with the text <code class="java">"play/pause"</code>;</li>
+<li>add a <code class="java">Button</code> with the id <code class="java">controllerBtnStop</code> with the text <code class="java">"stop"</code>.</li>
+</ul>
+</li>
+<li>Create an <a href="https://developer.android.com/develop/ui/views/components/menus#options-menu" rel="noopener noreferrer nofollow" target="_blank">options menu</a> with three <code class="java">item</code> (Add Playlist, Load Playlist, Delete Playlist):
+	<ul>
+<li>add the item Add Playlist, with the id <code class="java">mainMenuAddPlaylist</code> and the title <code class="java">"Add Playlist"</code>. On click, show the message <code class="java">"no songs loaded, click search to load songs"</code>;</li>
+<li>add the item Load Playlist, with the id <code class="java">mainMenuLoadPlaylist</code> and the title <code class="java">"Load Playlist"</code>. On click, show an <code class="java">AlertDialog</code> with title <code class="java">"choose playlist to load"</code>, and a negative button with the text <code class="java">"cancel"</code> that does nothing;</li>
+<li>add the item Delete Playlist, with the id <code class="java">mainMenuDeletePlaylist</code> and the title <code class="java">"Delete Playlist"</code>. On click, show an <code class="java">AlertDialog</code> with title <code class="java">"choose playlist to delete"</code> and a negative button with text <code class="java">"cancel"</code> that does nothing;</li>
+<li>use <code class="java">import android.app.AlertDialog</code>, the AppCompat alternative version will fail.</li>
+</ul>
+</li>
+</ol>
+<p>obs: tests assume the existence of a file named "wisdom.mp3" on res/raw. It should be loaded automatically with the project, but if for some reason it goes missing use this link to restore it <a href="https://stepik.org/media/attachments/lesson/791917/wisdom.mp3" rel="noopener noreferrer nofollow" target="_blank"> https://stepik.org/media/attachments/lesson/791917/wisdom.mp3</a></p>
+<h5 id="example">Example</h5>
+<p><img alt="android music player layout" height="524" name="MusicPlayerStage1_01.gif" src="https://ucarecdn.com/4a2f43f7-01fc-476b-8d62-ad45e3d52ac7/" width="305"/></p>
+</div>

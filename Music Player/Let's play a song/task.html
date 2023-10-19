@@ -1,0 +1,62 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Yeah, that was a lot of work in the previous stage. How about you put your <code class="java">MediaPlayer</code> to play some calm tune and chill? But to still have some control, let's see what song is on at the moment, alright? You'll probably need some instructions for that – no worries, here you go.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li><code class="java">controllerSeekBar</code>:
+
+	<ul>
+<li>set the <code class="java">controllerSeekBar</code>'s max to match the song duration in seconds;</li>
+<li>sync <code class="java">controllerSeekBar</code> with <code class="java">MediaPlayer</code>; the <code class="java">controllerSeekBar</code> progress should match the <code class="java">MediaPlayer</code> <code class="java">currentPosition</code>, but one is in seconds and the other is in milliseconds, don't forget that;</li>
+<li>add an <code class="java">OnSeekBarChangeListener</code> to make it possible to change the <code class="java">currentPosition</code> by dragging the <code class="java">seekBar</code>; the change should only actually happen in <code class="java">onStopTrackingTouch</code>;</li>
+<li>you can use <code class="java">onStartTrackingTouch</code> to stop actualizations of controller widgets and <code class="java">onProgressChanged</code> to display the time in <code class="java">controllerTvCurrentTime</code>;</li>
+<li>it should be possible to change the <code class="java">currentPosition</code> by dragging <code class="java">controllerSeekBar</code> with the <code class="java">currentTrack</code> to any state: playing/paused/stopped;</li>
+<li>don't forget that the <code class="java">currentTrack</code> should keep it's playing/pause/stopped state during the <code class="java">ADD_PLAYLIST</code> state. If you are transitioning from <code class="java">ADD_PLAYLIST</code> back to the <code class="java">PLAY_MUSIC</code> state with the <code class="java">currentTrack</code> playing, then the <code class="java">controllerSeekBar</code> progress should still match <code class="java">MediaPlayer</code> <code class="java">currentPosition</code>.</li>
+</ul>
+</li>
+<li><code class="java">controllerTvCurrentTime</code>:
+	<ul>
+<li>sync <code class="java">controllerTvCurrentTime</code> with <code class="java">MediaPlayer</code> <code class="java">currentPosition</code>. The <code class="java">controllerTvCurrentTime</code> text should match the <code class="java">MediaPlayer</code> <code class="java">currentPosition</code>, but one is in the "clock format" and the other is in milliseconds;</li>
+<li>don't forget that the <code class="java">currentTrack</code> should keep its playing/pause/stopped state during the <code class="java">ADD_PLAYLIST</code> state. If you are transitioning from ADD_PLAYLIST back to the <code class="java">PLAY_MUSIC</code> state with <code class="java">currentTrack</code> playing, then the <code class="java">controllerTvCurrentTime</code> progress should still match the <code class="java">MediaPlayer</code> <code class="java">currentPosition</code>.</li>
+</ul>
+</li>
+<li><code class="java">Handler</code>:
+	<ul>
+<li>one possible way to sync <code class="java">controllerSeekBar</code> and <code class="java">controllerTvCurrentTime</code> with <code class="java">MediaPlayer</code> while the <code class="java">currentTrack</code> is playing is to use the method <code class="java">postDelayed</code> recursively; this method is available on the <code class="java">Handler</code> object, which can be instantiated with <code class="java">Handler(Looper.getMainLooper())</code>; the idea is to call an update function from time to time;</li>
+<li>the frequency of updates can be set to one second, but you should rely on the player <code class="java">currentPosition</code> to set values for controller widgets; relying on other ways to measure time passage and update controller widgets is not guaranteed to work with tests, since tests use time emulation;</li>
+<li>tests will only assert if widgets contain the expected values, there are other possible ways to implement the update, and they should work with tests.</li>
+</ul>
+</li>
+<li><code class="java">MediaPlayer</code>:
+	<ul>
+<li>In this stage, you will be loading the same song for all <code class="java">Song</code> items, and in the following stage, you will change that; the song to be loaded is placed at <code class="java">/res/raw/</code> folder;</li>
+<li>you can use <code class="java">MediaPlayer.create(this, R.raw.wisdom)</code> to load the song;</li>
+<li><code class="java">MediaPlayer</code> has a complex state system; some state transitions are illegal and throw exceptions: keep an eye for that; to have a more in-depth info about that, you can check <a href="https://developer.android.com/guide/topics/media/mediaplayer#managestate" rel="noopener noreferrer nofollow" target="_blank">MediaPlayer overview</a> and <a href="https://developer.android.com/reference/android/media/MediaPlayer#StateDiagram" rel="noopener noreferrer nofollow" target="_blank">MediaPlayer reference</a> from Android documentation;</li>
+<li>add a <code class="java">setOnCompletionListener</code>; on completion, set the <code class="java">mediaPlayer</code> <code class="java">currentPosition</code> to 0 and set the track to <code class="java">stopped</code>, keep controller widgets synced with the new <code class="java">currentPosition</code>.</li>
+</ul>
+</li>
+<li><code class="java">controllerBtnPlayPause</code> and <code class="java">songItemImgBtnPlayPause</code>:
+	<ul>
+<li>on play, <code class="java">MediaPlayer</code> should play;</li>
+<li>on pause, <code class="java">MediaPlayer</code> should pause;</li>
+<li>don't forget to synchronize controller widgets with <code class="java">MediaPlayer</code>;</li>
+</ul>
+</li>
+<li><code class="java">controllerBtnStop</code>:
+	<ul>
+<li>stop <code class="java">Media Player</code>;</li>
+<li>set <code class="java">controllerSeekBar</code> progress to <code class="java">0</code>;</li>
+<li>set <code class="java">controllerTvCurrentTime</code> to <code class="java">"00:00"</code>.</li>
+</ul>
+</li>
+</ol>
+<p>obs: tests assume the existence of a file named "wisdom.mp3" on res/raw. It should be loaded automatically with the project, but if for some reason it goes missing use this link to restore it <a href="https://stepik.org/media/attachments/lesson/791917/wisdom.mp3" rel="noopener noreferrer nofollow" target="_blank"> https://stepik.org/media/attachments/lesson/791917/wisdom.mp3</a></p>
+<h5 id="examples">Examples</h5>
+<p><img alt="android music player fast forward" height="524" name="MusicPlayerStage3_01.gif" src="https://ucarecdn.com/d48a8857-45d5-4873-ae77-35c1ddc23e77/" width="305"/></p>
+<p> </p>
+<p> </p>
+<p><img alt="android music player overflow menu" height="523" name="MusicPlayerStage3_02.gif" src="https://ucarecdn.com/a9a1e729-c0b3-4feb-80d2-b6626b7e0187/" width="305"/></p>
+<p> </p>
+<p> </p>
+<p><img alt="android music player menu actions" height="524" name="MusicPlayerStage3_03.gif" src="https://ucarecdn.com/7438ccca-aa46-4dcd-854e-9171b6fc1ede/" width="305"/></p>
+</div>

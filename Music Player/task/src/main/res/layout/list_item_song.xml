@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/songItemImgBtnPlayPause"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/btn_listItemSong_playPause"
+        android:src="@drawable/ic_play" />
+
+    <TextView
+        android:id="@+id/songItemTvArtist"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/songItemImgBtnPlayPause"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="Artist" />
+
+    <TextView
+        android:id="@+id/songItemTvTitle"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songItemTvArtist"
+        android:layout_toEndOf="@id/songItemImgBtnPlayPause"
+        android:textSize="14sp"
+        android:text="Title" />
+
+    <TextView
+        android:id="@+id/songItemTvDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songItemTvArtist"
+        android:layout_toEndOf="@id/songItemTvTitle"
+        android:text="00:00" />
+
+</RelativeLayout>

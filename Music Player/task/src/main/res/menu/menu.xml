@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/mainMenuAddPlaylist"
+        android:title="@string/menu_main_addPlaylist_title" />
+
+    <item
+        android:id="@+id/mainMenuLoadPlaylist"
+        android:title="@string/menu_main_loadPlaylist_title" />
+
+    <item
+        android:id="@+id/mainMenuDeletePlaylist"
+        android:title="@string/menu_main_deletePlaylist_title" />
+</menu>

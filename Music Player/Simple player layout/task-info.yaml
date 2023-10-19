@@ -1,0 +1,1695 @@
+type: edu
+files:
+  - name: src/main/java/org/hyperskill/musicplayer/MainActivity.kt
+    visible: true
+    text: |-
+      package org.hyperskill.musicplayer
+      
+      import android.os.Bundle
+      import androidx.appcompat.app.AppCompatActivity
+      
+      class MainActivity : AppCompatActivity() {
+      
+      
+          override fun onCreate(savedInstanceState: Bundle?) {
+              super.onCreate(savedInstanceState)
+              setContentView(R.layout.activity_main)
+          }
+      
+      }
+    learner_created: false
+  - name: src/main/res/drawable/ic_launcher_background.xml
+    visible: true
+    text: |
+      <?xml version="1.0" encoding="utf-8"?>
+      <vector xmlns:android="http://schemas.android.com/apk/res/android"
+          android:width="108dp"
+          android:height="108dp"
+          android:viewportWidth="108"
+          android:viewportHeight="108">
+          <path
+              android:fillColor="#008577"
+              android:pathData="M0,0h108v108h-108z" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M9,0L9,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,0L19,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M29,0L29,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M39,0L39,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M49,0L49,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M59,0L59,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M69,0L69,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M79,0L79,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M89,0L89,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M99,0L99,108"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,9L108,9"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,19L108,19"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,29L108,29"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,39L108,39"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,49L108,49"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,59L108,59"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,69L108,69"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,79L108,79"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,89L108,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M0,99L108,99"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,29L89,29"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,39L89,39"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,49L89,49"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,59L89,59"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,69L89,69"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M19,79L89,79"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M29,19L29,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M39,19L39,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M49,19L49,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M59,19L59,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M69,19L69,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+          <path
+              android:fillColor="#00000000"
+              android:pathData="M79,19L79,89"
+              android:strokeWidth="0.8"
+              android:strokeColor="#33FFFFFF" />
+      </vector>
+    learner_created: false
+  - name: src/main/res/drawable/ic_pause.xml
+    visible: true
+    text: |
+      <vector android:height="24dp" android:tint="#000000"
+          android:viewportHeight="24" android:viewportWidth="24"
+          android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+          <path android:fillColor="@android:color/white" android:pathData="M6,19h4L10,5L6,5v14zM14,5v14h4L18,5h-4z"/>
+      </vector>
+    learner_created: false
+  - name: src/main/res/drawable/ic_play.xml
+    visible: true
+    text: |
+      <vector android:height="24dp" android:tint="#000000"
+          android:viewportHeight="24" android:viewportWidth="24"
+          android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+          <path android:fillColor="@android:color/white" android:pathData="M8,5v14l11,-7z"/>
+      </vector>
+    learner_created: false
+  - name: src/main/res/drawable-v24/ic_launcher_foreground.xml
+    visible: true
+    text: |
+      <vector xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:aapt="http://schemas.android.com/aapt"
+          android:width="108dp"
+          android:height="108dp"
+          android:viewportWidth="108"
+          android:viewportHeight="108">
+          <path
+              android:fillType="evenOdd"
+              android:pathData="M32,64C32,64 38.39,52.99 44.13,50.95C51.37,48.37 70.14,49.57 70.14,49.57L108.26,87.69L108,109.01L75.97,107.97L32,64Z"
+              android:strokeWidth="1"
+              android:strokeColor="#00000000">
+              <aapt:attr name="android:fillColor">
+                  <gradient
+                      android:endX="78.5885"
+                      android:endY="90.9159"
+                      android:startX="48.7653"
+                      android:startY="61.0927"
+                      android:type="linear">
+                      <item
+                          android:color="#44000000"
+                          android:offset="0.0" />
+                      <item
+                          android:color="#00000000"
+                          android:offset="1.0" />
+                  </gradient>
+              </aapt:attr>
+          </path>
+          <path
+              android:fillColor="#FFFFFF"
+              android:fillType="nonZero"
+              android:pathData="M66.94,46.02L66.94,46.02C72.44,50.07 76,56.61 76,64L32,64C32,56.61 35.56,50.11 40.98,46.06L36.18,41.19C35.45,40.45 35.45,39.3 36.18,38.56C36.91,37.81 38.05,37.81 38.78,38.56L44.25,44.05C47.18,42.57 50.48,41.71 54,41.71C57.48,41.71 60.78,42.57 63.68,44.05L69.11,38.56C69.84,37.81 70.98,37.81 71.71,38.56C72.44,39.3 72.44,40.45 71.71,41.19L66.94,46.02ZM62.94,56.92C64.08,56.92 65,56.01 65,54.88C65,53.76 64.08,52.85 62.94,52.85C61.8,52.85 60.88,53.76 60.88,54.88C60.88,56.01 61.8,56.92 62.94,56.92ZM45.06,56.92C46.2,56.92 47.13,56.01 47.13,54.88C47.13,53.76 46.2,52.85 45.06,52.85C43.92,52.85 43,53.76 43,54.88C43,56.01 43.92,56.92 45.06,56.92Z"
+              android:strokeWidth="1"
+              android:strokeColor="#00000000" />
+      </vector>
+    learner_created: false
+  - name: src/main/res/layout/activity_main.xml
+    visible: true
+    text: |-
+      <?xml version="1.0" encoding="utf-8"?>
+      <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+      
+          <TextView
+              android:id="@+id/helloTv"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="8dp"
+              android:gravity="center"
+              android:text="hello new project"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+      
+      
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    learner_created: false
+  - name: src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+    visible: true
+    text: |-
+      <?xml version="1.0" encoding="utf-8"?>
+      <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+          <background android:drawable="@drawable/ic_launcher_background" />
+          <foreground android:drawable="@drawable/ic_launcher_foreground" />
+      </adaptive-icon>
+    learner_created: false
+  - name: src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+    visible: true
+    text: |-
+      <?xml version="1.0" encoding="utf-8"?>
+      <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+          <background android:drawable="@drawable/ic_launcher_background" />
+          <foreground android:drawable="@drawable/ic_launcher_foreground" />
+      </adaptive-icon>
+    learner_created: false
+  - name: src/main/res/values/colors.xml
+    visible: true
+    text: |
+      <?xml version="1.0" encoding="utf-8"?>
+      <resources>
+          <color name="colorPrimary">#008577</color>
+          <color name="colorPrimaryDark">#00574B</color>
+          <color name="colorAccent">#D81B60</color>
+      </resources>
+    learner_created: false
+  - name: src/main/res/values/strings.xml
+    visible: true
+    text: |
+      <resources>
+          <string name="app_name">Music Player</string>
+      </resources>
+    learner_created: false
+  - name: src/main/res/values/styles.xml
+    visible: true
+    text: |
+      <resources>
+      
+          <!-- Base application theme. -->
+          <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+              <!-- Customize your theme here. -->
+              <item name="colorPrimary">@color/colorPrimary</item>
+              <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+              <item name="colorAccent">@color/colorAccent</item>
+          </style>
+      
+      </resources>
+    learner_created: false
+  - name: src/main/AndroidManifest.xml
+    visible: true
+    text: |-
+      <?xml version="1.0" encoding="utf-8"?>
+      <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="org.hyperskill.musicplayer">
+      
+        <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+          <activity android:name="org.hyperskill.musicplayer.MainActivity">
+            <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+      
+              <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+          </activity>
+        </application>
+      
+      </manifest>
+    learner_created: false
+  - name: src/test/java/org/hyperskill/musicplayer/internals/AbstractUnitTest.kt
+    visible: false
+    text: |-
+      package org.hyperskill.musicplayer.internals
+      
+      import android.app.Activity
+      import android.content.Intent
+      import android.os.Bundle
+      import android.os.SystemClock
+      import android.view.View
+      import android.widget.SeekBar
+      import org.junit.Assert
+      import org.junit.Assert.assertNotNull
+      import org.junit.Assert.assertTrue
+      import org.robolectric.Robolectric
+      import org.robolectric.Shadows.shadowOf
+      import org.robolectric.android.controller.ActivityController
+      import org.robolectric.shadow.api.Shadow
+      import org.robolectric.shadows.ShadowActivity
+      import org.robolectric.shadows.ShadowLooper
+      import org.robolectric.shadows.ShadowToast
+      import java.time.Duration
+      
+      // version 1.3
+      abstract class AbstractUnitTest<T : Activity>(clazz: Class<T>) {
+      
+          /**
+           * Setup and control activities and their lifecycle
+           */
+          val activityController: ActivityController<T> by lazy {
+              Robolectric.buildActivity(clazz)
+          }
+      
+          /**
+           * The activity being tested.
+           *
+           * It is the @RealObject of the shadowActivity
+           */
+          val activity : Activity by lazy {
+              activityController.get()
+          }
+      
+          /**
+           * A Roboletric shadow object of the Activity class, contains helper methods to deal with
+           * testing activities like setting permissions, peeking results of launched activities for result,
+           * retrieving shown dialogs, intents and others.
+           *
+           * If you don't know what shadows are you can have a better understanding on that reading this
+           * on roboletric documentation: http://robolectric.org/extending/
+           *
+           * Understanding Shadows is fundamental for Roboletric, things are not what they appear to be on
+           * Roboletric because running a code on the jvm is not the same as running the code on a real/emulated device.
+           * Code that expects to eventually talk to the machine won't have the machine they expect to have to talk to.
+           * Shadow is how Roboletric makes things possible, they impersonate @RealObject and act when @RealObject is expected to act.
+           *
+           * Things in Roboletric are not what they appear to be.
+           * It is possible to not notice it for the most part, but it will be essential for some other parts
+           */
+          val shadowActivity: ShadowActivity by lazy {
+              Shadow.extract(activity)
+          }
+      
+          /**
+           * A Roboletric shadow object of the mainLooper. Handles enqueued runnables and also the passage of time.
+           *
+           * Usually used with .idleFor(someDurationValue) or .runToEndOfTasks()
+           */
+          val shadowLooper: ShadowLooper by lazy {
+              shadowOf(activity.mainLooper)
+          }
+      
+          /**
+           * Decorate your test code with this method to ensure better error messages displayed
+           * when tests are run with check button and exceptions are thrown by user implementation.
+           *
+           * returns a value for convenience use, like in tests that involve navigation between Activities
+           */
+          fun <ReturnValue> testActivity(arguments: Intent = Intent(), savedInstanceState: Bundle = Bundle(), testCodeBlock: (Activity) -> ReturnValue): ReturnValue {
+              try {
+                  activity.intent =  arguments
+                  activityController.setup(savedInstanceState)
+              } catch (ex: Exception) {
+                  throw AssertionError("Exception, test failed on activity creation with $ex\n${ex.stackTraceToString()}")
+              }
+      
+              return try {
+                  testCodeBlock(activity)
+              } catch (ex: Exception) {
+                  throw AssertionError("Exception. Test failed on activity execution with $ex\n${ex.stackTraceToString()}")
+              }
+          }
+      
+          /**
+           * Use this method to find views.
+           *
+           * The view existence will be assert before being returned
+           */
+          inline fun <reified T> Activity.findViewByString(idString: String): T {
+              val id = this.resources.getIdentifier(idString, "id", this.packageName)
+              val view: View? = this.findViewById(id)
+      
+              val idNotFoundMessage = "View with id \"$idString\" was not found"
+              val wrongClassMessage = "View with id \"$idString\" is not from expected class. " +
+                      "Expected ${T::class.java.simpleName} found ${view?.javaClass?.simpleName}"
+      
+              assertNotNull(idNotFoundMessage, view)
+              assertTrue(wrongClassMessage, view is T)
+      
+              return view as T
+          }
+      
+          /**
+           * Use this method to find views.
+           *
+           * The view existence will be assert before being returned
+           */
+          inline fun <reified T> View.findViewByString(idString: String): T {
+              val id = this.resources.getIdentifier(idString, "id", context.packageName)
+              val view: View? = this.findViewById(id)
+      
+              val idNotFoundMessage = "View with id \"$idString\" was not found"
+              val wrongClassMessage = "View with id \"$idString\" is not from expected class. " +
+                      "Expected ${T::class.java.simpleName} found ${view?.javaClass?.simpleName}"
+      
+              assertNotNull(idNotFoundMessage, view)
+              assertTrue(wrongClassMessage, view is T)
+      
+              return view as T
+          }
+      
+          /**
+           * Use this method to perform clicks. It will also advance the clock millis milliseconds and run
+           * enqueued Runnable scheduled to run on main looper in that timeframe.
+           * Default value for millis is 500.
+           *
+           * Internally it calls performClick(), which might or might not increase clock time by itself
+           * depending on the actions performed during click. If possible the amount of millis will
+           * be corrected on the call to shadowLooper.idleFor(millis), but it is not possible to idleFor
+           * negative values, which means it is not always possible to increase 0 millis.
+           *
+           * Returns the actual amount increased to help keep track of time elapsed.
+           *
+           */
+          fun View.clickAndRun(millis: Long = 500): Int {
+              val timeBeforeClick = SystemClock.currentGnssTimeClock().millis()
+              this.performClick()
+              val timeAfterClick = SystemClock.currentGnssTimeClock().millis()
+              shadowLooper.idleFor(Duration.ofMillis(millis - (timeAfterClick - timeBeforeClick)))
+              val timeAfterIdle = SystemClock.currentGnssTimeClock().millis()
+              return (timeAfterIdle - timeBeforeClick).toInt()
+          }
+      
+          /**
+           * Use this method to perform long clicks. It will also advance the clock millis milliseconds and run
+           * enqueued Runnable scheduled to run on main looper in that timeframe.
+           * Default value for millis is 500
+           *
+           * Internally it calls performLongClick(), which might or might not increase clock time by itself
+           * depending on the actions performed during click. If possible the amount of millis will
+           * be corrected on the call to shadowLooper.idleFor(millis), but it is not possible to idleFor
+           * negative values, which means it is not always possible to increase 0 millis.
+           *
+           * Returns the actual amount increased to help keep track of time elapsed.
+           */
+          fun View.clickLongAndRun(millis: Long = 500): Int {
+              val timeBeforeClick = SystemClock.currentGnssTimeClock().millis()
+              this.performLongClick()
+              val timeAfterClick = SystemClock.currentGnssTimeClock().millis()
+              shadowLooper.idleFor(Duration.ofMillis(millis - (timeAfterClick - timeBeforeClick)))
+              val timeAfterIdle = SystemClock.currentGnssTimeClock().millis()
+              return (timeAfterIdle - timeBeforeClick).toInt()
+          }
+      
+          /**
+           * Asserts that the last message toasted is the expectedMessage.
+           * Assertion fails if no toast is shown with null actualLastMessage value.
+           */
+          fun assertLastToastMessageEquals(errorMessage: String, expectedMessage: String,) {
+              val actualLastMessage: String? = ShadowToast.getTextOfLatestToast()
+              Assert.assertEquals(errorMessage, expectedMessage, actualLastMessage)
+          }
+      
+          /**
+           * Use this method to set the progress as a user.
+           *
+           * Will trigger attached listeners.
+           *
+           * First onStartTrackingTouch(), then onProgressChanged() as user, and finally onStopTrackingTouch()
+           */
+          fun SeekBar.setProgressAsUser(progress: Int) {
+              val shadowSeekBar = shadowOf(this)
+              assertNotNull("Expected seekbar to have a onSeekBarChangeListener", shadowSeekBar.onSeekBarChangeListener)
+      
+              shadowSeekBar.onSeekBarChangeListener.onStartTrackingTouch(this)
+      
+              // using java reflection to change progress without triggering listener
+              var clazz: Class<*> = this::class.java  // may be subclass of SeekBar
+              while(clazz.name != "android.widget.ProgressBar") {  // since SeekBar is a subclass of ProgressBar this should not be an infinite loop
+                  clazz = clazz.superclass as Class<*>
+              }
+              val progressBarClazz = clazz
+              val progressField = progressBarClazz.getDeclaredField("mProgress")
+              progressField.isAccessible = true
+              progressField.setInt(this, progress)
+              //
+      
+              shadowSeekBar.onSeekBarChangeListener.onProgressChanged(this, progress, true)
+              shadowSeekBar.onSeekBarChangeListener.onStopTrackingTouch(this)
+          }
+      
+          /**
+           * Use this method to make assertions on requisition of permissions
+           *
+           * @param permissionsRequired list of requiredPermission, ex: listOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+           * @param expectedRequestCode requestCode that test expect implementation to use in their code
+           */
+          fun assertRequestPermissions(permissionsRequired: List<String>, expectedRequestCode: Int = 1){
+      
+              val messageAnyPermissionRequest = "Have you asked any permissions?"
+              val permissionRequest = shadowActivity.lastRequestedPermission ?: throw java.lang.AssertionError(
+                  messageAnyPermissionRequest
+              )
+      
+              permissionsRequired.forEach { permissionRequired: String ->
+      
+                  val messagePermissionRequired = "Have you asked permission $permissionRequired"
+      
+                  val hasRequestedPermission =
+                      permissionRequest.requestedPermissions.any { it == permissionRequired }
+                  assert(hasRequestedPermission) { messagePermissionRequired }
+      
+                  val actualRequestCode = permissionRequest.requestCode
+                  val messageWrongRequestCode =
+                      "Did you use the requestCode stated on description while requiring permissions?"
+                  Assert.assertEquals(messageWrongRequestCode, expectedRequestCode, actualRequestCode)
+              }
+          }
+      }
+    learner_created: false
+  - name: src/test/java/org/hyperskill/musicplayer/internals/CustomMediaPlayerShadow.java
+    visible: false
+    text: |-
+      package org.hyperskill.musicplayer.internals;
+      
+      import static org.junit.Assert.assertEquals;
+      import static org.robolectric.shadows.ShadowMediaPlayer.State.INITIALIZED;
+      
+      import android.content.ContentUris;
+      import android.content.Context;
+      import android.content.res.AssetFileDescriptor;
+      import android.media.AudioAttributes;
+      import android.media.MediaDataSource;
+      import android.media.MediaPlayer;
+      import android.net.Uri;
+      import android.provider.MediaStore;
+      import android.view.SurfaceHolder;
+      
+      import org.hyperskill.musicplayer.R;
+      import org.robolectric.annotation.Implementation;
+      import org.robolectric.annotation.Implements;
+      import org.robolectric.shadow.api.Shadow;
+      import org.robolectric.shadows.ShadowMediaPlayer;
+      import org.robolectric.shadows.util.DataSource;
+      
+      import java.io.FileDescriptor;
+      import java.io.IOException;
+      import java.net.HttpCookie;
+      import java.util.List;
+      import java.util.Map;
+      // version 1.3
+      @Implements(MediaPlayer.class)
+      public class CustomMediaPlayerShadow extends ShadowMediaPlayer {
+      
+          private static SongFake fakeSong = new SongFake(
+                  -1,
+                  "Guggenheim grotto",
+                  "Wisdom",
+                  215_000
+          );
+      
+          public static boolean wasResetOrRecreated = false;
+      
+      
+          @Implementation
+          public static MediaPlayer create(Context context, int resid){
+              if(resid == R.raw.wisdom) {
+                  DataSource dataSource = DataSource.toDataSource(String.valueOf(resid));
+                  MediaInfo info = new MediaInfo(fakeSong.getDuration(), 0);
+      
+                  addMediaInfo(dataSource, info);
+      
+                  MediaPlayer mediaPlayer = new MediaPlayer();
+                  ShadowMediaPlayer shadow = Shadow.extract(mediaPlayer);
+                  try {
+                      shadow.setDataSource(dataSource);
+                      shadow.setState(INITIALIZED);
+                      mediaPlayer.prepare();
+                  } catch (Exception e) {
+                      return null;
+                  }
+                  wasResetOrRecreated = true;
+                  return mediaPlayer;
+              }
+              throw new AssertionError("invalid resid provided to MediaPlayer.create(Context context, int resid)");
+          }
+      
+          @Implementation
+          protected static MediaPlayer create(
+                  Context context, int resid, AudioAttributes audioAttributes, int audioSessionId) {
+      
+              return create(context, resid);
+          }
+      
+          @Implementation
+          protected static MediaPlayer create(Context context, Uri trackUri){
+              if(trackUri.getPath().equals("/raw/wisdom")) {
+                  return create(context, R.raw.wisdom);
+              }
+      
+              Uri expectedSongUri = ContentUris.withAppendedId(
+                      MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                      fakeSong.getId()
+              );
+      
+              assertEquals("Media player created with incorrect uri", expectedSongUri.getPath(), trackUri.getPath());
+      
+              DataSource dataSource = DataSource.toDataSource(context, trackUri);
+      
+              MediaInfo info = new MediaInfo((int) fakeSong.getDuration(), 0);
+              addMediaInfo(dataSource, info);
+      
+              MediaPlayer mediaPlayer = new MediaPlayer();
+              ShadowMediaPlayer shadow = Shadow.extract(mediaPlayer);
+              try {
+                  shadow.setDataSource(dataSource);
+                  shadow.setState(INITIALIZED);
+                  mediaPlayer.prepare();
+              } catch (Exception e) {
+                  return null;
+              }
+              wasResetOrRecreated = true;
+              return mediaPlayer;
+          }
+      
+          @Implementation
+          protected static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
+              return create(context, uri);
+          }
+      
+          @Implementation
+          protected static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder,
+                                              AudioAttributes audioAttributes, int audioSessionId) {
+              return create(context, uri);
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(
+                  Context context,
+                  Uri trackUri,
+                  Map<String, String> headers,
+                  List<HttpCookie> cookies) throws IOException {
+      
+              if(trackUri.getPath().equals("/raw/wisdom")) {
+                  DataSource dataSource = DataSource.toDataSource(context, trackUri);
+                  MediaInfo info = new MediaInfo(fakeSong.getDuration(), 0);
+                  addMediaInfo(dataSource, info);
+              } else {
+                  Uri expectedSongUri = ContentUris.withAppendedId(
+                          MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                          fakeSong.getId()
+                  );
+      
+                  assertEquals(
+                          "Media player created with incorrect uri",
+                          expectedSongUri.getPath(), trackUri.getPath()
+                  );
+      
+                  DataSource dataSource = DataSource.toDataSource(context, trackUri);
+                  MediaInfo info = new MediaInfo((int) fakeSong.getDuration(), 0);
+                  addMediaInfo(dataSource, info);
+              }
+      
+              super.setDataSource(context, trackUri, headers, cookies);
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(Context context, Uri trackUri) throws IOException {
+              setDataSource(context, trackUri, null, null);
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(
+                  Context context, Uri uri, Map<String, String> headers) throws IOException {
+              setDataSource(context, uri, null, null);
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(String uri, Map<String, String> headers) throws IOException {
+              throw new AssertionError(
+                      "tests do not support the method " +
+                              ".setDataSource(String uri, Map<String, String> headers), " +
+                              "use .setDataSource(Context context, Uri uri) instead"
+              );
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(FileDescriptor fd, long offset, long length) throws IOException {
+              throw new AssertionError(
+                      "tests do not support the method " +
+                              ".setDataSource(FileDescriptor fd, long offset, long length), " +
+                              "use .setDataSource(Context context, Uri uri) instead"
+              );
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(MediaDataSource mediaDataSource) throws IOException {
+              throw new AssertionError(
+                      "tests do not support the method " +
+                              ".setDataSource(MediaDataSource mediaDataSource), " +
+                              "use .setDataSource(Context context, Uri uri) instead"
+              );
+          }
+      
+          @Implementation
+          @Override
+          protected void setDataSource(AssetFileDescriptor assetFileDescriptor) throws IOException {
+              throw new AssertionError(
+                      "tests do not support the method " +
+                              ".setDataSource(AssetFileDescriptor assetFileDescriptor), " +
+                              "use .setDataSource(Context context, Uri uri) instead"
+              );
+          }
+      
+          @Implementation
+          @Override
+          protected void _reset() {
+              wasResetOrRecreated = true;
+              super._reset();
+          }
+      
+          public static void setFakeSong(SongFake fakeSong) {
+              CustomMediaPlayerShadow.fakeSong = fakeSong;
+          }
+      }
+    learner_created: false
+  - name: src/test/java/org/hyperskill/musicplayer/internals/FakeContentProvider.kt
+    visible: false
+    text: |-
+      package org.hyperskill.musicplayer.internals
+      
+      import android.content.ContentProvider
+      import android.content.ContentValues
+      import android.database.Cursor
+      import android.database.MatrixCursor
+      import android.net.Uri
+      import android.provider.MediaStore
+      // version 1.3
+      class FakeContentProvider : ContentProvider() {
+      
+          companion object {
+              var fakeSongResult: List<SongFake> = listOf()
+              var hasPermissionToReadExternalStorage = true
+          }
+      
+          override fun onCreate(): Boolean {
+              return true
+          }
+      
+          override fun query(
+              uri: Uri,
+              projection: Array<out String>?,
+              selection: String?,
+              selectionArgs: Array<out String>?,
+              sortOrder: String?
+          ): Cursor? {
+      
+              if(hasPermissionToReadExternalStorage.not()) {
+                  throw AssertionError(
+                      "You are trying to read from external storage, " +
+                              "but you don't have permission to read from external storage"
+                  )
+              }
+      
+              val columns = listOf (
+                  MediaStore.Audio.Media._ID,
+                  MediaStore.Audio.Media.ARTIST,
+                  MediaStore.Audio.Media.TITLE,
+                  MediaStore.Audio.Media.DURATION,
+              )
+      
+              return if (uri == MediaStore.Audio.Media.EXTERNAL_CONTENT_URI) {
+                  val cursor = MatrixCursor(
+                      columns.filter { projection?.contains(it) ?: true }
+                          .sortedBy { projection?.indexOf(it) ?: columns.indexOf(it)}
+                          .toTypedArray()
+                  )
+                  addMockRows(cursor, projection)
+                  cursor
+              } else {
+                  null
+              }
+          }
+      
+          private fun addMockRows(cursor: MatrixCursor, projection: Array<out String>?) {
+              for (song in fakeSongResult) {
+                  val rowBuilder = cursor.newRow()
+                  if (projection?.contains(MediaStore.Audio.Media._ID) != false) {  // if (true || null) then add
+                      rowBuilder.add(MediaStore.Audio.Media._ID, song.id)
+                  }
+                  if (projection?.contains(MediaStore.Audio.Media.ARTIST) != false) {
+                      rowBuilder.add(MediaStore.Audio.Media.ARTIST, song.artist)
+                  }
+                  if (projection?.contains(MediaStore.Audio.Media.TITLE) != false) {
+                      rowBuilder.add(MediaStore.Audio.Media.TITLE, song.title)
+                  }
+                  if (projection?.contains(MediaStore.Audio.Media.DURATION) != false) {
+                      rowBuilder.add(MediaStore.Audio.Media.DURATION, song.duration)
+                  }
+              }
+          }
+      
+          override fun getType(uri: Uri): String? {
+              throw NotImplementedError()
+          }
+      
+          override fun insert(uri: Uri, values: ContentValues?): Uri? {
+              throw NotImplementedError()
+          }
+      
+          override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
+              throw NotImplementedError()
+          }
+      
+          override fun update(
+              uri: Uri,
+              values: ContentValues?,
+              selection: String?,
+              selectionArgs: Array<out String>?
+          ): Int {
+              throw NotImplementedError()
+          }
+      }
+    learner_created: false
+  - name: src/test/java/org/hyperskill/musicplayer/internals/MusicPlayerUnitTests.kt
+    visible: false
+    text: |-
+      package org.hyperskill.musicplayer.internals
+      
+      
+      import android.app.Activity
+      import android.app.AlertDialog
+      import android.content.pm.ProviderInfo
+      import android.graphics.Color
+      import android.graphics.drawable.ColorDrawable
+      import android.graphics.drawable.Drawable
+      import android.media.MediaPlayer
+      import android.os.SystemClock
+      import android.provider.MediaStore
+      import android.view.View
+      import android.widget.*
+      import androidx.annotation.ColorInt
+      import androidx.fragment.app.FragmentContainerView
+      import androidx.recyclerview.widget.RecyclerView
+      import org.junit.Assert.*
+      import org.robolectric.Robolectric
+      import org.robolectric.Shadows
+      import org.robolectric.shadow.api.Shadow
+      import org.robolectric.shadows.ShadowAlertDialog
+      import org.robolectric.shadows.ShadowMediaPlayer
+      import java.time.Duration
+      import java.util.Collections.max
+      import java.util.concurrent.TimeUnit
+      import kotlin.math.abs
+      
+      // version 1.3
+      open class MusicPlayerUnitTests<T : Activity>(clazz: Class<T>): AbstractUnitTest<T>(clazz) {
+      
+      
+          init {
+              CustomMediaPlayerShadow.setCreateListener(::onMediaPlayerCreated)
+          }
+      
+          private var playerPrivate: MediaPlayer? = null
+          private var shadowPlayerPrivate: ShadowMediaPlayer? = null
+      
+          protected var player: MediaPlayer
+              get() {
+                  assertNotNull("No MediaPlayer was found", playerPrivate)
+                  return this.playerPrivate!!
+              }
+              set(_) {}
+      
+          protected var shadowPlayer: ShadowMediaPlayer
+              get() {
+                  assertNotNull("No MediaPlayer was found", playerPrivate)
+                  shadowPlayer.invalidStateBehavior = ShadowMediaPlayer.InvalidStateBehavior.ASSERT
+                  return this.shadowPlayerPrivate!!
+              }
+              set(_) {}
+      
+          fun isPlayerNull(): Boolean {
+              return playerPrivate == null
+          }
+      
+          private fun onMediaPlayerCreated(player: MediaPlayer, shadow: ShadowMediaPlayer) {
+              playerPrivate = player
+              shadowPlayerPrivate = shadow
+          }
+      
+          fun setupContentProvider(fakeSongResult: List<SongFake>){
+              val info = ProviderInfo().apply {
+                  authority = MediaStore.AUTHORITY
+              }
+              Robolectric.buildContentProvider(FakeContentProvider::class.java).create(info)
+              FakeContentProvider.fakeSongResult = fakeSongResult
+          }
+      
+          /**
+           * Use this method to perform clicks on menu items.
+           *
+           * It will assert the existence of the identifier. If the identifier exists but is not
+           * a menu item then the assertion will succeed, but no click will be performed.
+           *
+           * Will also advance the clock millis milliseconds and run
+           * enqueued Runnable scheduled to run on main looper in that timeframe.
+           * Default value for millis is 500
+           *
+           */
+          fun Activity.clickMenuItemAndRun(idString: String, millis: Long = 500): Int {
+              val clock = SystemClock.currentGnssTimeClock()
+              val timeBeforeClick = clock.millis()
+              val identifier = resources.getIdentifier(idString, "id", packageName)
+      
+              assertTrue(
+                  "The identifier with idString \"$idString\" was not found",
+                  identifier != 0
+              )
+      
+              shadowActivity.clickMenuItem(identifier)
+              val timeAfterClick = clock.millis()
+      
+              shadowLooper.idleFor(Duration.ofMillis(millis- (timeAfterClick - timeBeforeClick)))
+              val timeAfterIdle = clock.millis()
+              return (timeAfterIdle - timeBeforeClick).toInt()
+          }
+      
+          /**
+           *  Retrieve last shown AlertDialog.
+           *
+           *  Will only find android.app.AlertDialog and not androidx.appcompat.app.AlertDialog
+           *
+           *  Returns the AlertDialog instance paired with its shadow
+           */
+          fun getLastAlertDialogWithShadow(errorMessageNotFound: String) : Pair<AlertDialog, ShadowAlertDialog> {
+              val latestDialog:  AlertDialog? = ShadowAlertDialog.getLatestAlertDialog()
+      
+              assertNotNull("$errorMessageNotFound$ Make sure you are using android.app.AlertDialog", latestDialog)
+      
+              return latestDialog!! to Shadow.extract(latestDialog)
+          }
+      
+          /**
+           *  Makes assertions on the contents of the RecyclerView.
+           *
+           *  Asserts that the size matches the size of fakeResultList and then
+           *  calls assertItems for each item of the list with the itemViewSupplier
+           *  so that it is possible to make assertions on that itemView.
+           *
+           *  Take attention to refresh references to views coming from itemView since RecyclerView
+           *  can change the instance of View for a determinate list item after an update to the list.
+           */
+          fun <T> RecyclerView.assertListItems(
+              fakeResultList: List<T>,
+              assertItems: (itemViewSupplier: () -> View, position: Int, item: T) -> Unit
+          ) : Unit {
+      
+              assertNotNull("Your recycler view adapter should not be null", this.adapter)
+      
+              val expectedSize = fakeResultList.size
+      
+              val actualSize = this.adapter!!.itemCount
+              assertEquals("Incorrect number of list items", expectedSize, actualSize)
+      
+              if(expectedSize == 0) {
+                  return
+              } else if(expectedSize > 0) {
+                  val firstItemViewHolder = (0 until expectedSize)
+                      .asSequence()
+                      .mapNotNull {  this.findViewHolderForAdapterPosition(it) }
+                      .firstOrNull()
+                      ?: throw AssertionError("No item is being displayed on songList RecyclerView, is it big enough to display one item?")
+      
+                  val listHeight = firstItemViewHolder.itemView.height * (expectedSize + 1)
+      
+                  for((i, song) in fakeResultList.withIndex()) {
+                      // setting height to ensure that all items are inflated. Height might change after assertItems, keep statement inside loop.
+                      this.layout(0,0, this.width, listHeight)  // may increase clock time
+      
+                      val itemViewSupplier = {
+                          scrollToPosition(i)
+                          findViewHolderForAdapterPosition(i)?.itemView
+                              ?: throw AssertionError("Could not find list item with index $i")
+                      }
+                      assertItems(itemViewSupplier, i, song)
+                  }
+      
+              } else {
+                  throw IllegalStateException("size assertion was not effective")
+              }
+          }
+      
+          /**
+           *  Makes assertions on the contents of the RecyclerView.
+           *
+           *  Asserts that the size matches the size of fakeResultList and then
+           *  calls assertItems for each item of the list with the itemViewSupplier
+           *  so that it is possible to make assertions on that itemView.
+           *
+           *  Take attention to refresh references to views coming from itemView since RecyclerView
+           *  can change the instance of View for a determinate list item after an update to the list.
+           *
+           *  This version also includes elapsedTime on the callBack to help keep track of time
+           *  since the clock might advance
+           */
+          fun <T> RecyclerView.assertListItems(
+              fakeResultList: List<T>,
+              assertItems: (itemViewSupplier: () -> View, position: Int, item: T, elapsedTime: Int) -> Unit
+          ) : Unit {
+      
+              assertNotNull("Your recycler view adapter should not be null", this.adapter)
+      
+              val expectedSize = fakeResultList.size
+      
+              val actualSize = this.adapter!!.itemCount
+              assertEquals("Incorrect number of list items", expectedSize, actualSize)
+      
+              if(expectedSize > 0) {
+                  val firstItemViewHolder = (0 until expectedSize)
+                      .asSequence()
+                      .mapNotNull {  this.findViewHolderForAdapterPosition(it) }
+                      .firstOrNull()
+                      ?: throw AssertionError("No item is being displayed on songList RecyclerView, is it big enough to display one item?")
+      
+                  val listHeight = firstItemViewHolder.itemView.height * (expectedSize + 1)
+      
+                  for((i, song) in fakeResultList.withIndex()) {
+                      val timeBefore = SystemClock.currentGnssTimeClock().millis()
+                      // setting height to ensure that all items are inflated. Height might change after assertItems, keep statement inside loop.
+                      this.layout(0,0, this.width, listHeight)  // may increase clock time
+      
+                      val itemViewSupplier = {
+                          scrollToPosition(i)
+                          findViewHolderForAdapterPosition(i)?.itemView
+                              ?: throw AssertionError("Could not find list item with index $i")
+                      }
+                      val timeAfter = SystemClock.currentGnssTimeClock().millis()
+                      assertItems(itemViewSupplier, i, song, (timeAfter -  timeBefore).toInt())
+                  }
+      
+              } else {
+                  throw IllegalStateException("size assertion was not effective")
+              }
+          }
+      
+          /**
+           *  Makes assertions on the contents of one item of the RecyclerView.
+           *
+           *  Asserts that the the size of the list is at least itemIndex + 1.
+           *
+           *  Calls assertItem with the itemViewSupplier so that it is possible to make assertions on that itemView.
+           *  Take attention to refresh references to views coming from itemView since RecyclerView
+           *  can change the instance of View for a determinate list item after an update to the list.
+           */
+          fun RecyclerView.assertSingleListItem(itemIndex: Int, assertItem: (itemViewSupplier: () -> View) -> Unit) {
+      
+              assertNotNull("Your recycler view adapter should not be null", this.adapter)
+      
+              val expectedMinSize = itemIndex + 1
+      
+              val actualSize = this.adapter!!.itemCount
+              assertTrue(
+                  "RecyclerView was expected to contain item with index $itemIndex, but its size was $actualSize",
+                  actualSize >= expectedMinSize
+              )
+      
+              if(actualSize >= expectedMinSize) {
+                  val firstItemViewHolder = (0 until actualSize)
+                      .asSequence()
+                      .mapNotNull {  this.findViewHolderForAdapterPosition(it) }
+                      .firstOrNull()
+                      ?: throw AssertionError("No item is being displayed on songList RecyclerView, is it big enough to display one item?")
+      
+                  val listHeight = firstItemViewHolder.itemView.height * (expectedMinSize + 1)
+                  this.layout(0,0, this.width, listHeight)  // may increase clock time
+      
+                  val itemViewSupplier = {
+                      this.scrollToPosition(itemIndex)
+                      val itemView = (this.findViewHolderForAdapterPosition(itemIndex)?.itemView
+                          ?: throw AssertionError("Could not find list item with index $itemIndex"))
+                      itemView
+      
+                  }
+      
+                  assertItem(itemViewSupplier)
+      
+              } else {
+                  throw IllegalStateException("size assertion was not effective")
+              }
+          }
+      
+      
+          fun ShadowAlertDialog.clickAndRunOnItem(itemIndex: Int, millis: Long = 500): Int {
+              val timeBeforeClick = SystemClock.currentGnssTimeClock().millis()
+              this.clickOnItem(itemIndex) // might or might not increase clock time
+              val timeAfterClick = SystemClock.currentGnssTimeClock().millis()
+              shadowLooper.idleFor(Duration.ofMillis(millis - (timeAfterClick - timeBeforeClick)))
+              val timeAfterIdle = SystemClock.currentGnssTimeClock().millis()
+      
+              assertTrue(
+                  "After click on AlertDialog item the dialog should be dismissed",
+                  this.hasBeenDismissed()
+              )
+      
+              return (timeAfterIdle - timeBeforeClick).toInt()
+          }
+      
+      
+          fun Int.timeString(): String {
+              return "%02d:%02d".format(this / 60_000, this % 60_000 / 1000)
+          }
+      
+          fun View.assertBackgroundColor(errorMessage:String, @ColorInt expectedBackgroundColor: Int, ) {
+      
+              assertTrue("Expected background to be ColorDrawable but was not. $errorMessage", this.background is ColorDrawable)
+      
+              val actualBackgroundColor = (this.background as ColorDrawable).color
+      
+              assertTrue(errorMessage, expectedBackgroundColor == actualBackgroundColor)
+          }
+      
+          fun Drawable.assertCreatedFromResourceId(errorMessage: String, expectedId:  Int) {
+              val actualId = Shadows.shadowOf(this).createdFromResId
+              assertTrue(errorMessage, expectedId == actualId)
+          }
+      
+          fun List<Int>.clickSongSelectorListItems(listView: RecyclerView): Int {
+              val timeBefore = SystemClock.currentGnssTimeClock().millis()
+      
+              val maxIndex = max(this)
+      
+              assertNotNull("Your recycler view adapter should not be null", listView.adapter)
+      
+              val expectedMinSize = maxIndex + 1
+      
+              val actualSize = listView.adapter!!.itemCount
+              assertTrue(
+                  "RecyclerView was expected to contain item with index $maxIndex, but its size was $actualSize",
+                  actualSize >= expectedMinSize
+              )
+      
+              if(actualSize >= expectedMinSize) {
+      
+                  val firstItemViewHolder = (0 until actualSize)
+                      .asSequence()
+                      .mapNotNull {  listView.findViewHolderForAdapterPosition(it) }
+                      .firstOrNull()
+                      ?: throw AssertionError("No item is being displayed on songList RecyclerView, is it big enough to display one item?")
+      
+                  this.forEach { i ->
+                      // setting height to ensure that all items are inflated
+                      listView.layout(0,0, listView.width, firstItemViewHolder.itemView.height * (expectedMinSize + 1))
+                      listView.scrollToPosition(i)
+                      shadowLooper.idleFor(5, TimeUnit.MILLISECONDS)
+      
+                      var itemView = listView.findViewHolderForAdapterPosition(i)!!.itemView
+      
+                      var checkBox =
+                          itemView.findViewByString<CheckBox>("songSelectorItemCheckBox")
+      
+                      assertEquals(
+                          "songSelectorItemCheckBox should not be checked after clicks on mainMenuItemIdAddPlaylist",
+                          false,
+                          checkBox.isChecked
+                      )
+      
+                      itemView.clickAndRun(5)
+      
+                      itemView = listView.findViewHolderForAdapterPosition(i)!!.itemView
+                      checkBox = itemView.findViewByString<CheckBox>("songSelectorItemCheckBox")
+      
+                      assertEquals(
+                          "songSelectorItemCheckBox should be checked after clicks on the list item",
+                          true,
+                          checkBox.isChecked
+                      )
+      
+                      itemView.assertBackgroundColor(
+                          "SongSelector list items should change color to Color.LTGRAY when item is selected",
+                          Color.LTGRAY
+                      )
+                  }
+      
+                  val timeAfter = SystemClock.currentGnssTimeClock().millis()
+                  return (timeAfter - timeBefore).toInt()
+      
+              } else {
+                  throw IllegalStateException("size assertion was not effective")
+              }
+          }
+      
+          fun assertSongItem(errorMessage: String, itemView: View, song: SongFake) {
+              val songItemTvArtist = itemView.findViewByString<TextView>("songItemTvArtist")
+              val songItemTvTitle = itemView.findViewByString<TextView>("songItemTvTitle")
+              val songItemTvDuration = itemView.findViewByString<TextView>("songItemTvDuration")
+      
+              assertEquals(errorMessage, song.artist, songItemTvArtist.text.toString())
+              assertEquals(errorMessage, song.title, songItemTvTitle.text.toString())
+              assertEquals(errorMessage, song.duration.timeString(), songItemTvDuration.text.toString())
+          }
+      
+          fun assertViewStateIsPlayMusicState(
+              songList: RecyclerView,
+              fragmentContainer: FragmentContainerView
+          ) {
+      
+              songList.assertSingleListItem(0){ itemView ->
+                  itemView().findViewByString<ImageButton>("songItemImgBtnPlayPause")
+              }
+              fragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
+          }
+      
+          fun addPlaylist(
+              playlistName: String,
+              selectedItemsIndex: List<Int>,
+              songListView: RecyclerView,
+              fragmentContainer: FragmentContainerView,
+              testEmptyName: Boolean = false
+          ): Int {
+              val timeBefore = SystemClock.currentGnssTimeClock().millis()
+              selectedItemsIndex.clickSongSelectorListItems(songListView) // might or might not increase clock time
+      
+              val addPlaylistButtonOk =
+                  fragmentContainer.findViewByString<Button>("addPlaylistBtnOk")
+      
+              if(testEmptyName) {
+                  addPlaylistButtonOk.clickAndRun(0) // might or might not increase clock time
+      
+                  assertLastToastMessageEquals(
+                      errorMessage = "When addPlaylistEtPlaylistName is empty a toast message is expected after click on addPlaylistBtnOk",
+                      expectedMessage = "Add a name to your playlist"
+                  )
+              }
+      
+              val addPlaylistEtPlaylistName =
+                  fragmentContainer.findViewByString<EditText>("addPlaylistEtPlaylistName")
+              addPlaylistEtPlaylistName.setText(playlistName)
+      
+              addPlaylistButtonOk.clickAndRun(0) // might or might not increase clock time
+              assertViewStateIsPlayMusicState(songListView, fragmentContainer)
+              val timeAfter = SystemClock.currentGnssTimeClock().millis()
+              return (timeAfter - timeBefore).toInt()
+          }
+      
+          fun loadPlaylist(menuItemIdLoadPlaylist: String, expectedPlaylistNameList: List<String>, playlistToLoadIndex: Int): Int {
+              val timeBefore = SystemClock.currentGnssTimeClock().millis()
+              activity.clickMenuItemAndRun(menuItemIdLoadPlaylist) // might or might not increase clock time
+      
+              getLastAlertDialogWithShadow(
+                  "An AlertDialog should be displayed after click on mainMenuItemLoadPlaylist"
+              ).also { (dialog, shadowDialog) ->
+                  val dialogItems = shadowDialog.items.map { it.toString() }
+      
+                  assertEquals("Wrong list displayed on AlertDialog after click on mainMenuItemLoadPlaylist",
+                      expectedPlaylistNameList,
+                      dialogItems
+                  )
+                  shadowDialog.clickAndRunOnItem(playlistToLoadIndex, millis = 0) // might or might not increase clock time
+              }
+              val timeAfter = SystemClock.currentGnssTimeClock().millis()
+              return (timeAfter - timeBefore).toInt()
+          }
+      
+          inner class ControllerViews(
+              val currentTv: TextView,
+              val totalTv: TextView,
+              val seekBar: SeekBar,
+              val btnPlayPause: Button,
+              val btnStop: Button
+          ) {
+              fun assertControllerState(errorMessage: String, songFake: SongFake, expectedPosition: Int) {
+      
+                  val messageTotalTimeTv = "$errorMessage On controllerTvTotalTime text"
+                  assertEquals(messageTotalTimeTv, songFake.duration.timeString(), this.totalTv.text.toString())
+      
+                  val messageSeekBar = "$errorMessage On controllerSeekBar progress"
+                  assertEquals(messageSeekBar, expectedPosition / 1000, this.seekBar.progress)
+      
+                  val messageCurrentTimeTv = "$errorMessage On controllerTvCurrentTime text"
+                  assertEquals(messageCurrentTimeTv, expectedPosition.timeString(), this.currentTv.text.toString())
+              }
+          }
+      
+          fun FragmentContainerView.getControllerViews(): ControllerViews {
+      
+              return ControllerViews(
+                  currentTv = findViewByString("controllerTvCurrentTime"),
+                  totalTv=  findViewByString("controllerTvTotalTime"),
+                  seekBar = findViewByString("controllerSeekBar"),
+                  btnPlayPause = findViewByString("controllerBtnPlayPause"),
+                  btnStop = findViewByString("controllerBtnStop")
+              )
+          }
+      
+          fun MediaPlayer.assertControllerPlay(errorMessage: String, controllerViews: ControllerViews, expectedPosition: Int) {
+              assertController(errorMessage, controllerViews, expectedPosition, expectedIsPlaying = true)
+          }
+      
+          fun MediaPlayer.assertControllerPause(errorMessage: String, controllerViews: ControllerViews, expectedPosition: Int) {
+              assertController(errorMessage, controllerViews, expectedPosition, expectedIsPlaying = false)
+          }
+      
+          fun MediaPlayer.assertControllerStop(errorMessage: String, controllerViews: ControllerViews) {
+              assertController(errorMessage, controllerViews, expectedPosition = 0, expectedIsPlaying = false)
+          }
+      
+          private fun MediaPlayer.assertController(
+              errorMessage: String, controllerViews: ControllerViews, expectedPosition: Int, expectedIsPlaying: Boolean) {
+      
+              assertEquals("$errorMessage On mediaPlayer isPlaying", expectedIsPlaying, isPlaying)
+      
+              val messageCurrentPosition = "$errorMessage On mediaPlayer currentPosition expected: $expectedPosition found: $currentPosition"
+              assertTrue(messageCurrentPosition, abs(expectedPosition - currentPosition) < 100)
+      
+              val messageSeekBar = "$errorMessage On controllerSeekBar progress"
+              assertEquals(messageSeekBar, expectedPosition / 1000, controllerViews.seekBar.progress)
+      
+              val messageCurrentTimeTv = "$errorMessage On controllerTvCurrentTime text"
+              assertEquals(messageCurrentTimeTv, expectedPosition.timeString(), controllerViews.currentTv.text.toString())
+          }
+      
+          fun adjustPlayerPositionToAvoidSyncIssues(): Int {
+              // tests can have sync problems with solutions depending on which position the player is paused
+              // to avoid issues we adjust player position before pausing if the player position can be in inconvenient position
+              // this is only needed if playingTime had some change without hardcoded values
+      
+              val syncAdjustment = 1000 - (player.currentPosition % 1000) + 200
+              shadowLooper.idleFor(Duration.ofMillis(syncAdjustment.toLong()))
+              return syncAdjustment
+          }
+      }
+    learner_created: false
+  - name: src/test/java/org/hyperskill/musicplayer/internals/SongFake.kt
+    visible: false
+    text: |-
+      package org.hyperskill.musicplayer.internals
+      
+      // version 1.3
+      data class SongFake(
+          val id: Int,
+          val artist: String,
+          val title: String,
+          val duration: Int
+      )
+    learner_created: false
+  - name: src/test/java/org/hyperskill/musicplayer/Stage1UnitTest.kt
+    visible: false
+    text: |-
+      package org.hyperskill.musicplayer
+      
+      import android.app.AlertDialog
+      import android.widget.Button
+      import android.widget.SeekBar
+      import android.widget.TextView
+      import androidx.fragment.app.FragmentContainerView
+      import androidx.recyclerview.widget.RecyclerView
+      import org.hyperskill.musicplayer.internals.MusicPlayerUnitTests
+      import org.junit.Assert.assertEquals
+      import org.junit.Test
+      import org.junit.runner.RunWith
+      import org.robolectric.RobolectricTestRunner
+      import org.robolectric.Shadows
+      
+      // version 1.3
+      @RunWith(RobolectricTestRunner::class)
+      class Stage1UnitTest : MusicPlayerUnitTests<MainActivity>(MainActivity::class.java){
+      
+          private val mainButtonSearch by lazy {
+              val view = activity.findViewByString<Button>("mainButtonSearch")
+      
+              val expectedText = "search"
+              val actualText = view.text.toString().lowercase()
+              assertEquals("wrong text for mainButtonSearch", expectedText, actualText)
+      
+              view
+      
+          }
+      
+          private val mainSongList by lazy {
+              activity.findViewByString<RecyclerView>("mainSongList")
+          }
+      
+          private val mainFragmentContainer by lazy {
+              activity.findViewByString<FragmentContainerView>("mainFragmentContainer")
+          }
+      
+          val mainMenuItemIdAddPlaylist = "mainMenuAddPlaylist"
+          val mainMenuItemIdLoadPlaylist = "mainMenuLoadPlaylist"
+          val mainMenuItemIdDeletePlaylist = "mainMenuDeletePlaylist"
+      
+      
+          @Test
+          fun checkMainActivityComponentsExist() {
+              testActivity {
+                  mainButtonSearch
+                  mainSongList
+                  mainFragmentContainer
+              }
+          }
+      
+          @Test
+          fun checkPlayerControllerFragmentComponentsExist() {
+              testActivity {
+                  mainFragmentContainer
+      
+                  val controllerTvCurrentTime =
+                      mainFragmentContainer.findViewByString<TextView>("controllerTvCurrentTime")
+      
+      
+                  val actualCurrentTime = controllerTvCurrentTime.text.toString()
+                  val expectedCurrentTime = "00:00"
+                  val messageWrongInitialCurrentTime = "Wrong initial value for controllerTvCurrentTime"
+                  assertEquals(messageWrongInitialCurrentTime, expectedCurrentTime, actualCurrentTime)
+      
+                  val controllerTvTotalTime =
+                      mainFragmentContainer.findViewByString<TextView>("controllerTvTotalTime")
+      
+      
+                  val actualTotalTime = controllerTvTotalTime.text.toString()
+                  val expectedTotalTime = "00:00"
+                  val messageWrongInitialTotalTime = "Wrong initial value for controllerTvTotalTime"
+                  assertEquals(messageWrongInitialTotalTime, expectedTotalTime, actualTotalTime)
+      
+                  mainFragmentContainer.findViewByString<SeekBar>("controllerSeekBar")
+      
+                  val controllerBtnPlayPause =
+                      mainFragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
+      
+                  val actualBtnPlayPauseText = controllerBtnPlayPause.text.toString().lowercase()
+                  val expectedBtnPlayPauseText = "play/pause"
+                  val messageWrongInitialBtnPlayPauseText = "Wrong initial value for controllerBtnPlayPause"
+                  assertEquals(messageWrongInitialBtnPlayPauseText, expectedBtnPlayPauseText, actualBtnPlayPauseText)
+      
+                  val controllerBtnStop =
+                      mainFragmentContainer.findViewByString<Button>("controllerBtnStop")
+                  val actualBtnStopText = controllerBtnStop.text.toString().lowercase()
+                  val expectedBtnStopText = "stop"
+                  val messageWrongInitialBtnStopText = "Wrong initial value for controllerBtnStop"
+                  assertEquals(messageWrongInitialBtnStopText, expectedBtnStopText, actualBtnStopText)
+              }
+          }
+      
+          @Test
+          fun checkSearchButtonNoSongsFound() {
+              testActivity {
+                  mainButtonSearch
+      
+                  mainButtonSearch.clickAndRun()
+                  assertLastToastMessageEquals(
+                      "wrong toast message after click to mainButtonSearch",
+                      "no songs found"
+                  )
+              }
+          }
+      
+          @Test
+          fun checkMenuItemAddPlaylist() {
+              testActivity {
+                  activity.clickMenuItemAndRun(mainMenuItemIdAddPlaylist)
+                  assertLastToastMessageEquals(
+                      "wrong toast message after click to mainMenuItemIdAddPlaylist",
+                      "no songs loaded, click search to load songs"
+                  )
+              }
+          }
+      
+          @Test
+          fun checkMenuItemLoadPlaylist() {
+              testActivity {
+                  activity.clickMenuItemAndRun(mainMenuItemIdLoadPlaylist)
+      
+                  val (alertDialog, shadowAlertDialog) = getLastAlertDialogWithShadow(
+                      errorMessageNotFound = "No Dialog was shown after click on mainMenuLoadPlaylist."
+                  )
+      
+                  val actualTitle = shadowAlertDialog.title.toString().lowercase()
+                  val messageWrongTitle =
+                      "Wrong title found on dialog shown after click on mainMenuLoadPlaylist"
+                  val expectedTitle = "choose playlist to load"
+                  assertEquals(messageWrongTitle, expectedTitle, actualTitle)
+      
+      
+                  alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).clickAndRun()
+              }
+          }
+      
+          @Test
+          fun checkMenuItemDeletePlaylist() {
+              testActivity {
+                  activity.clickMenuItemAndRun(mainMenuItemIdDeletePlaylist)
+      
+      
+                  val (alertDialog, shadowAlertDialog) = getLastAlertDialogWithShadow(
+                      errorMessageNotFound = "No Dialog was shown after click on mainMenuDeletePlaylist."
+                  )
+      
+                  val actualTitle = shadowAlertDialog.title.toString().lowercase()
+                  val messageWrongTitle =
+                      "Wrong title found on dialog shown after click on mainMenuDeletePlaylist"
+                  val expectedTitle = "choose playlist to delete"
+                  assertEquals(messageWrongTitle, expectedTitle, actualTitle)
+      
+      
+                  alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).clickAndRun()
+              }
+          }
+      
+          @Test
+          fun checkControllerStopButtonBeforeSearch() {
+      
+              testActivity {
+                  mainFragmentContainer
+      
+                  val controllerBtnStop =
+                      mainFragmentContainer.findViewByString<Button>("controllerBtnStop")
+      
+                  controllerBtnStop.clickAndRun()
+                  // should not throw Exception
+              }
+          }
+      
+          @Test
+          fun checkControllerSeekBarBeforeSearch() {
+      
+              testActivity {
+                  mainFragmentContainer
+      
+                  val controllerSeekBar =
+                      mainFragmentContainer.findViewByString<SeekBar>("controllerSeekBar")
+      
+                  if(Shadows.shadowOf(controllerSeekBar).onSeekBarChangeListener != null) {
+                      controllerSeekBar.setProgressAsUser(1)
+                      //should not throw exception
+                  } else {
+                      // ok
+                  }
+              }
+          }
+      
+          @Test
+          fun checkControllerPlayPauseButtonBeforeSearch() {
+      
+              testActivity {
+                  mainFragmentContainer
+      
+                  val controllerBtnPlayPause =
+                      mainFragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
+      
+                  controllerBtnPlayPause.clickAndRun()
+                  // should not throw Exception
+              }
+          }
+      }
+    learner_created: false
+  - name: build.gradle
+    visible: true
+    text: |-
+      apply plugin: 'com.android.application'
+      apply plugin: 'kotlin-android'
+      
+      android {
+        compileSdkVersion hs.android.compileSdkVersion
+      
+        defaultConfig {
+      
+          applicationId "org.hyperskill.musicplayer"
+          minSdkVersion hs.android.minSdkVersion
+          targetSdkVersion hs.android.targetSdkVersion
+          versionCode 1
+          versionName '1.0'
+        }
+      
+        buildFeatures {
+          viewBinding true
+        }
+      }
+      
+      dependencies {
+        def kotlinVersion = hs.android.kotlinVersion
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+      
+        def coreKtx = hs.android.lib.coreKtx
+        implementation "androidx.core:core-ktx:$coreKtx"
+      
+        def appCompat = hs.android.lib.appCompat
+        implementation "androidx.appcompat:appcompat:$appCompat"
+      
+        def constraintLayout = hs.android.lib.constraintLayout
+        implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+      
+        def material = hs.android.lib.material
+        implementation "com.google.android.material:material:$material"
+      }
+    learner_created: false
+  - name: src/main/res/raw/wisdom.mp3
+    visible: true
+    learner_created: false
+  - name: src/main/res/menu/menu.xml
+    visible: true
+    learner_created: true
+  - name: src/main/res/layout/song_list.xml
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/MainPlayerControllerFragment.kt
+    visible: true
+    learner_created: true
+  - name: src/main/res/layout/main_player_controller.xml
+    visible: true
+    learner_created: true
+  - name: src/test/java/org/hyperskill/musicplayer/Stage1UnitTestB.kt
+    visible: true
+    learner_created: true
+  - name: src/test/java/org/hyperskill/musicplayer/Stage2UnitTest.kt
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/22739#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 08 Sep 2023 14:46:04 UTC"
+record: 5
