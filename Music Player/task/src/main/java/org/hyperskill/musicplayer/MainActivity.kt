@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val defaultSongs = Constants.getDefaultPlaylist().toMutableList()
+        val defaultSongs = Constants.getDefaultPlaylist()
         val currentPlaylist = PlaylistType.CurrentPlaylist(PlaylistType.Playlist(defaultPlaylistName, defaultSongs))
         val loadedPlaylist = PlaylistType.LoadedPlaylist(PlaylistType.Playlist(defaultPlaylistName, defaultSongs))
 
@@ -114,14 +114,14 @@ class MainActivity : AppCompatActivity() {
             setOnItemClickListener(
                 object : RecyclerAdapterSong.OnItemClickListener {
                     override fun onClick(songSelected: DataType.SongSelector, position: Int) {
-                        val modifiedList = ArrayList(adapter.currentList)
+                        val modifiedList = currentList.toMutableList()
                         val modifiedSong = DataType.SongSelector(DataType.Song(
                             songSelected.song.id, songSelected.song.title, songSelected.song.artist,
                             songSelected.song.duration
                         ))
                         modifiedSong.isSelected = !songSelected.isSelected
                         modifiedList[position] = modifiedSong
-                        submitList(modifiedList.toMutableList())
+                        submitList(modifiedList)
                     }
                 }
             )
@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity() {
                         )
                         val modifiedSongSelector = DataType.SongSelector(modifiedSong)
                         modifiedSongSelector.isSelected = true
-                        loadedPlaylist.songs[position] = modifiedSong
+                        /*loadedPlaylist.songs[position] = modifiedSong*/
                         loadedPlaylist.songsAsSelectors[position] = modifiedSongSelector
                         viewState = ViewState.ADD_PLAYLIST
                         changeState(viewState)

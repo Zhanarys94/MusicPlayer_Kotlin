@@ -3,6 +3,7 @@ package org.hyperskill.musicplayer.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
+/*
 class PlaylistData(loadedPlaylist: MutableList<DataType.SongSelector>) {
     private val playlistLiveData = MutableLiveData(loadedPlaylist)
 
@@ -49,4 +50,4 @@ class PlaylistData(loadedPlaylist: MutableList<DataType.SongSelector>) {
         return playlistLiveData
     }
 
-}
+}*/

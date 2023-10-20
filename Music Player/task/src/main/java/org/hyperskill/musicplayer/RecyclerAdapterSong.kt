@@ -10,10 +10,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import org.hyperskill.musicplayer.model.DataType
-import org.hyperskill.musicplayer.model.PlaylistType
 import org.hyperskill.musicplayer.model.SongState
 import org.hyperskill.musicplayer.model.ViewState
-import java.util.ArrayList
 import java.util.EnumSet
 
 class RecyclerAdapterSong(
@@ -42,16 +40,9 @@ class RecyclerAdapterSong(
                     .inflate(R.layout.list_item_song_selector, parent, false)
                 SongViewHolder(songSelectorView)
             }
-            else -> {
-                val emptyView = inflater.inflate(R.layout.list_item_empty, parent, false)
-                SongViewHolder(emptyView)
-            }
+            else -> throw UnsupportedOperationException("Unknown view type!")
         }
         return holder
-    }
-
-    override fun getItemCount(): Int {
-        return currentList.size
     }
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/v904_nunny_010_d"
     android:orientation="vertical"
     android:theme="@android:style/Theme.Holo.NoActionBar">
 
@@ -29,7 +28,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainSongList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp" />
 
@@ -37,6 +36,8 @@
         android:id="@+id/mainFragmentContainer"
         android:name="org.hyperskill.musicplayer.MainPlayerControllerFragment"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

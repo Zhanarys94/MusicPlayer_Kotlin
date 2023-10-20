@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <ImageButton
@@ -13,27 +13,28 @@
 
     <TextView
         android:id="@+id/songItemTvArtist"
-        android:layout_width="320dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/songItemImgBtnPlayPause"
+        android:text="Artist"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:text="Artist" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/songItemTvTitle"
-        android:layout_width="320dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/songItemTvArtist"
         android:layout_toEndOf="@id/songItemImgBtnPlayPause"
-        android:textSize="14sp"
-        android:text="Title" />
+        android:text="Title"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/songItemTvDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="17dp"
         android:layout_below="@id/songItemTvArtist"
+        android:layout_marginStart="2dp"
         android:layout_toEndOf="@id/songItemTvTitle"
         android:text="00:00" />
 

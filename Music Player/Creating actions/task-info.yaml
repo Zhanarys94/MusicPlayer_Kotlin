@@ -3670,9 +3670,6 @@ files:
   - name: src/main/res/raw/wisdom.mp3
     visible: true
     learner_created: true
-  - name: src/main/res/drawable/v904_nunny_010_d.webp
-    visible: true
-    learner_created: true
   - name: src/main/res/layout/list_item_song.xml
     visible: true
     learner_created: true
@@ -3730,18 +3727,16 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/model/PlaylistData.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/viewModel/PlaylistViewModel.kt
-    visible: true
-    learner_created: true
-  - name: src/main/res/layout/list_item_empty.xml
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/RecyclerAdapterSong.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/viewModel/MainActivityViewModel.kt
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22740#comment
 status: Failed
 feedback:
-  message: Your recycler view adapter should not be null
-  time: "Fri, 08 Sep 2023 13:08:37 UTC"
+  message: After clicking on songItemImgBtnPlayPause on a paused song the image displayed
+    should change to R.drawable.ic_pause
+  time: "Fri, 20 Oct 2023 11:02:42 UTC"
 record: 3
