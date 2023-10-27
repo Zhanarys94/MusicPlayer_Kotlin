@@ -3718,13 +3718,7 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/model/CurrentTrack.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/Constants.kt
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/PlaylistType.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/PlaylistData.kt
     visible: true
     learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/RecyclerAdapterSong.kt
@@ -3733,10 +3727,74 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/viewModel/MainActivityViewModel.kt
     visible: true
     learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/PlaylistsRepository.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/PlaylistsRepositoryImpl.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/modules.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/MusicAll.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/viewModel/SongViewModel.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/SongStateController.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22740#comment
 status: Failed
 feedback:
-  message: After clicking on songItemImgBtnPlayPause on a paused song the image displayed
-    should change to R.drawable.ic_pause
-  time: "Fri, 20 Oct 2023 11:02:42 UTC"
+  message: "Exception. Test failed on activity execution with java.lang.ClassCastException:\
+    \ class org.hyperskill.musicplayer.model.DataType$Song cannot be cast to class\
+    \ org.hyperskill.musicplayer.model.DataType$SongSelector (org.hyperskill.musicplayer.model.DataType$Song\
+    \ and org.hyperskill.musicplayer.model.DataType$SongSelector are in unnamed module\
+    \ of loader org.robolectric.internal.AndroidSandbox$SdkSandboxClassLoader @1fc0053e)\n\
+    java.lang.ClassCastException: class org.hyperskill.musicplayer.model.DataType$Song\
+    \ cannot be cast to class org.hyperskill.musicplayer.model.DataType$SongSelector\
+    \ (org.hyperskill.musicplayer.model.DataType$Song and org.hyperskill.musicplayer.model.DataType$SongSelector\
+    \ are in unnamed module of loader org.robolectric.internal.AndroidSandbox$SdkSandboxClassLoader\
+    \ @1fc0053e)\n\tat org.hyperskill.musicplayer.RecyclerAdapterSong$SongViewHolder.bind(RecyclerAdapterSong.kt:113)\n\
+    \tat org.hyperskill.musicplayer.RecyclerAdapterSong.onBindViewHolder(RecyclerAdapterSong.kt:73)\n\
+    \tat org.hyperskill.musicplayer.RecyclerAdapterSong.onBindViewHolder(RecyclerAdapterSong.kt:17)\n\
+    \tat androidx.recyclerview.widget.RecyclerView$Adapter.bindViewHolder(RecyclerView.java:7107)\n\
+    \tat androidx.recyclerview.widget.RecyclerView$Recycler.tryBindViewHolderByDeadline(RecyclerView.java:6012)\n\
+    \tat androidx.recyclerview.widget.RecyclerView$Recycler.tryGetViewHolderForPositionByDeadline(RecyclerView.java:6279)\n\
+    \tat androidx.recyclerview.widget.RecyclerView$Recycler.getViewForPosition(RecyclerView.java:6118)\n\
+    \tat androidx.recyclerview.widget.RecyclerView$Recycler.getViewForPosition(RecyclerView.java:6114)\n\
+    \tat androidx.recyclerview.widget.LinearLayoutManager$LayoutState.next(LinearLayoutManager.java:2303)\n\
+    \tat androidx.recyclerview.widget.LinearLayoutManager.layoutChunk(LinearLayoutManager.java:1627)\n\
+    \tat androidx.recyclerview.widget.LinearLayoutManager.fill(LinearLayoutManager.java:1587)\n\
+    \tat androidx.recyclerview.widget.LinearLayoutManager.onLayoutChildren(LinearLayoutManager.java:665)\n\
+    \tat androidx.recyclerview.widget.RecyclerView.dispatchLayoutStep2(RecyclerView.java:4134)\n\
+    \tat androidx.recyclerview.widget.RecyclerView.dispatchLayout(RecyclerView.java:3851)\n\
+    \tat androidx.recyclerview.widget.RecyclerView.onLayout(RecyclerView.java:4404)\n\
+    \tat android.view.View.layout(View.java:23143)\n\tat android.view.ViewGroup.layout(ViewGroup.java:6412)\n\
+    \tat org.hyperskill.musicplayer.internals.MusicPlayerUnitTests.clickSongSelectorListItems(MusicPlayerUnitTests.kt:325)\n\
+    \tat org.hyperskill.musicplayer.internals.MusicPlayerUnitTests.addPlaylist(MusicPlayerUnitTests.kt:394)\n\
+    \tat org.hyperskill.musicplayer.internals.MusicPlayerUnitTests.addPlaylist$default(MusicPlayerUnitTests.kt:386)\n\
+    \tat org.hyperskill.musicplayer.Stage2UnitTest$checkDeletePlaylistOnPlayMusicStateWithCurrentPlaylistBeingDeleted$1.invoke(Stage2UnitTest.kt:1584)\n\
+    \tat org.hyperskill.musicplayer.Stage2UnitTest$checkDeletePlaylistOnPlayMusicStateWithCurrentPlaylistBeingDeleted$1.invoke(Stage2UnitTest.kt:1573)\n\
+    \tat org.hyperskill.musicplayer.internals.AbstractUnitTest.testActivity(AbstractUnitTest.kt:84)\n\
+    \tat org.hyperskill.musicplayer.internals.AbstractUnitTest.testActivity$default(AbstractUnitTest.kt:75)\n\
+    \tat org.hyperskill.musicplayer.Stage2UnitTest.checkDeletePlaylistOnPlayMusicStateWithCurrentPlaylistBeingDeleted(Stage2UnitTest.kt:1573)\n\
+    \tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\
+    \tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\
+    \tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\
+    \tat org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)\n\
+    \tat org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)\n\
+    \tat org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)\n\
+    \tat org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)\n\
+    \tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\n\
+    \tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\n\tat org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:591)\n\
+    \tat org.robolectric.internal.SandboxTestRunner$2.lambda$evaluate$0(SandboxTestRunner.java:274)\n\
+    \tat org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:88)\n\
+    \tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)\n\tat\
+    \ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\n\
+    \tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\n\
+    \tat java.base/java.lang.Thread.run(Thread.java:833)"
+  time: "Wed, 25 Oct 2023 12:48:59 UTC"
 record: 3

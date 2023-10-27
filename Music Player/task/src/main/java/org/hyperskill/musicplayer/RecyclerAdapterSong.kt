@@ -88,14 +88,6 @@ class RecyclerAdapterSong(
          }
     }
 
-    override fun submitList(list: MutableList<DataType>?) {
-        if (list == currentList) {
-            super.submitList(list.let { list.toList() })
-        } else {
-            super.submitList(list)
-        }
-    }
-
     inner class SongViewHolder(private val view: View) : ViewHolder(view) {
         fun bind(
             item: DataType,
@@ -130,13 +122,7 @@ class RecyclerAdapterSong(
                 onButtonPlayPauseClick?.onClick(item, adapterPosition)
             }
 
-
             button.setImageResource(R.drawable.ic_play)
-/*            if (item.songState == SongState.PLAYED) {
-                button.setImageResource(R.drawable.ic_pause)
-            } else {
-                button.setImageResource(R.drawable.ic_play)
-            }*/
 
             val changes = if (payloads.isEmpty()) {
                 emptySet<ChangeField>()
@@ -164,7 +150,7 @@ class RecyclerAdapterSong(
                 duration.text = item.durationString
             }
             if (ChangeField.SONG_STATE in changes) {
-                if (item.songState == SongState.PLAYED) {
+                if (item.songState == SongState.PLAYING) {
                     button.setImageResource(R.drawable.ic_pause)
                 } else {
                     button.setImageResource(R.drawable.ic_play)

@@ -16,10 +16,14 @@
                 <arg>$MODULE_DIR$/../../../../Music Player/task/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/440b1a88abe1c1d04c68adafed8b8bab/transformed/jetified-viewbinding-7.4.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/d0fffada4452f6841c37c86108824cb6/transformed/material-1.4.0-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/868e741d9288c90467719a68ac5bee02/transformed/jetified-fragment-ktx-1.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/939fbf12c9e4d9be0cedb51873478f1b/transformed/jetified-activity-ktx-1.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/a26ce15c70f30fb2857e542c83c104cc/transformed/appcompat-1.3.1-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/4d5dd0a2b33c0f2a2bd7ffe555e1b27c/transformed/jetified-viewpager2-1.0.0-api.jar</arg>
-                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/620eb84b89f9d4c949c212aedb9f63bd/transformed/fragment-1.3.6-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/f717373132d7b6abfe5429bf925aeaf1/transformed/jetified-koin-android-compat-3.1.5-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/069b398ac58efac19fc07e1c78687af4/transformed/jetified-koin-android-3.1.5-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/55bd867e105f767fe34b56aef50c7097/transformed/lifecycle-extensions-2.2.0-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/a7a158c840b84c2d0b81a6b66b0575ab/transformed/fragment-1.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/305a86238fec665e173cd5f9e06f5c54/transformed/jetified-activity-1.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/27c018bb6f4a6ef519eb00a2ff65e683/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/626d056059c7d1ee13f87ee4d430e4d6/transformed/jetified-core-ktx-1.7.0-api.jar</arg>
@@ -42,6 +46,7 @@
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/94acafa74ba3cb0a74eb900d42bba524/transformed/cursoradapter-1.0.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/a16c95b440e25765602799d706009197/transformed/jetified-savedstate-ktx-1.2.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/de11d2654887957ae3af6fcf7ebea5a9/transformed/jetified-savedstate-1.2.0-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/1830999421fc1247b2431e9af9db23b2/transformed/jetified-collection-ktx-1.1.0.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/85e303d5cc564e1b315228ba7308a4dc/transformed/versionedparcelable-1.1.1-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/modules-2/files-2.1/androidx.collection/collection/1.1.0/1f27220b47669781457de0d600849a5de0e89909/collection-1.1.0.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/35de9c81bd77b7c891cac29176749fe5/transformed/jetified-lifecycle-viewmodel-ktx-2.5.0-api.jar</arg>
@@ -49,6 +54,7 @@
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/28db175fe7a94b61b68691aeec9e09a8/transformed/lifecycle-livedata-2.0.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/c0c073fc830d2e16dcf7b685a0962fcb/transformed/core-runtime-2.1.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.1.0/b3152fc64428c9354344bd89848ecddc09b6f07e/core-common-2.1.0.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/1ab777f8e689c1b87ecd0062150c5c53/transformed/jetified-lifecycle-livedata-core-ktx-2.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/a631e7b0d18cc9dc9225b5127aa39d91/transformed/lifecycle-livedata-core-2.5.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common/2.5.0/1fdb7349701e9cf2f0a69fc10642b6fef6bb3e12/lifecycle-common-2.5.0.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/b28b99f0a72b7c21f1da7d5706241e73/transformed/documentfile-1.0.0-api.jar</arg>
@@ -56,8 +62,9 @@
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/d3870240eaf41106ccd3f8c3524a8265/transformed/print-1.0.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/77100bc050aa0a39c39fc8c442df228d/transformed/interpolator-1.0.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/57136ff68ee784c6e19db34ed4a175338fadfde1/annotation-1.2.0.jar</arg>
-                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/941199f4e6d922b9340f2d02730c1092/transformed/jetified-kotlinx-coroutines-core-jvm-1.6.4.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/113a715916914491d273a42c2df644e1/transformed/jetified-kotlinx-coroutines-android-1.6.4.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/941199f4e6d922b9340f2d02730c1092/transformed/jetified-kotlinx-coroutines-core-jvm-1.6.4.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/ead9a7f737aae7f866dee3a4ceaf9b3f/transformed/jetified-koin-core-jvm-3.1.5.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/9c367a645728f8bfd0ce2914129fb005/transformed/jetified-kotlin-stdlib-jdk8-1.6.21.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/372c18948bcb17a7398c5eeea00867a8/transformed/jetified-timber-5.0.1-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/19b0f0b9c7a2ea4fbaa1270ce0f77d2d/transformed/jetified-kotlin-stdlib-jdk7-1.6.21.jar</arg>
@@ -135,12 +142,12 @@
     <orderEntry type="library" name="Gradle: androidx.savedstate:savedstate-ktx:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.3.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.cursoradapter:cursoradapter:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.3.6@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.viewpager:viewpager:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: androidx.customview:customview:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.5.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.loader:loader:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-runtime:2.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.viewpager:viewpager:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.customview:customview:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat-resources:1.3.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable-animated:1.1.0@aar" level="project" />
@@ -158,7 +165,12 @@
     <orderEntry type="library" name="Gradle: androidx.recyclerview:recyclerview:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.transition:transition:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.fragment:fragment-ktx:1.5.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton.timber:timber:5.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: io.insert-koin:koin-android:3.1.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-extensions:2.2.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: io.insert-koin:koin-android-compat:3.1.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.6.21" level="project" />
@@ -170,5 +182,7 @@
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.collection:collection-ktx:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.insert-koin:koin-core-jvm:3.1.5" level="project" />
   </component>
 </module>

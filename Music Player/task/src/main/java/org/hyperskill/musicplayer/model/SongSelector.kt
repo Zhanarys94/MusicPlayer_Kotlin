@@ -1,12 +1,10 @@
 package org.hyperskill.musicplayer.model
 
-import androidx.recyclerview.widget.DiffUtil
-
 sealed class DataType {
     class Song(
         val id: Int,
-        val title: String,
-        val artist: String,
+        var title: String,
+        var artist: String,
         val duration: Int
     ) : java.io.Serializable, DataType() {
         val durationString: String
@@ -65,8 +63,4 @@ sealed class DataType {
             return true
         }
     }
-}
-
-fun songsToSelectors(songs: List<DataType.Song>): MutableList<DataType.SongSelector> {
-    return songs.map { DataType.SongSelector(it) }.toMutableList()
 }

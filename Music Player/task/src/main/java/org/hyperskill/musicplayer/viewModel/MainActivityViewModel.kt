@@ -5,7 +5,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import org.hyperskill.musicplayer.model.DataType
 import org.hyperskill.musicplayer.model.ViewState
-import org.hyperskill.musicplayer.model.songsToSelectors
 
 /*class MainActivityViewModel : ViewModel() {
 
