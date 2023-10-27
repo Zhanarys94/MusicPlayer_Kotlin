@@ -1,4 +1,4 @@
-package org.hyperskill.musicplayer
+package org.hyperskill.musicplayer.viewModel
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import org.hyperskill.musicplayer.model.DataType
-import org.hyperskill.musicplayer.model.SongState
+import org.hyperskill.musicplayer.R
+import org.hyperskill.musicplayer.model.song.SongType
+import org.hyperskill.musicplayer.model.song.SongState
 import org.hyperskill.musicplayer.model.ViewState
 import java.util.EnumSet
 
 class RecyclerAdapterSong(
     private var currentState: ViewState
-) : ListAdapter<DataType, RecyclerAdapterSong.SongViewHolder>(
+) : ListAdapter<SongType, RecyclerAdapterSong.SongViewHolder>(
     DataTypeDiffCallbackObj
 ) {
     private var onItemClickListener: OnItemClickListener? = null
@@ -57,7 +58,7 @@ class RecyclerAdapterSong(
         when (currentState) {
             ViewState.PLAY_MUSIC -> {
                 holder.itemView.setOnLongClickListener {
-                    onItemLongClickListener?.onLongClick(getItem(position) as DataType.Song, position)
+                    onItemLongClickListener?.onLongClick(getItem(position) as SongType.Song, position)
                     true
                 }
                 holder.bind(
@@ -83,22 +84,14 @@ class RecyclerAdapterSong(
 
      override fun getItemViewType(position: Int): Int {
          return when (getItem(position)) {
-             is DataType.Song -> VIEW_TYPE_SONG
-             is DataType.SongSelector -> VIEW_TYPE_SONG_SELECTOR
+             is SongType.Song -> VIEW_TYPE_SONG
+             is SongType.SongSelector -> VIEW_TYPE_SONG_SELECTOR
          }
-    }
-
-    override fun submitList(list: MutableList<DataType>?) {
-        if (list == currentList) {
-            super.submitList(list.let { list.toList() })
-        } else {
-            super.submitList(list)
-        }
     }
 
     inner class SongViewHolder(private val view: View) : ViewHolder(view) {
         fun bind(
-            item: DataType,
+            item: SongType,
             currentState: ViewState,
             onItemClickListener: OnItemClickListener? = null,
             onButtonPlayPauseClick: OnButtonPlayPauseClickListener? = null,
@@ -106,18 +99,18 @@ class RecyclerAdapterSong(
         ) {
             when (currentState) {
                 ViewState.PLAY_MUSIC -> bindCurrentPlaylist(
-                    item as DataType.Song, onButtonPlayPauseClick, payloads
+                    item as SongType.Song, onButtonPlayPauseClick, payloads
                 )
                 ViewState.ADD_PLAYLIST -> {
                     bindLoadedPlaylist(
-                        item as DataType.SongSelector, onItemClickListener, payloads
+                        item as SongType.SongSelector, onItemClickListener, payloads
                     )
                 }
             }
         }
 
         private fun bindCurrentPlaylist(
-            item: DataType.Song,
+            item: SongType.Song,
             onButtonPlayPauseClick: OnButtonPlayPauseClickListener?,
             payloads: MutableList<Any>
         ) {
@@ -130,13 +123,7 @@ class RecyclerAdapterSong(
                 onButtonPlayPauseClick?.onClick(item, adapterPosition)
             }
 
-
             button.setImageResource(R.drawable.ic_play)
-/*            if (item.songState == SongState.PLAYED) {
-                button.setImageResource(R.drawable.ic_pause)
-            } else {
-                button.setImageResource(R.drawable.ic_play)
-            }*/
 
             val changes = if (payloads.isEmpty()) {
                 emptySet<ChangeField>()
@@ -164,7 +151,7 @@ class RecyclerAdapterSong(
                 duration.text = item.durationString
             }
             if (ChangeField.SONG_STATE in changes) {
-                if (item.songState == SongState.PLAYED) {
+                if (item.songState == SongState.PLAYING) {
                     button.setImageResource(R.drawable.ic_pause)
                 } else {
                     button.setImageResource(R.drawable.ic_play)
@@ -173,7 +160,7 @@ class RecyclerAdapterSong(
         }
 
         private fun bindLoadedPlaylist(
-            item: DataType.SongSelector,
+            item: SongType.SongSelector,
             onItemClickListener: OnItemClickListener?,
             payloads: MutableList<Any>
         ) {
@@ -236,52 +223,52 @@ class RecyclerAdapterSong(
     }
 
     interface OnItemClickListener {
-        fun onClick(songSelected: DataType.SongSelector, position: Int)
+        fun onClick(songSelected: SongType.SongSelector, position: Int)
     }
 
     interface OnItemLongClickListener {
-        fun onLongClick(songSelected: DataType.Song, position: Int)
+        fun onLongClick(songSelected: SongType.Song, position: Int)
     }
 
     interface OnButtonPlayPauseClickListener {
-        fun onClick(song: DataType.Song, position: Int)
+        fun onClick(song: SongType.Song, position: Int)
     }
 }
 
-object DataTypeDiffCallbackObj : DiffUtil.ItemCallback<DataType>() {
+object DataTypeDiffCallbackObj : DiffUtil.ItemCallback<SongType>() {
 
     override fun areItemsTheSame(
-        oldItem: DataType,
-        newItem: DataType
+        oldItem: SongType,
+        newItem: SongType
     ): Boolean {
         return when {
-            oldItem is DataType.Song && newItem is DataType.Song -> oldItem.id == newItem.id
-            oldItem is DataType.SongSelector && newItem is DataType.SongSelector ->
+            oldItem is SongType.Song && newItem is SongType.Song -> oldItem.id == newItem.id
+            oldItem is SongType.SongSelector && newItem is SongType.SongSelector ->
                 oldItem.song.id == newItem.song.id
             else -> false
         }
     }
 
     override fun areContentsTheSame(
-        oldItem: DataType,
-        newItem: DataType
+        oldItem: SongType,
+        newItem: SongType
     ): Boolean {
         return when {
-            oldItem is DataType.Song && newItem is DataType.Song -> oldItem == newItem
-            oldItem is DataType.SongSelector && newItem is DataType.SongSelector -> oldItem == newItem
+            oldItem is SongType.Song && newItem is SongType.Song -> oldItem == newItem
+            oldItem is SongType.SongSelector && newItem is SongType.SongSelector -> oldItem == newItem
             else -> false
         }
     }
 
-    override fun getChangePayload(oldItem: DataType, newItem: DataType): Any? {
+    override fun getChangePayload(oldItem: SongType, newItem: SongType): Any? {
         return when {
-            oldItem is DataType.Song && newItem is DataType.Song -> listOfNotNull(
+            oldItem is SongType.Song && newItem is SongType.Song -> listOfNotNull(
                 ChangeField.ARTIST.takeIf { oldItem.artist != newItem.artist },
                 ChangeField.TITLE.takeIf { oldItem.title != newItem.title },
                 ChangeField.DURATION.takeIf { oldItem.duration != newItem.duration },
                 ChangeField.SONG_STATE.takeIf { oldItem.songState != newItem.songState }
             )
-            oldItem is DataType.SongSelector && newItem is DataType.SongSelector -> listOfNotNull(
+            oldItem is SongType.SongSelector && newItem is SongType.SongSelector -> listOfNotNull(
                 ChangeField.ARTIST.takeIf { oldItem.song.artist != newItem.song.artist },
                 ChangeField.TITLE.takeIf { oldItem.song.title != newItem.song.title },
                 ChangeField.DURATION.takeIf { oldItem.song.duration != newItem.song.duration },

@@ -4,7 +4,7 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: android
-update_date: "Fri, 20 Oct 2023 10:57:43 UTC"
+update_date: "Fri, 27 Oct 2023 12:00:01 UTC"
 stages:
   - id: 1506
     step: 22739
@@ -61,16 +61,16 @@ topics:
       theory_id: 17408
     - title: Data types
       theory_id: 4388
+    - title: The classification of basic types
+      theory_id: 4455
+    - title: Type conversion
+      theory_id: 4672
     - title: Comments
       theory_id: 4406
     - title: Coding style conventions
       theory_id: 4419
     - title: Naming variables
       theory_id: 4389
-    - title: The classification of basic types
-      theory_id: 4455
-    - title: Type conversion
-      theory_id: 4672
     - title: Standard output
       theory_id: 4425
     - title: Invoking functions

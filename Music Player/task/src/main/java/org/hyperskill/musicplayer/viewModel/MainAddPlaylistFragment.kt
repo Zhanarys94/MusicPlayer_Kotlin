@@ -1,4 +1,4 @@
-package org.hyperskill.musicplayer
+package org.hyperskill.musicplayer.viewModel
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.hyperskill.musicplayer.databinding.MainAddPlaylistBinding
-import org.hyperskill.musicplayer.databinding.MainPlayerControllerBinding
 
 class MainAddPlaylistFragment : Fragment() {
     private var binding: MainAddPlaylistBinding? = null

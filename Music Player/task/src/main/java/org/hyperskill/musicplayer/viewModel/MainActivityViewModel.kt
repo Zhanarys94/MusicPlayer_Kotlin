@@ -1,12 +1,5 @@
 package org.hyperskill.musicplayer.viewModel
 
-import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import org.hyperskill.musicplayer.model.DataType
-import org.hyperskill.musicplayer.model.ViewState
-import org.hyperskill.musicplayer.model.songsToSelectors
-
 /*class MainActivityViewModel : ViewModel() {
 
     private val _viewState = MutableStateFlow(ViewState.PLAY_MUSIC)

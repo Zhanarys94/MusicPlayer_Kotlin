@@ -34,7 +34,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/mainFragmentContainer"
-        android:name="org.hyperskill.musicplayer.MainPlayerControllerFragment"
+        android:name="org.hyperskill.musicplayer.viewModel.MainPlayerControllerFragment"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="bottom"

@@ -1,14 +1,13 @@
-package org.hyperskill.musicplayer.model
+package org.hyperskill.musicplayer.model.song
 
-import androidx.recyclerview.widget.DiffUtil
+sealed class SongType {
 
-sealed class DataType {
     class Song(
         val id: Int,
-        val title: String,
-        val artist: String,
+        var title: String,
+        var artist: String,
         val duration: Int
-    ) : java.io.Serializable, DataType() {
+    ) : java.io.Serializable, SongType() {
         val durationString: String
             get() {
                 val durationSec = (duration / 1000)
@@ -41,7 +40,7 @@ sealed class DataType {
         }
     }
 
-    class SongSelector(val song: Song) : DataType() {
+    class SongSelector(val song: Song) : SongType() {
         var isSelected = false
 
         override fun hashCode(): Int {
@@ -65,8 +64,4 @@ sealed class DataType {
             return true
         }
     }
-}
-
-fun songsToSelectors(songs: List<DataType.Song>): MutableList<DataType.SongSelector> {
-    return songs.map { DataType.SongSelector(it) }.toMutableList()
 }
