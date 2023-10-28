@@ -1,4 +1,4 @@
-package org.hyperskill.musicplayer.viewModel
+package org.hyperskill.musicplayer
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,17 +9,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import org.hyperskill.musicplayer.R
 import org.hyperskill.musicplayer.model.song.SongType
 import org.hyperskill.musicplayer.model.song.SongState
 import org.hyperskill.musicplayer.model.ViewState
+import org.hyperskill.musicplayer.model.song.Song
+import org.hyperskill.musicplayer.model.song.SongSelector
 import java.util.EnumSet
 
 class RecyclerAdapterSong(
     private var currentState: ViewState
-) : ListAdapter<SongType, RecyclerAdapterSong.SongViewHolder>(
-    DataTypeDiffCallbackObj
-) {
+    ) : ListAdapter<SongType, RecyclerAdapterSong.SongViewHolder>(DataTypeDiffCallbackObj) {
     private var onItemClickListener: OnItemClickListener? = null
     private var onItemLongClickListener: OnItemLongClickListener? = null
     private var onButtonPlayPauseClickListener: OnButtonPlayPauseClickListener? = null
@@ -58,7 +57,7 @@ class RecyclerAdapterSong(
         when (currentState) {
             ViewState.PLAY_MUSIC -> {
                 holder.itemView.setOnLongClickListener {
-                    onItemLongClickListener?.onLongClick(getItem(position) as SongType.Song, position)
+                    onItemLongClickListener?.onLongClick(getItem(position) as Song, position)
                     true
                 }
                 holder.bind(
@@ -84,8 +83,8 @@ class RecyclerAdapterSong(
 
      override fun getItemViewType(position: Int): Int {
          return when (getItem(position)) {
-             is SongType.Song -> VIEW_TYPE_SONG
-             is SongType.SongSelector -> VIEW_TYPE_SONG_SELECTOR
+             is Song -> VIEW_TYPE_SONG
+             is SongSelector -> VIEW_TYPE_SONG_SELECTOR
          }
     }
 
@@ -99,18 +98,18 @@ class RecyclerAdapterSong(
         ) {
             when (currentState) {
                 ViewState.PLAY_MUSIC -> bindCurrentPlaylist(
-                    item as SongType.Song, onButtonPlayPauseClick, payloads
+                    item as Song, onButtonPlayPauseClick, payloads
                 )
                 ViewState.ADD_PLAYLIST -> {
                     bindLoadedPlaylist(
-                        item as SongType.SongSelector, onItemClickListener, payloads
+                        item as SongSelector, onItemClickListener, payloads
                     )
                 }
             }
         }
 
         private fun bindCurrentPlaylist(
-            item: SongType.Song,
+            item: Song,
             onButtonPlayPauseClick: OnButtonPlayPauseClickListener?,
             payloads: MutableList<Any>
         ) {
@@ -123,7 +122,10 @@ class RecyclerAdapterSong(
                 onButtonPlayPauseClick?.onClick(item, adapterPosition)
             }
 
-            button.setImageResource(R.drawable.ic_play)
+            button.setImageResource(
+                if (item.songState == SongState.PLAYING) R.drawable.ic_pause
+                else R.drawable.ic_play
+            )
 
             val changes = if (payloads.isEmpty()) {
                 emptySet<ChangeField>()
@@ -160,7 +162,7 @@ class RecyclerAdapterSong(
         }
 
         private fun bindLoadedPlaylist(
-            item: SongType.SongSelector,
+            item: SongSelector,
             onItemClickListener: OnItemClickListener?,
             payloads: MutableList<Any>
         ) {
@@ -223,15 +225,15 @@ class RecyclerAdapterSong(
     }
 
     interface OnItemClickListener {
-        fun onClick(songSelected: SongType.SongSelector, position: Int)
+        fun onClick(songSelected: SongSelector, position: Int)
     }
 
     interface OnItemLongClickListener {
-        fun onLongClick(songSelected: SongType.Song, position: Int)
+        fun onLongClick(songSelected: Song, position: Int)
     }
 
     interface OnButtonPlayPauseClickListener {
-        fun onClick(song: SongType.Song, position: Int)
+        fun onClick(song: Song, position: Int)
     }
 }
 
@@ -242,8 +244,8 @@ object DataTypeDiffCallbackObj : DiffUtil.ItemCallback<SongType>() {
         newItem: SongType
     ): Boolean {
         return when {
-            oldItem is SongType.Song && newItem is SongType.Song -> oldItem.id == newItem.id
-            oldItem is SongType.SongSelector && newItem is SongType.SongSelector ->
+            oldItem is Song && newItem is Song -> oldItem.id == newItem.id
+            oldItem is SongSelector && newItem is SongSelector ->
                 oldItem.song.id == newItem.song.id
             else -> false
         }
@@ -254,21 +256,21 @@ object DataTypeDiffCallbackObj : DiffUtil.ItemCallback<SongType>() {
         newItem: SongType
     ): Boolean {
         return when {
-            oldItem is SongType.Song && newItem is SongType.Song -> oldItem == newItem
-            oldItem is SongType.SongSelector && newItem is SongType.SongSelector -> oldItem == newItem
+            oldItem is Song && newItem is Song -> oldItem == newItem
+            oldItem is SongSelector && newItem is SongSelector -> oldItem == newItem
             else -> false
         }
     }
 
     override fun getChangePayload(oldItem: SongType, newItem: SongType): Any? {
         return when {
-            oldItem is SongType.Song && newItem is SongType.Song -> listOfNotNull(
+            oldItem is Song && newItem is Song -> listOfNotNull(
                 ChangeField.ARTIST.takeIf { oldItem.artist != newItem.artist },
                 ChangeField.TITLE.takeIf { oldItem.title != newItem.title },
                 ChangeField.DURATION.takeIf { oldItem.duration != newItem.duration },
                 ChangeField.SONG_STATE.takeIf { oldItem.songState != newItem.songState }
             )
-            oldItem is SongType.SongSelector && newItem is SongType.SongSelector -> listOfNotNull(
+            oldItem is SongSelector && newItem is SongSelector -> listOfNotNull(
                 ChangeField.ARTIST.takeIf { oldItem.song.artist != newItem.song.artist },
                 ChangeField.TITLE.takeIf { oldItem.song.title != newItem.song.title },
                 ChangeField.DURATION.takeIf { oldItem.song.duration != newItem.song.duration },

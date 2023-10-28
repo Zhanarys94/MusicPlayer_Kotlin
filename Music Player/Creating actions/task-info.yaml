@@ -3715,19 +3715,10 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/viewModel/SongViewModel.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/database/PlaylistsRepository.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/database/PlaylistsRepositoryImpl.kt
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/song/SongState.kt
     visible: true
     learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/song/SongType.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/viewModel/SongStateController.kt
     visible: true
     learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/viewModel/MainAddPlaylistFragment.kt
@@ -3736,25 +3727,34 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/viewModel/MainPlayerControllerFragment.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/PlaylistData.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/CurrentTrack.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/Constants.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/playlist/PlaylistType.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/model/playlist/PlaylistsRepository.kt
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/playlist/Playlist.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/viewModel/RecyclerAdapterSong.kt
+  - name: src/main/java/org/hyperskill/musicplayer/viewModel/songStateController/SongStateControllerInterface.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/viewModel/songStateController/SongStateController.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/playlist/LoadedPlaylist.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/playlist/CurrentPlaylist.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/repository/PlaylistsRepositoryImpl.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/repository/PlaylistsRepository.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/song/SongSelector.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/song/Song.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/RecyclerAdapterSong.kt
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22740#comment
