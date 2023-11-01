@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainAddPlaylistFragmentLayout"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="100dp"
+    android:focusable="true">
 
     <EditText
         android:id="@+id/addPlaylistEtPlaylistName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:hint="@string/addPlaylist_et_playlistNameHint"
-        android:inputType="text"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/addPlaylistBtnOk"

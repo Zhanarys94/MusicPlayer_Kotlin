@@ -3712,9 +3712,6 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/MusicAll.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/viewModel/SongViewModel.kt
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/song/SongState.kt
     visible: true
     learner_created: true
@@ -3755,6 +3752,9 @@ files:
     visible: true
     learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/RecyclerAdapterSong.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/KeyboardUtil.kt
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22740#comment

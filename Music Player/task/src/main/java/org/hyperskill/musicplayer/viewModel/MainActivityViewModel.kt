@@ -17,6 +17,9 @@ class MainActivityViewModel : ViewModel() {
     private val _loadedPlaylistLiveData: MutableLiveData<List<SongSelector>> = MutableLiveData()
     val loadedPlaylistLiveData = _loadedPlaylistLiveData
 
+    private val _currentSong: MutableLiveData<Song> = MutableLiveData()
+    val currentSong = _currentSong
+
     fun changeCurrentState(currentState: ViewState) {
         _currentStateLiveData.value = currentState
     }
@@ -28,4 +31,9 @@ class MainActivityViewModel : ViewModel() {
     fun changeLoadedPlaylist(songs: Collection<SongSelector>) {
         _loadedPlaylistLiveData.value = songs.toList()
     }
+
+    fun changeCurrentSong(song: Song) {
+        _currentSong.value = song
+    }
+
 }

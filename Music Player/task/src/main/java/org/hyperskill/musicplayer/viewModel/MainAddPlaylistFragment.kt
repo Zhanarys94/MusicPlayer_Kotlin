@@ -1,5 +1,6 @@
 package org.hyperskill.musicplayer.viewModel
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,12 @@ import org.hyperskill.musicplayer.databinding.MainAddPlaylistBinding
 
 class MainAddPlaylistFragment : Fragment() {
     private var binding: MainAddPlaylistBinding? = null
+    private var interactionListener: AddPlaylistFragmentInteractionListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        interactionListener = context as AddPlaylistFragmentInteractionListener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,8 +26,35 @@ class MainAddPlaylistFragment : Fragment() {
         return binding?.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val playlistNameTextField = binding!!.addPlaylistEtPlaylistName
+        val okButton = binding!!.addPlaylistBtnOk.apply {
+            setOnClickListener {
+                requestFocus()
+                interactionListener!!.onOkButtonClick(playlistNameTextField.text.toString())
+            }
+        }
+        val cancelButton = binding!!.addPlaylistBtnCancel.apply {
+            setOnClickListener {
+                interactionListener!!.onCancelButtonClick()
+            }
+        }
+    }
+
     override fun onDestroyView() {
-        binding = null
         super.onDestroyView()
+        binding = null
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        interactionListener = null
+    }
+
+    interface AddPlaylistFragmentInteractionListener {
+        fun onCancelButtonClick()
+
+        fun onOkButtonClick(name: String)
     }
 }

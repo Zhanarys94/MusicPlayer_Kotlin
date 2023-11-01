@@ -4,7 +4,7 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: android
-update_date: "Sat, 28 Oct 2023 08:18:13 UTC"
+update_date: "Wed, 01 Nov 2023 13:12:30 UTC"
 stages:
   - id: 1506
     step: 22739
@@ -171,16 +171,16 @@ topics:
       theory_id: 11550
     - title: Scopes
       theory_id: 17116
-    - title: Introduction to Android
-      theory_id: 6331
     - title: Introduction to software architecture
       theory_id: 15368
-    - title: Design principles
-      theory_id: 8956
+    - title: Introduction to Android
+      theory_id: 6331
     - title: Inheritance
       theory_id: 9844
     - title: Inheritance
       theory_id: 7770
+    - title: Design principles
+      theory_id: 8956
     - title: Polymorphism
       theory_id: 10027
     - title: Overriding functions
@@ -320,14 +320,14 @@ topics:
       theory_id: 19037
     - title: RecyclerView Adapter mastery
       theory_id: 20429
-    - title: Simultaneous tasks
-      theory_id: 8544
     - title: Single Responsibility Principle
       theory_id: 8963
     - title: Object declarations
       theory_id: 10698
     - title: Advanced debugger features
       theory_id: 16028
+    - title: Simultaneous tasks
+      theory_id: 8544
     - title: Asynchronous programming techniques & problems
       theory_id: 14503
     - title: Suspending functions

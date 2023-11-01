@@ -5,7 +5,7 @@ import org.hyperskill.musicplayer.model.song.Song
 
 class PlaylistsRepositoryImpl : PlaylistsRepository {
 
-    override val playlists = ArrayMap<String, MutableList<Song>>()
+    override val playlists = ArrayMap<String, List<Song>>()
     override fun getDefaultSongs(): MutableList<Song> {
         return MutableList(10) { i ->
             Song(i + 1, "title${i + 1}", "artist${i + 1}", 215_000)
@@ -13,11 +13,11 @@ class PlaylistsRepositoryImpl : PlaylistsRepository {
     }
 
     override fun getPlaylist(name: String): MutableList<Song>? {
-        return playlists[name]
+        return playlists[name]?.toMutableList()
     }
 
-    override fun addPlaylist(name: String, songs: MutableList<Song>) {
-        playlists[name] = songs
+    override fun addPlaylist(name: String, songs: Collection<Song>) {
+        playlists[name] = songs.toList()
     }
 
     override fun removePlaylist(name: String) {

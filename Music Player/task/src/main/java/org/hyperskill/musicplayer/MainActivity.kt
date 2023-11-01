@@ -1,42 +1,44 @@
 package org.hyperskill.musicplayer
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import android.app.AlertDialog
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.hyperskill.musicplayer.databinding.ActivityMainBinding
+import org.hyperskill.musicplayer.model.ViewState.ADD_PLAYLIST
+import org.hyperskill.musicplayer.model.ViewState.PLAY_MUSIC
 import org.hyperskill.musicplayer.model.playlist.CurrentPlaylist
 import org.hyperskill.musicplayer.model.playlist.LoadedPlaylist
-import org.hyperskill.musicplayer.repository.PlaylistsRepositoryImpl
-import org.hyperskill.musicplayer.model.song.SongState
-import org.hyperskill.musicplayer.model.ViewState
 import org.hyperskill.musicplayer.model.song.Song
 import org.hyperskill.musicplayer.model.song.SongSelector
+import org.hyperskill.musicplayer.model.song.SongState
+import org.hyperskill.musicplayer.repository.PlaylistsRepositoryImpl
 import org.hyperskill.musicplayer.viewModel.MainActivityViewModel
 import org.hyperskill.musicplayer.viewModel.MainAddPlaylistFragment
 import org.hyperskill.musicplayer.viewModel.MainPlayerControllerFragment
 import org.hyperskill.musicplayer.viewModel.songStateController.SongStateController
-import org.hyperskill.musicplayer.viewModel.SongViewModel
 import timber.log.Timber
 
 private const val DEFAULT_PLAYLIST_NAME = "All Songs"
 
-class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmentInteractionListener {
-
+class MainActivity : AppCompatActivity(),
+    MainPlayerControllerFragment.OnFragmentInteractionListener,
+    MainAddPlaylistFragment.AddPlaylistFragmentInteractionListener
+{
     private lateinit var binding: ActivityMainBinding
-    private var viewState: ViewState = ViewState.PLAY_MUSIC
     private val playlists = PlaylistsRepositoryImpl()
     private val currentPlaylist = CurrentPlaylist(playlists.getDefaultSongs())
     private val loadedPlaylist = LoadedPlaylist(playlists.getDefaultSongs())
     private val mainActivityViewModel: MainActivityViewModel by viewModels()
-    private val adapter = RecyclerAdapterSong(viewState)
-    private val currentSongViewModel: SongViewModel by viewModels()
+    private val adapter = RecyclerAdapterSong()
     private val songStateController = SongStateController()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +54,8 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+
         val recyclerView = binding.mainSongList
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -62,11 +66,23 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
         mainActivityViewModel.loadedPlaylistLiveData.observe(this) { songSelectors ->
             (recyclerView.adapter as RecyclerAdapterSong).submitList(songSelectors)
         }
-        mainActivityViewModel.currentStateLiveData.observe(this) { state ->
-            (recyclerView.adapter as RecyclerAdapterSong).changeState(state)
-            if (viewState == ViewState.PLAY_MUSIC) {
+        mainActivityViewModel.currentStateLiveData.observe(this) {state ->
+            if (state == PLAY_MUSIC) {
                 (recyclerView.adapter as RecyclerAdapterSong).submitList(currentPlaylist.songs.toList())
-            } else (recyclerView.adapter as RecyclerAdapterSong).submitList(loadedPlaylist.songSelectors.toList())
+            } else {
+                (recyclerView.adapter as RecyclerAdapterSong).submitList(loadedPlaylist.songSelectors.toList())
+
+                onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        if (mainActivityViewModel.currentStateLiveData.value == ADD_PLAYLIST) {
+                            mainActivityViewModel.changeCurrentState(PLAY_MUSIC)
+                        }
+                        supportFragmentManager.popBackStack()
+                        isEnabled = false
+                    }
+                }
+                )
+            }
         }
 
         setSupportActionBar(binding.toolbar)
@@ -79,7 +95,7 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.mainMenuAddPlaylist -> {
-                        if (viewState == ViewState.ADD_PLAYLIST) return true
+                        if (mainActivityViewModel.currentStateLiveData.value == ADD_PLAYLIST) return true
                         if (playlists.getPlaylist(DEFAULT_PLAYLIST_NAME) == null) {
                             Toast.makeText(
                                 this@MainActivity,
@@ -88,10 +104,9 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
                             ).show()
                             return true
                         } else {
-                            viewState = ViewState.ADD_PLAYLIST
                             loadedPlaylist.songs = playlists.getPlaylist(DEFAULT_PLAYLIST_NAME)!!
                             loadedPlaylist.updateSongSelectors()
-                            mainActivityViewModel.changeCurrentState(viewState)
+                            mainActivityViewModel.changeCurrentState(ADD_PLAYLIST)
                             supportFragmentManager.beginTransaction()
                                 .setReorderingAllowed(true)
                                 .replace(R.id.mainFragmentContainer, MainAddPlaylistFragment(),"AddPlaylist")
@@ -117,8 +132,8 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
         })
 
         binding.mainButtonSearch.setOnClickListener {
-            when (viewState) {
-                ViewState.PLAY_MUSIC -> {
+            when (mainActivityViewModel.currentStateLiveData.value) {
+                PLAY_MUSIC -> {
                     if (playlists.getPlaylist(DEFAULT_PLAYLIST_NAME) == null) {
                         playlists.addPlaylist(DEFAULT_PLAYLIST_NAME, playlists.getDefaultSongs())
                         currentPlaylist.songs = playlists.getPlaylist(DEFAULT_PLAYLIST_NAME)!!
@@ -128,10 +143,20 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
                         mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
                     }
                 }
-                ViewState.ADD_PLAYLIST -> {
+                ADD_PLAYLIST -> {
                     loadedPlaylist.songs = playlists.getPlaylist(DEFAULT_PLAYLIST_NAME)!!
                     loadedPlaylist.updateSongSelectors()
                     mainActivityViewModel.changeLoadedPlaylist(loadedPlaylist.songSelectors)
+                }
+                else -> {
+                    if (playlists.getPlaylist(DEFAULT_PLAYLIST_NAME) == null) {
+                        playlists.addPlaylist(DEFAULT_PLAYLIST_NAME, playlists.getDefaultSongs())
+                        currentPlaylist.songs = playlists.getPlaylist(DEFAULT_PLAYLIST_NAME)!!
+                        mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
+                    } else {
+                        currentPlaylist.songs = playlists.getPlaylist(DEFAULT_PLAYLIST_NAME)!!
+                        mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
+                    }
                 }
             }
         }
@@ -156,24 +181,11 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
             setOnItemLongClickListener(
                 object : RecyclerAdapterSong.OnItemLongClickListener {
                     override fun onLongClick(songSelected: Song, position: Int) {
-
-                        /*val modifiedSong = SongType.Song(
-                            songSelected.id, songSelected.title, songSelected.artist,
-                            songSelected.duration
-                        )
-                        loadedPlaylist.songs[position] = modifiedSong
-                        loadedPlaylist.songSelectors[position] = SongType.SongSelector(loadedPlaylist.songs[position])
-                        loadedPlaylist.songSelectors[position].isSelected = true
-                        viewState = ViewState.ADD_PLAYLIST
-                        changeState(viewState)
-                        submitList(null)
-                        submitList(loadedPlaylist.songSelectors.toList())*/
                         loadedPlaylist.songs = playlists.getPlaylist(DEFAULT_PLAYLIST_NAME)!!
                         val index = loadedPlaylist.songs.indexOf(songSelected)
                         loadedPlaylist.updateSongSelectors()
                         loadedPlaylist.songSelectors[index].isSelected = true
-                        viewState = ViewState.ADD_PLAYLIST
-                        mainActivityViewModel.changeCurrentState(viewState)
+                        mainActivityViewModel.changeCurrentState(ADD_PLAYLIST)
                         supportFragmentManager.beginTransaction()
                             .setReorderingAllowed(true)
                             .replace(R.id.mainFragmentContainer, MainAddPlaylistFragment())
@@ -209,7 +221,7 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
                             currentPlaylist.songs[position] = newSong
                             currentPlaylist.currentTrack = newSong
                             songStateController.play(newSong)
-                            currentSongViewModel.changeCurrentSong(newSong)
+                            mainActivityViewModel.changeCurrentSong(newSong)
                             mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
                         } else if (song == currentPlaylist.currentTrack) {
                             if (currentPlaylist.currentTrack.songState == SongState.PLAYING) {
@@ -276,8 +288,28 @@ class MainActivity : AppCompatActivity(), MainPlayerControllerFragment.OnFragmen
         currentPlaylist.songs[index] = modifiedSong
         currentPlaylist.currentTrack = modifiedSong
         songStateController.stop(modifiedSong)
-        currentSongViewModel.changeCurrentSong(modifiedSong)
+        mainActivityViewModel.changeCurrentSong(modifiedSong)
         mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
     }
+
+    override fun onCancelButtonClick() {
+        mainActivityViewModel.changeCurrentState(PLAY_MUSIC)
+        supportFragmentManager.popBackStack()
+    }
+
+    override fun onOkButtonClick(name: String) {
+        if (loadedPlaylist.songSelectors.none { it.isSelected }) {
+            Toast.makeText(this, "Add at least one song to your playlist", Toast.LENGTH_LONG).show()
+        } else if (name.isBlank()) {
+            Toast.makeText(this, "Add a name to your playlist", Toast.LENGTH_LONG).show()
+        } else if (name == DEFAULT_PLAYLIST_NAME) {
+            Toast.makeText(this, "All Songs is a reserved name choose another playlist name", Toast.LENGTH_LONG).show()
+        } else  {
+            val songs = loadedPlaylist.songSelectors.filter { it.isSelected }.map { it.song }
+            playlists.addPlaylist(name, songs)
+            mainActivityViewModel.changeCurrentState(PLAY_MUSIC)
+        }
+    }
+
 }
 

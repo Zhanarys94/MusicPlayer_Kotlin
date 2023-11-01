@@ -9,16 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import org.hyperskill.musicplayer.model.song.SongType
-import org.hyperskill.musicplayer.model.song.SongState
-import org.hyperskill.musicplayer.model.ViewState
 import org.hyperskill.musicplayer.model.song.Song
 import org.hyperskill.musicplayer.model.song.SongSelector
+import org.hyperskill.musicplayer.model.song.SongState
+import org.hyperskill.musicplayer.model.song.SongType
 import java.util.EnumSet
 
-class RecyclerAdapterSong(
-    private var currentState: ViewState
-    ) : ListAdapter<SongType, RecyclerAdapterSong.SongViewHolder>(DataTypeDiffCallbackObj) {
+class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHolder>(
+    DataTypeDiffCallbackObj
+) {
     private var onItemClickListener: OnItemClickListener? = null
     private var onItemLongClickListener: OnItemLongClickListener? = null
     private var onButtonPlayPauseClickListener: OnButtonPlayPauseClickListener? = null
@@ -54,25 +53,23 @@ class RecyclerAdapterSong(
         position: Int,
         payloads: MutableList<Any>
     ) {
-        when (currentState) {
-            ViewState.PLAY_MUSIC -> {
+        when (getItem(position)) {
+            is Song -> {
                 holder.itemView.setOnLongClickListener {
                     onItemLongClickListener?.onLongClick(getItem(position) as Song, position)
                     true
                 }
                 holder.bind(
                     getItem(position),
-                    currentState,
                     onItemClickListener,
                     onButtonPlayPauseClickListener,
                     payloads
                 )
             }
 
-            ViewState.ADD_PLAYLIST -> {
+            is SongSelector -> {
                 holder.bind(
                     getItem(position),
-                    currentState,
                     onItemClickListener,
                     onButtonPlayPauseClickListener,
                     payloads
@@ -91,18 +88,17 @@ class RecyclerAdapterSong(
     inner class SongViewHolder(private val view: View) : ViewHolder(view) {
         fun bind(
             item: SongType,
-            currentState: ViewState,
             onItemClickListener: OnItemClickListener? = null,
             onButtonPlayPauseClick: OnButtonPlayPauseClickListener? = null,
             payloads: MutableList<Any>
         ) {
-            when (currentState) {
-                ViewState.PLAY_MUSIC -> bindCurrentPlaylist(
-                    item as Song, onButtonPlayPauseClick, payloads
+            when (item) {
+                is Song -> bindCurrentPlaylist(
+                    item, onButtonPlayPauseClick, payloads
                 )
-                ViewState.ADD_PLAYLIST -> {
+                is SongSelector -> {
                     bindLoadedPlaylist(
-                        item as SongSelector, onItemClickListener, payloads
+                        item, onItemClickListener, payloads
                     )
                 }
             }
@@ -220,9 +216,9 @@ class RecyclerAdapterSong(
         this.onButtonPlayPauseClickListener = onButtonPlayPauseClickListener
     }
 
-    fun changeState(viewState: ViewState) {
+/*    fun changeState(viewState: ViewState) {
         currentState = viewState
-    }
+    }*/
 
     interface OnItemClickListener {
         fun onClick(songSelected: SongSelector, position: Int)
