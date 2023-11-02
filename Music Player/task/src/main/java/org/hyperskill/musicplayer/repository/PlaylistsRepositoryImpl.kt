@@ -12,7 +12,11 @@ class PlaylistsRepositoryImpl : PlaylistsRepository {
         }
     }
 
-    override fun getPlaylist(name: String): MutableList<Song>? {
+    override fun getAllPlaylists(): ArrayMap<String, List<Song>> {
+        return playlists
+    }
+
+    override fun getPlaylistByName(name: String): MutableList<Song>? {
         return playlists[name]?.toMutableList()
     }
 
