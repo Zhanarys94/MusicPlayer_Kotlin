@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@android:style/Theme.Holo.NoActionBar">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:visibility="visible"
+        app:title="@string/app_name" />
+
+    <Button
+        android:id="@+id/mainButtonSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:contentDescription="@string/button_search_description"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/button_search"
+        android:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainSongList"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="10dp" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainFragmentContainer"
+        android:name="org.hyperskill.musicplayer.viewModel.MainPlayerControllerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        tools:layout="@layout/main_player_controller" />
+
+</FrameLayout>
