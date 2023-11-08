@@ -1,5 +1,6 @@
 package org.hyperskill.musicplayer
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -182,6 +183,11 @@ class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHo
             }
 
             checkBox.isChecked = item.isSelected
+            if (checkBox.isChecked) {
+                itemView.setBackgroundColor(Color.LTGRAY)
+            } else {
+                itemView.setBackgroundColor(Color.WHITE)
+            }
 
             if (changes.isEmpty()) {
                 artist.text = item.song.artist

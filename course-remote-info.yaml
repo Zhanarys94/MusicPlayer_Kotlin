@@ -4,7 +4,7 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: android
-update_date: "Thu, 02 Nov 2023 12:25:04 UTC"
+update_date: "Wed, 08 Nov 2023 09:07:54 UTC"
 stages:
   - id: 1506
     step: 22739
@@ -39,11 +39,11 @@ topics:
       theory_id: 15308
     - title: "Write, compile, and run"
       theory_id: 3739
-    - title: "JVM, JRE, and JDK"
+    - title: "Basic terms: JVM, JRE, JDK"
       theory_id: 3499
     - title: Command line overview
       theory_id: 8977
-    - title: Parameters and Options
+    - title: Parameters and options
       theory_id: 9746
     - title: Stack
       theory_id: 5252
@@ -51,23 +51,23 @@ topics:
       theory_id: 12981
     - title: Introduction to Kotlin
       theory_id: 4350
-    - title: Basic literals
+    - title: "Basic literals: numbers, strings and characters"
       theory_id: 4351
-    - title: Overview of the basic program
+    - title: Writing first program
       theory_id: 4362
     - title: Values and variables
       theory_id: 4371
-    - title: Val variables
+    - title: Constants and val variables
       theory_id: 17408
     - title: Data types
       theory_id: 4388
-    - title: The classification of basic types
+    - title: Properties of basic types
       theory_id: 4455
     - title: Type conversion
       theory_id: 4672
     - title: Comments
       theory_id: 4406
-    - title: Coding style conventions
+    - title: Kotlin style guide. Coding conventions
       theory_id: 4419
     - title: Naming variables
       theory_id: 4389
@@ -109,7 +109,7 @@ topics:
       theory_id: 4643
     - title: While loops
       theory_id: 4659
-    - title: Introduction to OOP
+    - title: What is object-oriented programming
       theory_id: 3614
     - title: Build tools
       theory_id: 4284
@@ -288,7 +288,7 @@ topics:
       theory_id: 22079
     - title: Lazy initialization
       theory_id: 14661
-    - title: What is a bug
+    - title: What are bugs
       theory_id: 5504
     - title: Functional testing
       theory_id: 13438
@@ -361,7 +361,7 @@ topics:
       theory_id: 13025
     - title: Reading files
       theory_id: 6351
-    - title: Introduction to databases
+    - title: What are databases
       theory_id: 8497
     - title: What is SQL
       theory_id: 7054
