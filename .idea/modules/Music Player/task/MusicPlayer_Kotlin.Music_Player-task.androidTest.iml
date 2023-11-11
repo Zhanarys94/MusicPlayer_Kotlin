@@ -25,7 +25,6 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
-                <arg>$MODULE_DIR$/../../../../Music Player/task/build/intermediates/compile_app_classes_jar/debug/classes.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/440b1a88abe1c1d04c68adafed8b8bab/transformed/jetified-viewbinding-7.4.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/f717373132d7b6abfe5429bf925aeaf1/transformed/jetified-koin-android-compat-3.1.5-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/069b398ac58efac19fc07e1c78687af4/transformed/jetified-koin-android-3.1.5-api.jar</arg>
@@ -123,7 +122,7 @@
     <content url="file://$MODULE_DIR$/../../../../Music Player/task/src/androidTestDebug" />
     <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Music_Player.Music_Player-task.main" scope="TEST" />
+    <orderEntry type="module" module-name="MusicPlayer_Kotlin.Music_Player-task.main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.databinding:viewbinding:7.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.activity:activity-ktx:1.5.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.activity:activity:1.5.0@aar" level="project" />
@@ -184,5 +183,5 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.collection:collection-ktx:1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.insert-koin:koin-core-jvm:3.1.5" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="Music_Player.Music_Player-task.main" />
+  <component name="TestModuleProperties" production-module="MusicPlayer_Kotlin.Music_Player-task.main" />
 </module>

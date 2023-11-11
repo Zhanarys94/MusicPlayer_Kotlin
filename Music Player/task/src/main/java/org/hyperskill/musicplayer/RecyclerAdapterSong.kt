@@ -79,11 +79,11 @@ class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHo
         }
     }
 
-     override fun getItemViewType(position: Int): Int {
-         return when (getItem(position)) {
-             is Song -> VIEW_TYPE_SONG
-             is SongSelector -> VIEW_TYPE_SONG_SELECTOR
-         }
+    override fun getItemViewType(position: Int): Int {
+        return when (getItem(position)) {
+            is Song -> VIEW_TYPE_SONG
+            is SongSelector -> VIEW_TYPE_SONG_SELECTOR
+        }
     }
 
     inner class SongViewHolder(private val view: View) : ViewHolder(view) {
@@ -169,7 +169,7 @@ class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHo
             val duration = view.findViewById<TextView>(R.id.songSelectorItemTvDuration)
 
             itemView.setOnClickListener {
-                onItemClickListener?.onClick(item, adapterPosition)
+                onItemClickListener?.onClick(item, layoutPosition)
             }
 
             val changes = if (payloads.isEmpty()) {
@@ -222,10 +222,6 @@ class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHo
         this.onButtonPlayPauseClickListener = onButtonPlayPauseClickListener
     }
 
-/*    fun changeState(viewState: ViewState) {
-        currentState = viewState
-    }*/
-
     interface OnItemClickListener {
         fun onClick(songSelected: SongSelector, position: Int)
     }
@@ -258,8 +254,12 @@ object DataTypeDiffCallbackObj : DiffUtil.ItemCallback<SongType>() {
         newItem: SongType
     ): Boolean {
         return when {
-            oldItem is Song && newItem is Song -> oldItem == newItem
-            oldItem is SongSelector && newItem is SongSelector -> oldItem == newItem
+            oldItem is Song && newItem is Song -> (oldItem.artist == newItem.artist) &&
+                    (oldItem.title == newItem.title) && (oldItem.duration == newItem.duration) &&
+                    (oldItem.songState == newItem.songState)
+            oldItem is SongSelector && newItem is SongSelector -> (oldItem.song.artist == newItem.song.artist) &&
+                    (oldItem.song.title == newItem.song.title) && (oldItem.song.duration == newItem.song.duration) &&
+                    (oldItem.song.songState == newItem.song.songState) && (oldItem.isSelected == newItem.isSelected)
             else -> false
         }
     }

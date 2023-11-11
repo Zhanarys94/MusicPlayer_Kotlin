@@ -3679,9 +3679,6 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/viewModel/MainActivityViewModel.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/modules.kt
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/song/SongState.kt
     visible: true
     learner_created: true
@@ -3724,17 +3721,58 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/RecyclerAdapterSong.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/Kdi.kt
+  - name: src/main/res/layout/activity_main.xml
     visible: true
     learner_created: true
-  - name: src/main/res/layout/activity_main.xml
+  - name: src/test/java/org/hyperskill/musicplayer/internals/CustomShadowAsyncDifferConfig.java
+    visible: false
+    text: |
+      package org.hyperskill.musicplayer.internals;
+      
+      import android.os.Handler;
+      import android.os.Looper;
+      
+      import androidx.recyclerview.widget.AsyncDifferConfig;
+      
+      import org.robolectric.annotation.Implementation;
+      import org.robolectric.annotation.Implements;
+      
+      import java.util.concurrent.Executor;
+      
+      @Implements(AsyncDifferConfig.class)
+      @SuppressWarnings({"unused"})
+      public class CustomShadowAsyncDifferConfig {
+      
+          public static class MainThreadExecutor implements Executor {
+              private final Handler handler = new Handler(Looper.getMainLooper());
+      
+              @Override
+              public void execute(Runnable r) {
+                  handler.post(r);
+              }
+          }
+          Executor mainExecutor;
+      
+          @Implementation
+          public Executor getBackgroundThreadExecutor() {
+              if(mainExecutor == null) {
+                  mainExecutor = new MainThreadExecutor();
+              }
+              return mainExecutor;
+          }
+      }
+    learner_created: false
+  - name: src/main/java/org/hyperskill/musicplayer/modules.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/Kdi.kt
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22740#comment
 status: Failed
 feedback:
   message: songSelectorItemCheckBox should be checked after clicks on the list item
-  time: "Wed, 08 Nov 2023 09:10:42 UTC"
+  time: "Sat, 11 Nov 2023 11:56:19 UTC"
   expected: <true>
   actual: <false>
 record: 3

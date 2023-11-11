@@ -17,7 +17,7 @@ class Song(
     var songState = SongState.STOPPED
 
     override fun hashCode(): Int {
-        return this.artist.hashCode() + this.title.hashCode() + this.duration.hashCode() +
+        return this.id.hashCode() + this.artist.hashCode() + this.title.hashCode() + this.duration.hashCode() +
                 this.songState.hashCode()
     }
 
@@ -29,6 +29,7 @@ class Song(
         if (this === other) return true
         if (other !is Song) return false
 
+        if (this.id != other.id) return false
         if (this.artist != other.artist) return false
         if (this.title != other.title) return false
         if (this.duration != other.duration) return false

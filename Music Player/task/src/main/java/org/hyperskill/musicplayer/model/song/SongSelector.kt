@@ -4,8 +4,7 @@ class SongSelector(val song: Song) : SongType() {
     var isSelected = false
 
     override fun hashCode(): Int {
-        return song.artist.hashCode() + song.title.hashCode() + song.duration.hashCode() +
-                isSelected.hashCode()
+        return song.hashCode() + isSelected.hashCode()
     }
 
     override fun toString(): String {
@@ -16,6 +15,7 @@ class SongSelector(val song: Song) : SongType() {
         if (this === other) return true
         if (other !is SongSelector) return false
 
+        if (song.id != other.song.id) return false
         if (song.artist != other.song.artist) return false
         if (song.title != other.song.title) return false
         if (song.duration != other.song.duration) return false

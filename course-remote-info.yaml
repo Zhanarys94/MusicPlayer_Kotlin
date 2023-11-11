@@ -4,14 +4,14 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: android
-update_date: "Wed, 08 Nov 2023 09:07:54 UTC"
+update_date: "Sat, 11 Nov 2023 11:35:20 UTC"
 stages:
   - id: 1506
     step: 22739
     is_completed: true
   - id: 1507
     step: 22740
-    is_completed: false
+    is_completed: true
   - id: 1508
     step: 22741
     is_completed: false
@@ -77,23 +77,23 @@ topics:
       theory_id: 4575
     - title: Standard input with Java Scanner
       theory_id: 4445
-    - title: Reading data with a readln
+    - title: Reading data with readln
       theory_id: 11224
     - title: String basics
       theory_id: 12553
     - title: String templates
       theory_id: 4547
-    - title: Boolean and logical operations
+    - title: Boolean type and operations. True and false
       theory_id: 4515
     - title: Arithmetic operations
       theory_id: 4472
-    - title: Type of the numeric expression
+    - title: "When different types meet: type coercion"
       theory_id: 9506
     - title: Increment and decrement
       theory_id: 10776
     - title: Integers in action
       theory_id: 4488
-    - title: Relational operators
+    - title: Comparing numbers. Relational operators
       theory_id: 4525
     - title: Declaring functions
       theory_id: 4580
@@ -105,7 +105,7 @@ topics:
       theory_id: 7613
     - title: Type system
       theory_id: 9689
-    - title: Repeating blocks
+    - title: "Loops: repeat statement"
       theory_id: 4643
     - title: While loops
       theory_id: 4659
@@ -113,13 +113,13 @@ topics:
       theory_id: 3614
     - title: Build tools
       theory_id: 4284
-    - title: Gradle basics
+    - title: "Gradle: overview"
       theory_id: 5075
-    - title: Objects
+    - title: Objects and their properties
       theory_id: 11233
     - title: Declaring classes
       theory_id: 6200
-    - title: Equality
+    - title: Structural vs referential equality
       theory_id: 11236
     - title: Functions as objects
       theory_id: 5991
@@ -131,7 +131,7 @@ topics:
       theory_id: 11312
     - title: Unicode
       theory_id: 7899
-    - title: Characters
+    - title: Characters. Char type
       theory_id: 4680
     - title: Ranges
       theory_id: 4633
@@ -165,7 +165,7 @@ topics:
       theory_id: 12561
     - title: External resources
       theory_id: 6216
-    - title: The concept of patterns
+    - title: Concept of design patterns
       theory_id: 3611
     - title: Call stack
       theory_id: 11550
@@ -179,7 +179,7 @@ topics:
       theory_id: 9844
     - title: Inheritance
       theory_id: 7770
-    - title: Design principles
+    - title: Code organization. Design principles
       theory_id: 8956
     - title: Polymorphism
       theory_id: 10027
@@ -233,13 +233,13 @@ topics:
       theory_id: 18600
     - title: "Menus: Options, Popup"
       theory_id: 30757
-    - title: What is an exception
+    - title: Exception
       theory_id: 7243
     - title: Hierarchy of exceptions
       theory_id: 13264
     - title: Taming exceptions
       theory_id: 7601
-    - title: Null safety
+    - title: Avoiding NPEs. Null safety
       theory_id: 7619
     - title: Introduction to creational patterns
       theory_id: 16251
@@ -363,7 +363,7 @@ topics:
       theory_id: 6351
     - title: What are databases
       theory_id: 8497
-    - title: What is SQL
+    - title: "SQL: structured query language"
       theory_id: 7054
     - title: Thread as object
       theory_id: 15809

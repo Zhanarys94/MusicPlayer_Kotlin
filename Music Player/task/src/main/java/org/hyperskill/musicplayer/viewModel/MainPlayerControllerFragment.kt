@@ -32,12 +32,12 @@ class MainPlayerControllerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val playPauseButton = binding!!.controllerBtnPlayPause.apply {
             setOnClickListener {
-                onFragmentInteractionListener?.onPlayPauseButtonClick()
+                onFragmentInteractionListener?.fragmentPlayPauseButtonClick()
             }
         }
         val stopButton = binding!!.controllerBtnStop.apply {
             setOnClickListener {
-                onFragmentInteractionListener?.onStopButtonClick()
+                onFragmentInteractionListener?.fragmentStopButtonClick()
             }
         }
         val currentTime = binding!!.controllerTvCurrentTime
@@ -60,8 +60,8 @@ class MainPlayerControllerFragment : Fragment() {
     }
 
     interface OnFragmentInteractionListener {
-        fun onPlayPauseButtonClick()
+        fun fragmentPlayPauseButtonClick()
 
-        fun onStopButtonClick()
+        fun fragmentStopButtonClick()
     }
 }
