@@ -6,6 +6,9 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.RecyclerView
+
+import org.hyperskill.musicplayer.internals.CustomShadowAsyncDifferConfig
+import org.hyperskill.musicplayer.internals.CustomMediaPlayerShadow
 import org.hyperskill.musicplayer.internals.MusicPlayerUnitTests
 import org.junit.Assert.assertEquals
 import org.junit.Ignore
@@ -13,9 +16,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows
+import org.robolectric.annotation.Config
 
-// version 1.3
+// version 1.4
 @RunWith(RobolectricTestRunner::class)
+@Config(shadows = [CustomMediaPlayerShadow::class, CustomShadowAsyncDifferConfig::class])
 class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.java){
 
     private val mainButtonSearch by lazy {

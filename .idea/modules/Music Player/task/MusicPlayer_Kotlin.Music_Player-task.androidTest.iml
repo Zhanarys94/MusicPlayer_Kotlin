@@ -25,6 +25,7 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../../Music Player/task/build/intermediates/compile_app_classes_jar/debug/classes.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/440b1a88abe1c1d04c68adafed8b8bab/transformed/jetified-viewbinding-7.4.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/f717373132d7b6abfe5429bf925aeaf1/transformed/jetified-koin-android-compat-3.1.5-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/069b398ac58efac19fc07e1c78687af4/transformed/jetified-koin-android-3.1.5-api.jar</arg>

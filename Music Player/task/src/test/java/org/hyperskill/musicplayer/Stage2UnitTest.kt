@@ -6,7 +6,9 @@ import android.graphics.Color
 import android.widget.*
 import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.RecyclerView
+
 import org.hyperskill.musicplayer.internals.CustomMediaPlayerShadow
+import org.hyperskill.musicplayer.internals.CustomShadowAsyncDifferConfig
 import org.hyperskill.musicplayer.internals.MusicPlayerUnitTests
 import org.hyperskill.musicplayer.internals.SongFake
 import org.junit.Assert.assertEquals
@@ -17,8 +19,8 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import java.util.concurrent.TimeUnit
 
-// version 1.3
-@Config(shadows = [CustomMediaPlayerShadow::class])
+// version 1.4
+@Config(shadows = [CustomMediaPlayerShadow::class, CustomShadowAsyncDifferConfig::class])
 @RunWith(RobolectricTestRunner::class)
 class Stage2UnitTest : MusicPlayerUnitTests<MainActivity>(MainActivity::class.java){
 

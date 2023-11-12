@@ -14,6 +14,8 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../../Music Player/task/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
+                <arg>$MODULE_DIR$/../../../../Music Player/task/build/intermediates/compile_app_classes_jar/debug/classes.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/440b1a88abe1c1d04c68adafed8b8bab/transformed/jetified-viewbinding-7.4.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/10fda97b415032ae973e6a496bb8ff70/transformed/jetified-robolectric-4.7.3.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/eb1f3103d0c49f172c5b963b35cd7436/transformed/jetified-shadows-framework-4.7.3.jar</arg>

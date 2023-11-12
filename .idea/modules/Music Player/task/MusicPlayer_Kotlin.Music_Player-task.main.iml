@@ -24,6 +24,7 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../../Music Player/task/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/440b1a88abe1c1d04c68adafed8b8bab/transformed/jetified-viewbinding-7.4.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/d0fffada4452f6841c37c86108824cb6/transformed/material-1.4.0-api.jar</arg>
                 <arg>$MODULE_DIR$/../../../../../../../../.gradle/caches/transforms-3/868e741d9288c90467719a68ac5bee02/transformed/jetified-fragment-ktx-1.5.0-api.jar</arg>
