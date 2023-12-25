@@ -61,7 +61,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             mainFragmentContainer
 
             val controllerTvCurrentTime =
-                mainFragmentContainer.findViewByString<TextView>("controllerTvCurrentTime")
+                    mainFragmentContainer.findViewByString<TextView>("controllerTvCurrentTime")
 
 
             val actualCurrentTime = controllerTvCurrentTime.text.toString()
@@ -70,7 +70,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             assertEquals(messageWrongInitialCurrentTime, expectedCurrentTime, actualCurrentTime)
 
             val controllerTvTotalTime =
-                mainFragmentContainer.findViewByString<TextView>("controllerTvTotalTime")
+                    mainFragmentContainer.findViewByString<TextView>("controllerTvTotalTime")
 
 
             val actualTotalTime = controllerTvTotalTime.text.toString()
@@ -81,7 +81,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             mainFragmentContainer.findViewByString<SeekBar>("controllerSeekBar")
 
             val controllerBtnPlayPause =
-                mainFragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
+                    mainFragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
 
             val actualBtnPlayPauseText = controllerBtnPlayPause.text.toString().lowercase()
             val expectedBtnPlayPauseText = "play/pause"
@@ -89,7 +89,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             assertEquals(messageWrongInitialBtnPlayPauseText, expectedBtnPlayPauseText, actualBtnPlayPauseText)
 
             val controllerBtnStop =
-                mainFragmentContainer.findViewByString<Button>("controllerBtnStop")
+                    mainFragmentContainer.findViewByString<Button>("controllerBtnStop")
             val actualBtnStopText = controllerBtnStop.text.toString().lowercase()
             val expectedBtnStopText = "stop"
             val messageWrongInitialBtnStopText = "Wrong initial value for controllerBtnStop"
@@ -105,8 +105,8 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
 
             mainButtonSearch.clickAndRun()
             assertLastToastMessageEquals(
-                "wrong toast message after click to mainButtonSearch",
-                "no songs found"
+                    "wrong toast message after click to mainButtonSearch",
+                    "no songs found"
             )
         }
     }
@@ -116,8 +116,8 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
         testActivity {
             activity.clickMenuItemAndRun(mainMenuItemIdAddPlaylist)
             assertLastToastMessageEquals(
-                "wrong toast message after click to mainMenuItemIdAddPlaylist",
-                "no songs loaded, click search to load songs"
+                    "wrong toast message after click to mainMenuItemIdAddPlaylist",
+                    "no songs loaded, click search to load songs"
             )
         }
     }
@@ -130,12 +130,12 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             activity.clickMenuItemAndRun(mainMenuItemIdLoadPlaylist)
 
             val (alertDialog, shadowAlertDialog) = getLastAlertDialogWithShadow(
-                errorMessageNotFound = "No Dialog was shown after click on mainMenuLoadPlaylist."
+                    errorMessageNotFound = "No Dialog was shown after click on mainMenuLoadPlaylist."
             )
 
             val actualTitle = shadowAlertDialog.title.toString().lowercase()
             val messageWrongTitle =
-                "Wrong title found on dialog shown after click on mainMenuLoadPlaylist"
+                    "Wrong title found on dialog shown after click on mainMenuLoadPlaylist"
             val expectedTitle = "choose playlist to load"
             assertEquals(messageWrongTitle, expectedTitle, actualTitle)
 
@@ -151,12 +151,12 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
 
 
             val (alertDialog, shadowAlertDialog) = getLastAlertDialogWithShadow(
-                errorMessageNotFound = "No Dialog was shown after click on mainMenuDeletePlaylist."
+                    errorMessageNotFound = "No Dialog was shown after click on mainMenuDeletePlaylist."
             )
 
             val actualTitle = shadowAlertDialog.title.toString().lowercase()
             val messageWrongTitle =
-                "Wrong title found on dialog shown after click on mainMenuDeletePlaylist"
+                    "Wrong title found on dialog shown after click on mainMenuDeletePlaylist"
             val expectedTitle = "choose playlist to delete"
             assertEquals(messageWrongTitle, expectedTitle, actualTitle)
 
@@ -172,7 +172,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             mainFragmentContainer
 
             val controllerBtnStop =
-                mainFragmentContainer.findViewByString<Button>("controllerBtnStop")
+                    mainFragmentContainer.findViewByString<Button>("controllerBtnStop")
 
             controllerBtnStop.clickAndRun()
             // should not throw Exception
@@ -186,7 +186,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             mainFragmentContainer
 
             val controllerSeekBar =
-                mainFragmentContainer.findViewByString<SeekBar>("controllerSeekBar")
+                    mainFragmentContainer.findViewByString<SeekBar>("controllerSeekBar")
 
             if(Shadows.shadowOf(controllerSeekBar).onSeekBarChangeListener != null) {
                 controllerSeekBar.setProgressAsUser(1)
@@ -205,7 +205,7 @@ class Stage1UnitTestB : MusicPlayerUnitTests<MainActivity>(MainActivity::class.j
             mainFragmentContainer
 
             val controllerBtnPlayPause =
-                mainFragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
+                    mainFragmentContainer.findViewByString<Button>("controllerBtnPlayPause")
 
             controllerBtnPlayPause.clickAndRun()
             // should not throw Exception

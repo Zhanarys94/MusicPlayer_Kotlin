@@ -3,6 +3,7 @@ package org.hyperskill.musicplayer
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -25,7 +26,6 @@ import org.hyperskill.musicplayer.viewModel.MainActivityViewModel
 import org.hyperskill.musicplayer.viewModel.MainAddPlaylistFragment
 import org.hyperskill.musicplayer.viewModel.MainPlayerControllerFragment
 import org.hyperskill.musicplayer.viewModel.songStateController.SongStateController
-import timber.log.Timber
 
 private const val DEFAULT_PLAYLIST_NAME = "All Songs"
 
@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.plant(Timber.DebugTree())
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -52,6 +51,7 @@ class MainActivity : AppCompatActivity(),
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
 
         val recyclerView = binding.mainSongList
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -175,33 +175,60 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun fragmentPlayPauseButtonClick() {
-        if (currentPlaylist.currentTrack.songState == SongState.PLAYING) {
+        if (currentPlaylist.currentTrack == null) {
+            currentPlaylist.currentTrack = currentPlaylist.songs.first()
+        }
+        if (currentPlaylist.currentTrack!!.songState == SongState.PLAYING) {
+            val isCurrentTrackHere = currentPlaylist.songs.contains(currentPlaylist.currentTrack!!)
             val currentSong = currentPlaylist.currentTrack
-            val modifiedSong = Song(
-                currentSong.id, currentSong.title, currentSong.artist, currentSong.duration
-            )
-            val index = currentPlaylist.songs.indexOf(currentSong)
-            currentPlaylist.songs[index] = modifiedSong
-            currentPlaylist.currentTrack = modifiedSong
-            songStateController.pause(modifiedSong)
+            if (isCurrentTrackHere) {
+                val index = currentPlaylist.songs.indexOf(currentSong)
+                val modifiedSong = Song(
+                    currentSong!!.id, currentSong.title, currentSong.artist, currentSong.duration
+                )
+                currentPlaylist.songs[index] = modifiedSong
+                currentPlaylist.currentTrack = modifiedSong
+                songStateController.pause(currentPlaylist.currentTrack!!)
+            } else {
+                val firstSong = currentPlaylist.songs.first()
+                val modifiedSong = Song(
+                    firstSong.id, firstSong.title, firstSong.artist, firstSong.duration
+                )
+                currentPlaylist.songs[0] = modifiedSong
+                currentPlaylist.currentTrack = modifiedSong
+                songStateController.play(currentPlaylist.currentTrack!!)
+            }
             mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
         } else {
+            val isCurrentTrackHere = currentPlaylist.songs.contains(currentPlaylist.currentTrack!!)
             val currentSong = currentPlaylist.currentTrack
-            val modifiedSong = Song(
-                currentSong.id, currentSong.title, currentSong.artist, currentSong.duration
-            )
-            val index = currentPlaylist.songs.indexOf(currentSong)
-            currentPlaylist.songs[index] = modifiedSong
-            currentPlaylist.currentTrack = modifiedSong
-            songStateController.play(modifiedSong)
+            if (isCurrentTrackHere) {
+                val index = currentPlaylist.songs.indexOf(currentSong)
+                val modifiedSong = Song(
+                    currentSong!!.id, currentSong.title, currentSong.artist, currentSong.duration
+                )
+                currentPlaylist.songs[index] = modifiedSong
+                currentPlaylist.currentTrack = modifiedSong
+            } else {
+                val firstSong = currentPlaylist.songs.first()
+                val modifiedSong = Song(
+                    firstSong.id, firstSong.title, firstSong.artist, firstSong.duration
+                )
+                currentPlaylist.songs[0] = modifiedSong
+                currentPlaylist.currentTrack = modifiedSong
+            }
+            songStateController.play(currentPlaylist.currentTrack!!)
             mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
         }
     }
 
     override fun fragmentStopButtonClick() {
+        if (currentPlaylist.currentTrack == null) {
+            currentPlaylist.currentTrack = currentPlaylist.songs.first()
+        }
         val currentSong = currentPlaylist.currentTrack
         val modifiedSong = Song(
-            currentSong.id, currentSong.title, currentSong.artist, currentSong.duration
+            currentSong!!.id, currentSong.title, currentSong.artist, currentSong.duration
         )
         val index = currentPlaylist.songs.indexOf(currentSong)
         currentPlaylist.songs[index] = modifiedSong
@@ -229,18 +256,6 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
     private fun mainMenuAddPlaylist(): Boolean {
         if (mainActivityViewModel.currentStateLiveData.value == ADD_PLAYLIST) {
             return true
@@ -258,7 +273,7 @@ class MainActivity : AppCompatActivity(),
                 loadedPlaylist.name = DEFAULT_PLAYLIST_NAME
                 loadedPlaylist.updateSongSelectors()
                 mainActivityViewModel.changeCurrentState(ADD_PLAYLIST)
-                Timber.log(1, "Add playlist menu item was clicked")
+                Log.d("mainMenuAddPlaylist()", "State was changed to Add Playlist")
                 return true
             }
         }
@@ -274,16 +289,18 @@ class MainActivity : AppCompatActivity(),
                 val currentSong = currentPlaylist.currentTrack
                 currentPlaylist.songs = selectedPlaylist
                 currentPlaylist.name = selectedPlaylistName
-                if (selectedPlaylist.any {
-                        it.title == currentSong.title && it.artist == currentSong.artist
-                                && it.duration == currentSong.duration
-                    }) {
-                    val _currentSong = selectedPlaylist.find {
-                        it.artist == currentSong.artist && it.title == currentSong.title
-                                && it.duration == currentSong.duration
-                    }!!
-                    _currentSong.songState = currentSong.songState
-                    currentPlaylist.currentTrack = _currentSong
+                if (currentSong != null) {
+                    if (selectedPlaylist.any {
+                            it.title == currentSong.title && it.artist == currentSong.artist
+                                    && it.duration == currentSong.duration
+                        }) {
+                        val _currentSong = selectedPlaylist.find {
+                            it.artist == currentSong.artist && it.title == currentSong.title
+                                    && it.duration == currentSong.duration
+                        }!!
+                        _currentSong.songState = currentSong.songState
+                        currentPlaylist.currentTrack = _currentSong
+                    }
                 }
                 mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
             } else {
@@ -305,7 +322,7 @@ class MainActivity : AppCompatActivity(),
             }
         }
         alertDialogCreator("choose playlist to load", playlistsNames, clickListener)
-        Timber.log(1, "Load playlist menu item was clicked")
+        Log.d("mainMenuLoadPlaylist()", "Load playlist menu item was clicked")
         return true
     }
 
@@ -316,7 +333,6 @@ class MainActivity : AppCompatActivity(),
         val playlistsNames = savedPlaylists.map { it.key }
         val clickListener = DialogInterface.OnClickListener { _, itemIndex ->
             val selectedPlaylistName = playlistsNames[itemIndex]
-            playlists.removePlaylist(selectedPlaylistName)
             if (currentPlaylist.name == selectedPlaylistName) {
                 currentPlaylist.songs = playlists.getPlaylistByName(DEFAULT_PLAYLIST_NAME)!!
                 currentPlaylist.name = DEFAULT_PLAYLIST_NAME
@@ -325,11 +341,13 @@ class MainActivity : AppCompatActivity(),
             if (loadedPlaylist.name == selectedPlaylistName) {
                 loadedPlaylist.songs = playlists.getPlaylistByName(DEFAULT_PLAYLIST_NAME)!!
                 loadedPlaylist.name = DEFAULT_PLAYLIST_NAME
+                loadedPlaylist.updateSongSelectors()
                 mainActivityViewModel.changeLoadedPlaylist(loadedPlaylist.songSelectors)
             }
+            playlists.removePlaylist(selectedPlaylistName)
         }
         alertDialogCreator("choose playlist to delete", playlistsNames, clickListener)
-        Timber.log(1, "Delete playlist menu item was clicked")
+        Log.d("mainMenuDeletePlaylist()", "Delete playlist menu item was clicked")
         return true
     }
 
@@ -344,16 +362,18 @@ class MainActivity : AppCompatActivity(),
             playlists.addPlaylist(DEFAULT_PLAYLIST_NAME, playlists.getDefaultSongs())
             currentPlaylist.songs = playlists.getPlaylistByName(DEFAULT_PLAYLIST_NAME)!!
             currentPlaylist.name = DEFAULT_PLAYLIST_NAME
-            if (playlists.getPlaylistByName(DEFAULT_PLAYLIST_NAME)!!.any {
-                    it.artist == currentTrack.artist && it.title == currentTrack.title &&
-                            it.duration == currentTrack.duration
-                }) {
-                val index = currentPlaylist.songs.indexOfFirst {
-                    it.artist == currentTrack.artist && it.title == currentTrack.title &&
-                            it.duration == currentTrack.duration
+            if (currentTrack != null) {
+                if (playlists.getPlaylistByName(DEFAULT_PLAYLIST_NAME)!!.any {
+                        it.artist == currentTrack.artist && it.title == currentTrack.title &&
+                                it.duration == currentTrack.duration
+                    }) {
+                    val index = currentPlaylist.songs.indexOfFirst {
+                        it.artist == currentTrack.artist && it.title == currentTrack.title &&
+                                it.duration == currentTrack.duration
+                    }
+                    currentPlaylist.songs[index].songState = currentTrack.songState
+                    currentPlaylist.currentTrack = currentPlaylist.songs[index]
                 }
-                currentPlaylist.songs[index].songState = currentTrack.songState
-                currentPlaylist.currentTrack = currentPlaylist.songs[index]
             }
             mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
         }
@@ -369,19 +389,21 @@ class MainActivity : AppCompatActivity(),
     private fun playPauseBtnClick(song: Song, position: Int) {
         if (song != currentPlaylist.currentTrack) {
             val oldCurrentSong = currentPlaylist.currentTrack
-            if (currentPlaylist.songs.contains(oldCurrentSong)) {
-                val modifiedOldCurrentSong = Song(
-                    oldCurrentSong.id,
-                    oldCurrentSong.title,
-                    oldCurrentSong.artist,
-                    oldCurrentSong.duration
-                )
+            if (oldCurrentSong != null) {
+                if (currentPlaylist.songs.contains(oldCurrentSong)) {
+                    val modifiedOldCurrentSong = Song(
+                        oldCurrentSong.id,
+                        oldCurrentSong.title,
+                        oldCurrentSong.artist,
+                        oldCurrentSong.duration
+                    )
 
-                val indexOfOldSong = currentPlaylist.songs.indexOfFirst {
-                    it.artist == oldCurrentSong.artist && it.title == oldCurrentSong.title
-                            && it.duration == oldCurrentSong.duration
+                    val indexOfOldSong = currentPlaylist.songs.indexOfFirst {
+                        it.artist == oldCurrentSong.artist && it.title == oldCurrentSong.title
+                                && it.duration == oldCurrentSong.duration
+                    }
+                    currentPlaylist.songs[indexOfOldSong] = modifiedOldCurrentSong
                 }
-                currentPlaylist.songs[indexOfOldSong] = modifiedOldCurrentSong
             }
 
             val newSongRef = currentPlaylist.songs[position]
@@ -397,7 +419,7 @@ class MainActivity : AppCompatActivity(),
             mainActivityViewModel.changeCurrentSong(newSong)
             mainActivityViewModel.changeCurrentPlaylist(currentPlaylist.songs)
         } else if (song == currentPlaylist.currentTrack) {
-            if (currentPlaylist.currentTrack.songState == SongState.PLAYING) {
+            if (currentPlaylist.currentTrack!!.songState == SongState.PLAYING) {
                 val modifiedSong = Song(
                     song.id, song.title, song.artist, song.duration
                 )

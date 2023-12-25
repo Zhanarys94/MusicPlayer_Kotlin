@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: org.robolectric:shadows-framework:4.7.3">
+  <library name="Gradle: org.robolectric:shadows-framework:4.7.3" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/modules-2/files-2.1/org.robolectric/shadows-framework/4.7.3/40428b2b6fd3f04f69063c16ee81e35640efeef3/shadows-framework-4.7.3.jar!/" />
     </CLASSES>

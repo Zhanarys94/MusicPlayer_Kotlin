@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: org.robolectric:sandbox:4.7.3">
+  <library name="Gradle: org.robolectric:sandbox:4.7.3" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/modules-2/files-2.1/org.robolectric/sandbox/4.7.3/449b30d91562089e74a854f9e6d47cbf1568bdd1/sandbox-4.7.3.jar!/" />
     </CLASSES>

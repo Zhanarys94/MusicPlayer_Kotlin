@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.almworks.sqlite4java:sqlite4java:1.0.392">
+  <library name="Gradle: com.almworks.sqlite4java:sqlite4java:1.0.392" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/modules-2/files-2.1/com.almworks.sqlite4java/sqlite4java/1.0.392/d6234e08ff4e1607ff5321da2579571f05ff778d/sqlite4java-1.0.392.jar!/" />
     </CLASSES>

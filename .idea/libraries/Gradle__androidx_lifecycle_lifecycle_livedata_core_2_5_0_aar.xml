@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.lifecycle:lifecycle-livedata-core:2.5.0@aar">
+  <library name="Gradle: androidx.lifecycle:lifecycle-livedata-core:2.5.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/63225cbf5c6e425abd57623f170812c2/transformed/lifecycle-livedata-core-2.5.0/res" />
-      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/63225cbf5c6e425abd57623f170812c2/transformed/lifecycle-livedata-core-2.5.0/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/63225cbf5c6e425abd57623f170812c2/transformed/lifecycle-livedata-core-2.5.0/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/2607a031f4d306a300edfda92975d7f4/transformed/lifecycle-livedata-core-2.5.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/2607a031f4d306a300edfda92975d7f4/transformed/lifecycle-livedata-core-2.5.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/2607a031f4d306a300edfda92975d7f4/transformed/lifecycle-livedata-core-2.5.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

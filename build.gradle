@@ -1,3 +1,17 @@
+/**
+ * This build file was created to target Android Studio Flamingo using gradle jdk 17
+ * and gradle version 7.6.1
+ *
+ * If you are experiencing build issues try checking/setting the gradle jdk on
+ * preferences -> Build, Execution, Deployment -> Build Tools -> Gradle -> Gradle JDK
+ *
+ * The gradle version should be automatically set, but if that is failing you can manually
+ * set it on /gradle/wrapper/gradle-wrapper.properties file setting the version to 7.6.1
+ *
+ * If you are still experiencing build issues with the expected config try seeking help on
+ * android channel at hyperskill users discord server (https://discord.gg/ut6nEqu)
+ */
+
 buildscript {
   apply plugin: 'hyperskill'
 
@@ -11,8 +25,8 @@ buildscript {
   repositories {
     google()
     mavenCentral()
-//    maven { url "https://packages.jetbrains.team/maven/p/academy/hyperskill-hspc" }
-    maven { url "https://jitpack.io" }
+    maven { url 'https://packages.jetbrains.team/maven/p/hyperskill-hs-test/maven' }
+    maven { url 'https://jitpack.io' }
   }
 
   dependencies {

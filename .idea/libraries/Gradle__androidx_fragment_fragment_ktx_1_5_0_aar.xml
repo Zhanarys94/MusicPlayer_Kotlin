@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.fragment:fragment-ktx:1.5.0@aar">
+  <library name="Gradle: androidx.fragment:fragment-ktx:1.5.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/0674482fef921f27760d1f923156deb5/transformed/jetified-fragment-ktx-1.5.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/0674482fef921f27760d1f923156deb5/transformed/jetified-fragment-ktx-1.5.0/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/0674482fef921f27760d1f923156deb5/transformed/jetified-fragment-ktx-1.5.0/res" />
+      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/a832c6edef6b8badbc80cc963f4ac219/transformed/jetified-fragment-ktx-1.5.0/res" />
+      <root url="jar://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/a832c6edef6b8badbc80cc963f4ac219/transformed/jetified-fragment-ktx-1.5.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../.gradle/caches/transforms-3/a832c6edef6b8badbc80cc963f4ac219/transformed/jetified-fragment-ktx-1.5.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

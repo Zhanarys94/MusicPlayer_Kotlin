@@ -4,7 +4,7 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: android
-update_date: "Sun, 12 Nov 2023 09:44:51 UTC"
+update_date: "Mon, 25 Dec 2023 08:14:55 UTC"
 stages:
   - id: 1506
     step: 22739
@@ -23,7 +23,7 @@ stages:
     is_completed: false
 topics:
   0:
-    - title: Data structures
+    - title: Abstract and concrete data structures
       theory_id: 16927
     - title: Introduction to UI/UX
       theory_id: 14603
@@ -61,10 +61,6 @@ topics:
       theory_id: 17408
     - title: Data types
       theory_id: 4388
-    - title: Properties of basic types
-      theory_id: 4455
-    - title: Type conversion
-      theory_id: 4672
     - title: Comments
       theory_id: 4406
     - title: Kotlin style guide. Coding conventions
@@ -77,8 +73,6 @@ topics:
       theory_id: 4575
     - title: Standard input with Java Scanner
       theory_id: 4445
-    - title: Reading data with readln
-      theory_id: 11224
     - title: String basics
       theory_id: 12553
     - title: String templates
@@ -87,10 +81,20 @@ topics:
       theory_id: 4515
     - title: Arithmetic operations
       theory_id: 4472
-    - title: "When different types meet: type coercion"
-      theory_id: 9506
     - title: Increment and decrement
       theory_id: 10776
+    - title: Build tools
+      theory_id: 4284
+    - title: "Gradle: overview"
+      theory_id: 5075
+    - title: Properties of basic types
+      theory_id: 4455
+    - title: Type conversion
+      theory_id: 4672
+    - title: Reading data with readln
+      theory_id: 11224
+    - title: "When different types meet: type coercion"
+      theory_id: 9506
     - title: Integers in action
       theory_id: 4488
     - title: Comparing numbers. Relational operators
@@ -109,26 +113,14 @@ topics:
       theory_id: 4643
     - title: While loops
       theory_id: 4659
-    - title: What is object-oriented programming
-      theory_id: 3614
-    - title: Build tools
-      theory_id: 4284
-    - title: "Gradle: overview"
-      theory_id: 5075
     - title: Objects and their properties
       theory_id: 11233
-    - title: Declaring classes
-      theory_id: 6200
     - title: Structural vs referential equality
       theory_id: 11236
     - title: Functions as objects
       theory_id: 5991
     - title: Lambda expressions
       theory_id: 30148
-    - title: Android studio basics
-      theory_id: 11048
-    - title: API Levels
-      theory_id: 11312
     - title: Unicode
       theory_id: 7899
     - title: Characters. Char type
@@ -143,10 +135,6 @@ topics:
       theory_id: 4637
     - title: Named arguments
       theory_id: 4640
-    - title: Constructors
-      theory_id: 10740
-    - title: Member functions
-      theory_id: 6364
     - title: Introduction to MutableList
       theory_id: 14879
     - title: For loop and ranges
@@ -161,30 +149,50 @@ topics:
       theory_id: 10730
     - title: Mutable List
       theory_id: 11032
-    - title: Working with strings
-      theory_id: 12561
     - title: External resources
       theory_id: 6216
-    - title: Concept of design patterns
-      theory_id: 3611
+    - title: What is object-oriented programming
+      theory_id: 3614
+    - title: Declaring classes
+      theory_id: 6200
+    - title: Constructors
+      theory_id: 10740
+    - title: Member functions
+      theory_id: 6364
+    - title: Working with strings
+      theory_id: 12561
     - title: Call stack
       theory_id: 11550
     - title: Scopes
       theory_id: 17116
-    - title: Introduction to software architecture
-      theory_id: 15368
-    - title: Introduction to Android
-      theory_id: 6331
+    - title: Android studio basics
+      theory_id: 11048
+    - title: API Levels
+      theory_id: 11312
+    - title: Concept of design patterns
+      theory_id: 3611
+    - title: Code organization. Design principles
+      theory_id: 8956
     - title: Inheritance
       theory_id: 9844
     - title: Inheritance
       theory_id: 7770
-    - title: Code organization. Design principles
-      theory_id: 8956
     - title: Polymorphism
       theory_id: 10027
     - title: Overriding functions
       theory_id: 7884
+    - title: Introduction to software architecture
+      theory_id: 15368
+    - title: Introduction to Android
+      theory_id: 6331
+    - title: Encapsulation
+      theory_id: 8519
+    - title: Property accessors
+      theory_id: 10511
+    - title: Introduction to generic programming
+      theory_id: 14698
+    - title: Generic functions
+      theory_id: 16052
     - title: XML
       theory_id: 6901
     - title: Android Project Structure
@@ -205,14 +213,6 @@ topics:
       theory_id: 14815
     - title: Running your app
       theory_id: 11320
-    - title: Encapsulation
-      theory_id: 8519
-    - title: Property accessors
-      theory_id: 10511
-    - title: Introduction to generic programming
-      theory_id: 14698
-    - title: Generic functions
-      theory_id: 16052
     - title: Retrieving Declared Views
       theory_id: 20346
     - title: ConstraintLayout vs RelativeLayout
@@ -276,6 +276,16 @@ topics:
       theory_id: 11290
     - title: Mutable Set
       theory_id: 11897
+    - title: What are bugs
+      theory_id: 5504
+    - title: Functional testing
+      theory_id: 13438
+    - title: Unit testing
+      theory_id: 7545
+    - title: Dependency injection
+      theory_id: 20580
+    - title: Nested and inner classes
+      theory_id: 14723
     - title: Arrays
       theory_id: 4564
     - title: String arrays
@@ -288,16 +298,6 @@ topics:
       theory_id: 22079
     - title: Lazy initialization
       theory_id: 14661
-    - title: What are bugs
-      theory_id: 5504
-    - title: Functional testing
-      theory_id: 13438
-    - title: Unit testing
-      theory_id: 7545
-    - title: Dependency injection
-      theory_id: 20580
-    - title: Nested and inner classes
-      theory_id: 14723
     - title: Coupling and cohesion
       theory_id: 21478
     - title: "Synchronous, asynchronous, parallel"
@@ -306,8 +306,6 @@ topics:
       theory_id: 9420
     - title: Mapping transformation
       theory_id: 23780
-    - title: View Binding
-      theory_id: 12927
     - title: Introduction to logging
       theory_id: 5538
     - title: Debugging techniques
@@ -316,16 +314,18 @@ topics:
       theory_id: 14368
     - title: Debugging simple constructs
       theory_id: 15503
-    - title: Customizing RecyclerView
-      theory_id: 19037
-    - title: RecyclerView Adapter mastery
-      theory_id: 20429
     - title: Single Responsibility Principle
       theory_id: 8963
     - title: Object declarations
       theory_id: 10698
     - title: Advanced debugger features
       theory_id: 16028
+    - title: View Binding
+      theory_id: 12927
+    - title: Customizing RecyclerView
+      theory_id: 19037
+    - title: RecyclerView Adapter mastery
+      theory_id: 20429
     - title: Simultaneous tasks
       theory_id: 8544
     - title: Asynchronous programming techniques & problems
@@ -397,7 +397,7 @@ topics:
       theory_id: 8619
     - title: Basic INSERT statement
       theory_id: 9059
-    - title: Introduction to SQLite
-      theory_id: 12165
     - title: Basic DELETE statement
       theory_id: 9075
+    - title: Introduction to SQLite
+      theory_id: 12165
