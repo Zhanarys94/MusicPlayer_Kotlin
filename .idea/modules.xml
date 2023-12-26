@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MusicPlayer_Kotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/MusicPlayer_Kotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer_Kotlin.Music_Player-task.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/MusicPlayer_Kotlin.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/MusicPlayer_Kotlin.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MusicPlayer.iml" filepath="$PROJECT_DIR$/.idea/modules/MusicPlayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Music Player/task/MusicPlayer.Music_Player-task.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/MusicPlayer.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/MusicPlayer.util.iml" />
     </modules>
   </component>
 </project>

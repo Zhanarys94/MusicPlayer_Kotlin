@@ -290,9 +290,6 @@ files:
           <foreground android:drawable="@drawable/ic_launcher_foreground" />
       </adaptive-icon>
     learner_created: false
-  - name: src/main/res/raw/wisdom.mp3
-    visible: true
-    learner_created: false
   - name: src/main/res/values/colors.xml
     visible: true
     text: |
@@ -4783,6 +4780,12 @@ files:
           }
       }
     learner_created: false
+  - name: src/main/res/layout/song_list.xml
+    visible: true
+    learner_created: true
+  - name: src/main/res/raw/wisdom.mp3
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22741#comment
 status: Failed
 record: 6

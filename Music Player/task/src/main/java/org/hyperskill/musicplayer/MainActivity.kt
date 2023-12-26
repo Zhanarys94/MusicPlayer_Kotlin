@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(),
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
 
         val recyclerView = binding.mainSongList
         recyclerView.layoutManager = LinearLayoutManager(this)

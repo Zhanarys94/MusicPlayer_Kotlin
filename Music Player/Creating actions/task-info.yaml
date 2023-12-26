@@ -1471,12 +1471,6 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/model/playlist/Playlist.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/viewModel/songStateController/SongStateControllerInterface.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/viewModel/songStateController/SongStateController.kt
-    visible: true
-    learner_created: true
   - name: src/main/java/org/hyperskill/musicplayer/model/playlist/LoadedPlaylist.kt
     visible: true
     learner_created: true
@@ -1539,21 +1533,39 @@ files:
           }
       }
     learner_created: false
-  - name: src/main/java/org/hyperskill/musicplayer/modules.kt
-    visible: true
-    learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/Kdi.kt
-    visible: true
-    learner_created: true
   - name: src/test/java/org/hyperskill/musicplayer/Stage1UnitTestB.kt
     visible: true
     learner_created: true
   - name: src/test/java/org/hyperskill/musicplayer/Stage2UnitTest.kt
     visible: true
     learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/di/Kdi.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/di/modules.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/businessLogic/songStateController/SongStateController.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/businessLogic/songStateController/SongStateControllerInterface.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/Kdi.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/modules.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/songStateController/SongStateController.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/model/songStateController/SongStateControllerInterface.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22740#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: "Mon, 25 Dec 2023 10:02:36 UTC"
+  time: "Mon, 25 Dec 2023 11:00:31 UTC"
 record: 3
