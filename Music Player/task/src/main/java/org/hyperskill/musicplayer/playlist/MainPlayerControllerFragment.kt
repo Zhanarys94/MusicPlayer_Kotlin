@@ -1,4 +1,4 @@
-package org.hyperskill.musicplayer.viewModel
+package org.hyperskill.musicplayer.playlist
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import org.hyperskill.musicplayer.databinding.MainPlayerControllerBinding
+import org.hyperskill.musicplayer.viewModel.MainActivityViewModel
 
 class MainPlayerControllerFragment : Fragment() {
     private var binding: MainPlayerControllerBinding? = null

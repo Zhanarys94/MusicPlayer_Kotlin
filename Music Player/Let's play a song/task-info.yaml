@@ -4786,6 +4786,15 @@ files:
   - name: src/main/res/raw/wisdom.mp3
     visible: true
     learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/MusicPlayer.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/playlist/LoadedPlaylistController.kt
+    visible: true
+    learner_created: true
+  - name: src/main/java/org/hyperskill/musicplayer/repository/PlaylistsRepositoryController.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22741#comment
 status: Failed
 record: 6

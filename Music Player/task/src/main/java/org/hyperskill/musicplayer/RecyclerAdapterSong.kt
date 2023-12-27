@@ -10,10 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import org.hyperskill.musicplayer.model.song.Song
-import org.hyperskill.musicplayer.model.song.SongSelector
-import org.hyperskill.musicplayer.model.song.SongState
-import org.hyperskill.musicplayer.model.song.SongType
+import org.hyperskill.musicplayer.song.Song
+import org.hyperskill.musicplayer.song.SongSelector
+import org.hyperskill.musicplayer.song.SongState
+import org.hyperskill.musicplayer.song.SongType
 import java.util.EnumSet
 
 class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHolder>(

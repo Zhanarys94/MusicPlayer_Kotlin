@@ -1,7 +1,7 @@
 package org.hyperskill.musicplayer.repository
 
 import android.util.ArrayMap
-import org.hyperskill.musicplayer.model.song.Song
+import org.hyperskill.musicplayer.song.Song
 
 class PlaylistsRepositoryImpl : PlaylistsRepository {
 

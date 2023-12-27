@@ -1,4 +1,4 @@
-package org.hyperskill.musicplayer.viewModel
+package org.hyperskill.musicplayer.playlist
 
 import android.content.Context
 import android.os.Bundle

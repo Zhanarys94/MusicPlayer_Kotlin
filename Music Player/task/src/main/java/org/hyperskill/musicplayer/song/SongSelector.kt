@@ -1,4 +1,4 @@
-package org.hyperskill.musicplayer.model.song
+package org.hyperskill.musicplayer.song
 
 class SongSelector(val song: Song) : SongType() {
     var isSelected = false

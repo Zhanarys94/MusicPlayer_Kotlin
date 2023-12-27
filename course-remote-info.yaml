@@ -4,7 +4,7 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: android
-update_date: "Tue, 26 Dec 2023 09:50:30 UTC"
+update_date: "Wed, 27 Dec 2023 15:14:18 UTC"
 stages:
   - id: 1506
     step: 22739
@@ -169,10 +169,10 @@ topics:
       theory_id: 11048
     - title: API Levels
       theory_id: 11312
-    - title: Concept of design patterns
-      theory_id: 3611
     - title: Code organization. Design principles
       theory_id: 8956
+    - title: Concept of design patterns
+      theory_id: 3611
     - title: Inheritance
       theory_id: 9844
     - title: Inheritance
@@ -296,14 +296,14 @@ topics:
       theory_id: 20794
     - title: "Test predicates: checking elements in collection"
       theory_id: 22079
-    - title: Lazy initialization
-      theory_id: 14661
     - title: Coupling and cohesion
       theory_id: 21478
     - title: "Synchronous, asynchronous, parallel"
       theory_id: 9332
     - title: Processes and threads
       theory_id: 9420
+    - title: Lazy initialization
+      theory_id: 14661
     - title: Mapping transformation
       theory_id: 23780
     - title: Introduction to logging
