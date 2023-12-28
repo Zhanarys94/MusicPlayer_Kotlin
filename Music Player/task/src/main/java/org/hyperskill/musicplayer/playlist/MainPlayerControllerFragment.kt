@@ -45,7 +45,7 @@ class MainPlayerControllerFragment : Fragment() {
         val totalTime = binding!!.controllerTvTotalTime
         val seekBar = binding!!.controllerSeekBar
 
-        viewModel.currentSong.observe(this) { song ->
+        viewModel.currentSongLiveData.observe(this) { song ->
             totalTime.text = song.durationString
         }
     }

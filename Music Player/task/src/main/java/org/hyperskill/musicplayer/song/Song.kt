@@ -33,8 +33,6 @@ class Song(
         if (this.artist != other.artist) return false
         if (this.title != other.title) return false
         if (this.duration != other.duration) return false
-        if (this.songState != other.songState) return false
-
-        return true
+        return this.songState == other.songState
     }
 }

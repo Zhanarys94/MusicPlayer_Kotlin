@@ -57,7 +57,7 @@ class RecyclerAdapterSong : ListAdapter<SongType, RecyclerAdapterSong.SongViewHo
         when (getItem(position)) {
             is Song -> {
                 holder.itemView.setOnLongClickListener {
-                    onItemLongClickListener?.onLongClick(getItem(position) as Song, position)
+                    onItemLongClickListener?.onLongClick(getItem(holder.adapterPosition) as Song, holder.adapterPosition)
                     true
                 }
                 holder.bind(
@@ -254,12 +254,8 @@ object DataTypeDiffCallbackObj : DiffUtil.ItemCallback<SongType>() {
         newItem: SongType
     ): Boolean {
         return when {
-            oldItem is Song && newItem is Song -> (oldItem.artist == newItem.artist) &&
-                    (oldItem.title == newItem.title) && (oldItem.duration == newItem.duration) &&
-                    (oldItem.songState == newItem.songState)
-            oldItem is SongSelector && newItem is SongSelector -> (oldItem.song.artist == newItem.song.artist) &&
-                    (oldItem.song.title == newItem.song.title) && (oldItem.song.duration == newItem.song.duration) &&
-                    (oldItem.song.songState == newItem.song.songState) && (oldItem.isSelected == newItem.isSelected)
+            oldItem is Song && newItem is Song -> oldItem == newItem
+            oldItem is SongSelector && newItem is SongSelector -> oldItem == newItem
             else -> false
         }
     }

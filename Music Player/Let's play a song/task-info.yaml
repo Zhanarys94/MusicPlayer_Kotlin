@@ -4789,10 +4789,10 @@ files:
   - name: src/main/java/org/hyperskill/musicplayer/MusicPlayer.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/playlist/LoadedPlaylistController.kt
+  - name: src/main/java/org/hyperskill/musicplayer/repository/PlaylistsRepositoryController.kt
     visible: true
     learner_created: true
-  - name: src/main/java/org/hyperskill/musicplayer/repository/PlaylistsRepositoryController.kt
+  - name: src/main/java/org/hyperskill/musicplayer/playlist/PlaylistInAddPlaylistController.kt
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/22741#comment

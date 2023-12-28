@@ -1,6 +1,7 @@
 package org.hyperskill.musicplayer.playlist
 
 import org.hyperskill.musicplayer.song.Song
+import org.hyperskill.musicplayer.song.SongSelector
 import org.hyperskill.musicplayer.song.SongState
 
 class CurrentPlaylistController(private val currentPlaylist: CurrentPlaylist) :
@@ -77,5 +78,31 @@ class CurrentPlaylistController(private val currentPlaylist: CurrentPlaylist) :
         currentPlaylist.currentTrack = modifiedSong
         stop(modifiedSong)
         return modifiedSong
+    }
+
+    fun changeCurrentPlaylistName(newName: String) {
+        currentPlaylist.name = newName
+    }
+
+    fun getCurrentTrack(): Song {
+        return currentPlaylist.currentTrack ?: currentPlaylist.songs.first()
+    }
+    fun changeCurrentTrack(newTrack: Song) {
+        currentPlaylist.currentTrack = newTrack
+    }
+
+    fun getCurrentPlaylist(): MutableList<Song> {
+        return currentPlaylist.songs
+    }
+    fun changeCurrentPlaylist(newPlaylist: MutableList<Song>) {
+        currentPlaylist.songs = newPlaylist
+    }
+
+    fun modifySong(modifiedSong: Song, position: Int) {
+        currentPlaylist.modifySong(modifiedSong, position)
+    }
+
+    fun changeStateOfSong(song: Song, position: Int) {
+        currentPlaylist.songs[position].songState = song.songState
     }
 }
